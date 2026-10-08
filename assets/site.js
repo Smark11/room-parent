@@ -9,9 +9,9 @@ const CONFIG = {
   school: "Maple Hill Elementary",
   roomParentName: "Mark",           // your first name
   studentCount: 24,
-  partyName: "Operation: Fourth Grade",
-  partyDate: "2026-10-30T13:30:00", // local time, ISO format
-  partyDisplayDate: "Friday, Oct 30 · 1:30–3:15 PM",
+  nextEventName: "Halloween Party",
+  nextEventDate: "2026-10-30T13:30:00", // local time, ISO format; drives the countdown
+  nextEventDisplayDate: "Friday, Oct 30 · 1:30–3:00 PM",
   contactEmail: "roomparent@example.com",
 };
 
@@ -52,7 +52,7 @@ if (themeBtn) {
 // ---- Countdown ----
 const cd = document.querySelector("[data-countdown]");
 if (cd) {
-  const target = new Date(CONFIG.partyDate).getTime();
+  const target = new Date(CONFIG.nextEventDate).getTime();
   const units = { days: cd.querySelector("[data-days]"), hours: cd.querySelector("[data-hours]"), mins: cd.querySelector("[data-mins]"), secs: cd.querySelector("[data-secs]") };
   const tick = () => {
     let diff = Math.max(0, target - Date.now());

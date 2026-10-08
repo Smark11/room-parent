@@ -420,3 +420,31 @@ footer .container { display: flex; justify-content: space-between; flex-wrap: wr
   .section { padding: 16px 0; }
   details { display: block; } details summary { display: none; } details > * { display: block; }
 }
+
+/* ---------- Halloween page additions ---------- */
+.src { font-size: .8rem; color: var(--muted); }
+.src a { color: var(--muted); }
+.concept { display: flex; flex-direction: column; gap: 8px; }
+.concept .art { font-size: 2.2rem; line-height: 1; }
+.concept h3 { margin: 4px 0 0; }
+.concept .hook { color: var(--ink-2); font-style: italic; margin: 0; }
+.concept ul { margin: 0; padding-left: 1.1em; font-size: .93rem; }
+.concept .finale { font-size: .93rem; margin: 0; }
+.concept .meta { margin-top: auto; padding-top: 8px; }
+.card.featured-concept { border: 3px solid var(--coral); }
+.insight { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; }
+.insight .n { font-family: "Fredoka", sans-serif; font-size: 1.8rem; font-weight: 600; color: var(--coral-dark); line-height: 1; }
+.suspect { text-align: center; }
+.suspect .face { font-size: 3rem; line-height: 1; }
+.suspect .traits { font-size: .85rem; text-align: left; margin: 8px 0 0; padding-left: 1.1em; }
+.clue-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+@media (max-width: 760px) { .clue-strip { grid-template-columns: repeat(2, 1fr); } }
+.clue-strip .card { padding: 14px; text-align: center; font-size: .9rem; }
+.clue-strip .card b { display: block; font-family: "Fredoka", sans-serif; font-size: 1.05rem; margin-bottom: 4px; }
+.hero.halloween { background: radial-gradient(circle at 20% 20%, rgba(255,122,26,.25), transparent 45%), radial-gradient(circle at 80% 60%, rgba(91,33,182,.28), transparent 45%); }
+
+/* dark-mode contrast for gold accents */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .pill.sun, :root:not([data-theme="light"]) .eyebrow.sun { color: #ffd93d; background: rgba(255, 217, 61, .16); }
+}
+:root[data-theme="dark"] .pill.sun, :root[data-theme="dark"] .eyebrow.sun { color: #ffd93d; background: rgba(255, 217, 61, .16); }

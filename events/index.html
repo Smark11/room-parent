@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Class Events</title>
+  <meta name="description" content="Every class party and event for the year, each with its own full plan.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%238b5cf6'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle'%3E🎉%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <style>
+    .event-card { display: grid; grid-template-columns: 96px 1fr; gap: 20px; align-items: start; text-decoration: none; color: inherit; }
+    .event-card .art { width: 96px; height: 96px; border-radius: 24px; display: grid; place-items: center; font-size: 3rem; box-shadow: var(--shadow-sm); }
+    .event-card .when { font-family: "Fredoka", sans-serif; color: var(--muted); font-size: .95rem; }
+    .event-card.featured { grid-template-columns: 1fr; }
+    .event-card.featured .art { width: 100%; height: 160px; font-size: 5rem; border-radius: var(--radius); }
+    .status { position: absolute; top: 18px; right: 18px; }
+    @media (max-width: 560px) { .event-card { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container">
+      <a class="brand" href="../index.html"><span class="logo">🎉</span> Room Parent HQ</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="index.html" aria-current="page">🎉 Events</a>
+        <a href="../resources.html">Toolkit</a>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" style="padding-bottom:16px">
+    <div class="container">
+      <span class="eyebrow grape"><span data-config="grade">4th Grade</span> · <span data-config="className">Room 12</span></span>
+      <h1>Class events, <span class="highlight">one page each</span></h1>
+      <p class="lead">Every party and celebration gets its own full plan: run of show, stations, snacks, volunteers, budget, printables. Pick the one you're working on.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Up next</span>
+      <div class="card coral lift" style="padding:0;overflow:hidden">
+        <a class="event-card featured" href="halloween.html">
+          <div class="art" style="background:linear-gradient(135deg,#ff7a1a,#5b21b6);border-radius:0">🎃👻🧪</div>
+          <div style="padding:24px 28px 28px">
+            <span class="pill coral">Fully planned</span><span class="pill">Oct 30</span>
+            <h2 style="margin-top:10px">Halloween: The Case of the Missing Candy</h2>
+            <p class="lead" style="margin-bottom:0">A whodunit built from what teachers and room parents on Reddit and across the web say actually works for 9- and 10-year-olds: five evidence stations, staff as suspects, a confession video, and a blacklight recovery hunt. Plus ten alternative concepts and a fall-festival mode.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow teal">The rest of the year</span>
+      <div class="grid grid-2" style="margin-top:12px">
+        <div class="card lift grape">
+          <span class="status pill grape">Fully planned</span>
+          <a class="event-card" href="secret-agent.html">
+            <div class="art" style="background:linear-gradient(135deg,var(--ink),var(--grape))">🕵️</div>
+            <div>
+              <div class="when">Any time of year · 105 min</div>
+              <h3>Operation: Fourth Grade</h3>
+              <p>Secret Agent Academy. Six training stations, a locked vault, a captured teacher. Works as a stand-alone party or a 100th-day / spring surprise.</p>
+            </div>
+          </a>
+        </div>
+        <div class="card lift sky">
+          <span class="status pill">Sketch</span>
+          <div class="event-card">
+            <div class="art" style="background:linear-gradient(135deg,#4cc9f0,#a78bfa)">❄️</div>
+            <div>
+              <div class="when">Dec 18 · 90 min</div>
+              <h3>Winter Science Lab</h3>
+              <p>Instant snow, borax crystal snowflakes, ice-cube fishing with salt and string, a cocoa bar, and a crumpled-paper snowball fight finale.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card lift coral">
+          <span class="status pill">Sketch</span>
+          <div class="event-card">
+            <div class="art" style="background:linear-gradient(135deg,#ff6b6b,#ffd93d)">💌</div>
+            <div>
+              <div class="when">Feb 13 · 75 min</div>
+              <h3>Kindness Carnival</h3>
+              <p>Valentine's without the pressure: compliment-card writing, kindness bingo, friendship bracelets, a class mural. Every kid leaves with a bag of cards from everyone.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card lift sun">
+          <span class="status pill">Sketch</span>
+          <div class="event-card">
+            <div class="art" style="background:linear-gradient(135deg,#ffd93d,#2ec4b6)">🏆</div>
+            <div>
+              <div class="when">Jun 5 · outdoors</div>
+              <h3>End-of-Year Olympics</h3>
+              <p>Sponge relay, hula-hoop pass, three-legged race, water-balloon toss, torch relay. Medals, popsicles, and the teacher gets pied (with permission).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:24px">
+        <p><strong>Want a sketch built out?</strong> Each full plan follows the same template: story hook, run of show, 5–6 stations with volunteer scripts, a finale, school-safe snacks, decor, crew, budget, printables, checklist, and backup plans. Copy <code>events/halloween.html</code> as a starting point.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <span>Room Parent HQ · <span data-config="school">Maple Hill Elementary</span> · <span data-config="grade">4th Grade</span></span>
+      <span>Built with ❤️ by the room parent · <span data-year>2026</span></span>
+    </div>
+  </footer>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

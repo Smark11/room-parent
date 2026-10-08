@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Room Parent Toolkit</title>
+  <meta name="description" content="Field trip checklists, sign-up templates, and copy-and-send message templates for a 4th grade room parent.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%232ec4b6'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle'%3E📝%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="container">
+      <a class="brand" href="index.html"><span class="logo">🎉</span> Room Parent HQ</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="party.html">🕵️ Party Plan</a>
+        <a href="resources.html" aria-current="page">Field Trips &amp; Sign-Ups</a>
+        <a href="resources.html#messages">Message Templates</a>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" style="padding-bottom:24px">
+    <div class="container">
+      <span class="eyebrow teal">Toolkit</span>
+      <h1>Field trips, sign-ups, <span class="highlight">and messages</span></h1>
+      <p class="lead">The unglamorous 80% of the job, made copy-and-paste easy. Every template below has a Copy button. Swap in your details and send.</p>
+      <div class="btn-row">
+        <a class="btn btn-teal" href="#field-trips">🚌 Field trips</a>
+        <a class="btn btn-sun" href="#signups">📝 Sign-ups</a>
+        <a class="btn btn-primary" href="#messages">💬 Messages</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= FIELD TRIPS ================= -->
+  <section class="section" id="field-trips">
+    <div class="container">
+      <span class="eyebrow teal">Field trips</span>
+      <h2>Chaperone game plan</h2>
+      <p class="lead">The teacher owns the trip. The room parent's job is to make sure the chaperones show up, know the plan, and nobody is counting heads alone.</p>
+      <div class="grid grid-2">
+        <div class="card teal">
+          <h3>🧭 Room parent timeline</h3>
+          <ul class="checklist" data-key="field-trip">
+            <li><label><input type="checkbox"><span><strong>4 weeks out:</strong> Confirm with the teacher: date, destination, bus departure and return, chaperone count needed, cost per student, lunch plan.</span></label></li>
+            <li><label><input type="checkbox"><span><strong>3 weeks out:</strong> Send the chaperone sign-up. Note any school requirement (background check, volunteer form, badge).</span></label></li>
+            <li><label><input type="checkbox"><span><strong>2 weeks out:</strong> Remind families about permission slips and money. Offer to quietly cover a fee for any family that needs it (via the teacher or PTA).</span></label></li>
+            <li><label><input type="checkbox"><span><strong>1 week out:</strong> Confirm chaperones. Send them the chaperone brief (below). Ask the teacher for group lists.</span></label></li>
+            <li><label><input type="checkbox"><span><strong>2 days out:</strong> Send the family reminder: what to wear, lunch, water bottle, no spending money unless allowed.</span></label></li>
+            <li><label><input type="checkbox"><span><strong>Day of:</strong> Arrive early, chaperone check-in, hand out group lists and a lanyard with the teacher's cell number.</span></label></li>
+            <li><label><input type="checkbox"><span><strong>After:</strong> Thank-you to chaperones by name. Photos to families if policy allows.</span></label></li>
+          </ul>
+          <button class="btn btn-sm btn-ghost no-print" data-reset-checklist="field-trip" style="margin-top:8px">Reset</button>
+        </div>
+        <div>
+          <div class="card sun" style="margin-bottom:20px">
+            <h3>🎒 Chaperone pack list</h3>
+            <ul>
+              <li>Group list with every kid's name, any medical notes, and the teacher's cell</li>
+              <li>Phone fully charged, plus a battery pack</li>
+              <li>Small first-aid kit, tissues, wet wipes, hand sanitizer</li>
+              <li>Water, a snack for yourself, and one spare snack (nut-free) for the kid who forgot lunch</li>
+              <li>Comfortable shoes. You will walk more than you expect.</li>
+              <li>A bright hat or shirt so your group can find you</li>
+              <li>Sharpie and masking tape for emergency name tags</li>
+            </ul>
+          </div>
+          <div class="card coral">
+            <h3>🔢 Chaperone rules of thumb</h3>
+            <ul>
+              <li><strong>Count heads constantly.</strong> Before you move, after you move, after every bathroom stop. Say the number out loud.</li>
+              <li><strong>Your group, your eyes.</strong> No phone scrolling. Photos of your own group only, per school policy.</li>
+              <li><strong>Bathroom in pairs</strong>, and an adult waits outside.</li>
+              <li><strong>No side trips.</strong> The gift shop is not on the itinerary unless the teacher says so.</li>
+              <li><strong>Behavior issues go to the teacher.</strong> You redirect, you don't discipline.</li>
+              <li><strong>Siblings stay home.</strong> Chaperones chaperone.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:32px">📄 Chaperone brief (send 1 week out)</h3>
+      <div class="copyblock"><button class="btn btn-sm btn-ghost copy" data-copy="#chap-brief">Copy</button><pre id="chap-brief">Subject: Chaperone details for Friday's Science Center trip
+
+Hi chaperones, and THANK YOU.
+
+THE PLAN
+• Meet at the school front office at 8:40 AM for check-in (bring ID). Bus leaves at 9:00 sharp.
+• We'll be at the Science Center from ~9:45 to 1:30. Lunch is at noon in the picnic area (kids bring their own).
+• Bus returns to school by 2:15. You're free to drive yourself, but kids must ride the bus both ways.
+
+YOUR GROUP
+• You'll get a list of 4–5 students at check-in, plus a lanyard with Ms. Rivera's cell number.
+• Count heads before and after every move. Bathroom trips in pairs, adult waits outside.
+• Stay with the itinerary. No gift shop unless Ms. Rivera announces it.
+• Photos of your own group only. Some students are opted out of photos; Ms. Rivera will tell you who.
+
+BRING
+• Charged phone, water, comfy shoes, a small first-aid kit if you have one, and a nut-free spare snack.
+
+If anything comes up, text me at [your number]. See you Friday!
+[Your name], room parent</pre></div>
+    </div>
+  </section>
+
+  <!-- ================= SIGN-UPS ================= -->
+  <section class="section" id="signups">
+    <div class="container">
+      <span class="eyebrow sun">Sign-ups</span>
+      <h2>Sign-up templates</h2>
+      <p class="lead">Paste these into SignUpGenius, a Google Form, or the class app. Specific slots with exact times and quantities get filled. "Anyone want to help?" does not.</p>
+      <div class="callout">
+        <p><strong>Three rules for sign-ups that fill:</strong> 1) name the job and the time window, 2) keep the list short enough to feel finishable, 3) close with a date, then send one reminder two days before that date.</p>
+      </div>
+
+      <div data-tabs>
+        <div class="tabs" role="tablist">
+          <button role="tab" aria-selected="true" aria-controls="su-party">🕵️ Party volunteers</button>
+          <button role="tab" aria-selected="false" aria-controls="su-snacks">🍪 Party snacks</button>
+          <button role="tab" aria-selected="false" aria-controls="su-chap">🚌 Chaperones</button>
+          <button role="tab" aria-selected="false" aria-controls="su-supplies">📦 Classroom supplies</button>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="su-party">
+          <div class="copyblock"><button class="btn btn-sm btn-ghost copy" data-copy="#su1">Copy</button><pre id="su1">OPERATION: FOURTH GRADE — Volunteer Sign-Up
+Friday, Oct 30 · Room 12 · Volunteers arrive 12:45–12:50, party runs 1:30–3:15
+
+We need 8 adults to run a secret-agent training party. Each station lead gets a one-page card with everything to say and do. No prep needed, we bring the bins.
+
+[ 1 ] Laser Maze lead — arrive 12:45, help tape up the maze, run timed runs (stopwatch provided)
+[ 1 ] Code Breakers lead — arrive 12:50, run three cipher puzzles (great for a puzzle person)
+[ 1 ] Fingerprint Lab lead — arrive 12:50, help kids lift their fingerprints (a little messy)
+[ 1 ] Disguise Lab lead — arrive 12:50, props + photo booth + "interrogations" (bring your big personality)
+[ 1 ] Invisible Ink lead — arrive 12:50, white crayon + watercolor reveal (keeps water cups upright)
+[ 1 ] Field Skills lead — arrive 12:50, three minute-to-win-it challenges, keep a leaderboard
+[ 1 ] Floater / Canteen Chief — arrive 12:45, check-in desk, restock, set up snacks, allergy plates
+[ 2 ] Cleanup crew — 3:10–3:30, pack bins and reset the room
+
+Sign-up closes Friday, Oct 16. Questions: [your email]</pre></div>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="su-snacks" hidden>
+          <div class="copyblock"><button class="btn btn-sm btn-ghost copy" data-copy="#su2">Copy</button><pre id="su2">CLASSIFIED CANTEEN — Snack Sign-Up for Oct 30
+Please drop items at the front office by 12:30 on Friday, Oct 30, labeled "Room 12 party."
+
+ALL ITEMS MUST BE NUT-FREE AND STORE-BOUGHT WITH THE INGREDIENT LABEL ATTACHED (school policy).
+We have [#] students with [allergy] in our class — thank you for checking labels for "may contain."
+
+[ 2 ] Thumbprint / jam cookies, 1 package each (24+ cookies total)
+[ 2 ] Mini powdered donuts, 1 box each
+[ 3 ] Fruit tray OR 16 pre-made fruit skewers (grapes, strawberries, melon)
+[ 2 ] Veggie tray with ranch or hummus
+[ 1 ] Pretzels, 1 large bag (trail mix bar)
+[ 1 ] Plain Chex or Cheerios, 1 box (trail mix bar)
+[ 1 ] Mini marshmallows, 1 bag (trail mix bar)
+[ 1 ] Chocolate chips, nut-free brand, 1 bag (trail mix bar)
+[ 1 ] Raisins or dried cranberries, 1 bag (trail mix bar)
+[ 1 ] Popcorn, 2 bags plain (trail mix bar)
+[ 2 ] Water bottles, case of 12
+[ 2 ] Lemonade, 1 jug each
+[ 1 ] Plates, napkins, cups (60 each)
+[ 1 ] Snack-size zip bags, box of 50
+[ 1 ] Clear 9 oz cups, 30 (for veggie cups)
+
+Sign-up closes Friday, Oct 23. Thank you!</pre></div>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="su-chap" hidden>
+          <div class="copyblock"><button class="btn btn-sm btn-ghost copy" data-copy="#su3">Copy</button><pre id="su3">CHAPERONE SIGN-UP — Science Center Field Trip, Friday, Nov 13
+
+Ms. Rivera needs 6 chaperones (1 per 4 students). Chaperones ride the bus with the class, lead a small group through the exhibits, and eat lunch with the group. Siblings cannot attend.
+
+Requirements: completed district volunteer form (link) on file at least 1 week before the trip. Bring photo ID on the day.
+
+[ 6 ] Chaperone — 8:40 AM check-in at the front office, return ~2:15 PM
+
+Also helpful:
+[ 1 ] Lunch-count helper — call/text families who haven't returned the lunch form by Nov 6
+[ 1 ] Extra water + snacks for the bus (nut-free), drop off by Nov 12
+
+Sign-up closes Friday, Oct 30. Questions: [your email]</pre></div>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="su-supplies" hidden>
+          <div class="copyblock"><button class="btn btn-sm btn-ghost copy" data-copy="#su4">Copy</button><pre id="su4">ROOM 12 WISH LIST — Classroom supplies
+
+Ms. Rivera's classroom could use a restock. Nothing is required; grab one item if you can and send it in with your student any time this month.
+
+[ 3 ] Tissues, 1 box
+[ 3 ] Disinfecting wipes, 1 container
+[ 2 ] Dry-erase markers, 1 pack (black or assorted)
+[ 2 ] Glue sticks, 1 pack
+[ 2 ] Pencils, 1 box of 24
+[ 2 ] Hand sanitizer, 1 bottle
+[ 1 ] Colored copy paper, 1 ream
+[ 1 ] Ziplock bags, gallon, 1 box
+[ 1 ] Ziplock bags, sandwich, 1 box
+[ 2 ] Indoor-recess game or puzzle (gently used is great)
+
+Thank you from Ms. Rivera and the room parent crew!</pre></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MESSAGES ================= -->
+  <section class="section" id="messages">
+    <div class="container">
+      <span class="eyebrow">Messages</span>
+      <h2>Copy-and-send message templates</h2>
+      <p class="lead">Short, warm, specific. One ask per message. Every template has the subject line built in.</p>
+
+      <div data-tabs>
+        <div class="tabs" role="tablist">
+          <button role="tab" aria-selected="true" aria-controls="m-welcome">👋 Welcome</button>
+          <button role="tab" aria-selected="false" aria-controls="m-party">🎉 Party announcement</button>
+          <button role="tab" aria-selected="false" aria-controls="m-nudge">🙏 Volunteer nudge</button>
+          <button role="tab" aria-selected="false" aria-controls="m-reminder">⏰ Reminder</button>
+          <button role="tab" aria-selected="false" aria-controls="m-thanks">💛 Thank you</button>
+          <button role="tab" aria-selected="false" aria-controls="m-teacher">🍎 Teacher check-in</button>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="m-welcome">
+          <div class="copyblock"><button class="btn btn-sm btn-ghost copy" data-copy="#m1">Copy</button><pre id="m1">Subject: Hi from your Room 12 room parent!
+
+Hi Room 12 families,
+
+I'm [Name], [student]'s [mom/dad], and I'm the room parent for Ms. Rivera's class this year. That means I'm the person to find for anything that isn't academic: field trips, class parties, sign-ups, and getting the word out when Ms. Rivera needs a hand.
+
+Three quick things:
+1. ALLERGIES & DIETARY NEEDS: If your child has any, reply to this email once and I'll carry it to every event all year. Nut-free is our baseline for all class food.
+2. PHOTOS: If you'd prefer your child not appear in class photos shared with families, let me or Ms. Rivera know.
+3. VOLUNTEERING: You'll see sign-ups a few times this year. Any amount of help is wonderful, and zero is also completely fine.
+
+Everything lives at [site link] so you never have to dig through email.
+
+Looking forward to a great year,
+[Name] · [phone] · [email]</pre></div>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="m-party" hidden>
+          <div class="copyblock"><button class="btn btn-sm btn-ghost copy" data-copy="#m2">Copy</button><pre id="m2">Subject: 🕵️ Operation: Fourth Grade — Oct 30 class party (volunteers needed!)
+
+Hi families,
+
+Our fall class party is Friday, Oct 30 from 1:30–3:15, and it is going to be a Secret Agent Academy. The kids will rotate through six training stations (laser maze, code breaking, fingerprint forensics, disguise lab, invisible ink, and steady-hands challenges), then crack a vault to unlock the snack canteen.
+
+HOW TO HELP
+• Volunteer to run a station (we give you a one-page card, no prep): [sign-up link]
+• Bring a snack item (nut-free, store-bought, label attached): [sign-up link]
+• Send your agent in black or spy-ish clothes on the 30th. Optional, but very fun.
+
+Full plan, with everything from the run of show to the shopping list: [site link]/party.html
+
+Sign-ups close Oct 16 (volunteers) and Oct 23 (snacks). Thank you!
+[Name], room parent</pre></div>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="m-nudge" hidden>
+          <div class="copyblock"><button class="btn btn-sm btn-ghost copy" data-copy="#m3">Copy</button><pre id="m3">Subject: Two more station leads needed for Oct 30 🙏
+
+Hi families,
+
+Quick one: we're two volunteers short for the Oct 30 party. The open spots are:
+
+• Invisible Ink Lab lead (12:50–3:15) — hand kids a crayon and a paintbrush, watch magic happen
+• Cleanup crew (3:10–3:30) — twenty minutes, and you'll get the leftover donuts
+
+Each comes with a one-page card so there's nothing to figure out. If you can grab one, here's the link: [sign-up link]
+
+Thank you to the six parents who've already signed up. You're the best.
+[Name]</pre></div>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="m-reminder" hidden>
+          <div class="copyblock"><button class="btn btn-sm btn-ghost copy" data-copy="#m4">Copy</button><pre id="m4">Subject: Reminder: Science Center trip is THIS Friday
+
+Hi families,
+
+The Science Center field trip is this Friday, Nov 13. A few reminders:
+
+• Permission slip and $12 due to Ms. Rivera by Wednesday if you haven't sent it.
+• Pack a disposable lunch and a water bottle, labeled with your child's name. No glass, no nuts.
+• Dress for walking and for the weather. Sneakers, please.
+• No spending money is needed. The gift shop is not on the itinerary.
+• Bus leaves at 9:00 AM. Please have your child at school on time. Return is about 2:15.
+
+Chaperones: your separate brief went out Monday. Thank you!
+[Name]</pre></div>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="m-thanks" hidden>
+          <div class="copyblock"><button class="btn btn-sm btn-ghost copy" data-copy="#m5">Copy</button><pre id="m5">Subject: Mission accomplished 🕵️ Thank you, Room 12!
+
+Hi families,
+
+Operation: Fourth Grade is complete, and the agents were spectacular. Every single kid earned full clearance, the vault was cracked in a record 48 seconds, and I believe there are still fake mustaches somewhere in the rug.
+
+Huge thanks to our volunteer crew:
+• [Name] ran the laser maze and re-taped it approximately 40 times
+• [Name] and [Name] talked six teams through three ciphers
+• [Name] lifted 24 fingerprints and only got graphite on most of the desks
+• [Name] interrogated every agent and never cracked
+• [Name] kept the invisible ink lab (mostly) dry
+• [Name] set an Academy Record in cup stacking that no child could beat
+• [Name] ran the canteen and the allergy plates like a pro
+• And Ms. Rivera, Agent Zero, who allowed all of this to happen in her classroom
+
+Photos are in the class app (photo opt-outs excluded). Your kids came home with a badge, a fingerprint card, and a secret message. Ask them what it said.
+
+Next up: the Science Center trip on Nov 13. Chaperone sign-up is open.
+
+[Name]</pre></div>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="m-teacher" hidden>
+          <div class="copyblock"><button class="btn btn-sm btn-ghost copy" data-copy="#m6">Copy</button><pre id="m6">Subject: Fall party plan for your review
+
+Hi Ms. Rivera,
+
+Here's the plan I'd like to run for the Oct 30 party, pending your okay: [site link]/party.html
+
+Things I'd love your call on:
+1. Date/time: does 1:30–3:15 work, or should it be shorter?
+2. Space: is a crepe-paper "laser maze" in a corner of the room okay? (Painter's tape only, down by 3:30.)
+3. Food: home-baked allowed, or store-bought only? I'll keep everything nut-free either way.
+4. Teams: could you split the class into six balanced teams of four?
+5. Allergies and photo opt-outs: can you send me the current lists?
+6. Your role: you'd be "Agent Zero," briefly "captured" before the vault opens. The kids free you with 30 seconds of total silence (your choice of challenge). Totally optional!
+
+I'll handle all supplies, volunteers, setup, and cleanup. Happy to simplify anything.
+
+Thanks so much,
+[Name]</pre></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <span>Room Parent HQ · <span data-config="school">Maple Hill Elementary</span> · <span data-config="grade">4th Grade</span></span>
+      <span>Built with ❤️ by the room parent · <span data-year>2026</span></span>
+    </div>
+  </footer>
+  <script src="assets/site.js"></script>
+</body>
+</html>

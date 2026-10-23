@@ -448,3 +448,24 @@ footer .container { display: flex; justify-content: space-between; flex-wrap: wr
   :root:not([data-theme="light"]) .pill.sun, :root:not([data-theme="light"]) .eyebrow.sun { color: #ffd93d; background: rgba(255, 217, 61, .16); }
 }
 :root[data-theme="dark"] .pill.sun, :root[data-theme="dark"] .eyebrow.sun { color: #ffd93d; background: rgba(255, 217, 61, .16); }
+
+/* ---------- Pigpen ransom notes ---------- */
+.ransom {
+  background: #fffdf5; color: #1a1a1a; border: 1px solid #d9cfb8; border-radius: 6px; padding: 22px 24px;
+  box-shadow: var(--shadow-sm); font-family: "Nunito", sans-serif; position: relative;
+  background-image: repeating-linear-gradient(transparent 0 27px, rgba(0,0,0,.05) 27px 28px);
+}
+.ransom .head { display: flex; justify-content: space-between; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: #8a6d00; margin-bottom: 12px; font-weight: 800; }
+.ransom .sig { margin-top: 14px; font-style: italic; color: #444; text-align: right; }
+.ransom .ps { margin-top: 10px; font-size: .9rem; color: #b59a00; background: rgba(255, 230, 0, .22); display: inline-block; padding: 2px 8px; border-radius: 4px; }
+.pigpen { line-height: 1; font-size: 0; }
+.pp-word { display: inline-flex; gap: 3px; margin: 4px 14px 4px 0; vertical-align: middle; }
+.pp-g { display: inline-flex; width: 26px; height: 26px; color: #1a1a1a; }
+.pp-txt { font-size: 18px; line-height: 26px; }
+.pigpen-key { display: grid; grid-template-columns: repeat(9, 1fr); gap: 8px 6px; background: #fff; color: #111; padding: 14px; border-radius: var(--radius-sm); border: 1px solid var(--line); }
+@media (max-width: 640px) { .pigpen-key { grid-template-columns: repeat(6, 1fr); } }
+.pp-key-item { display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: .95rem; }
+.pp-key-item .pp-g { color: #111; }
+.ransom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 760px) { .ransom-grid { grid-template-columns: 1fr; } }
+@media print { .ransom { break-inside: avoid; background-image: none; } .ransom .ps { display: none; } }

@@ -7,31 +7,61 @@
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../print.css">
 <style>
-  .letter { background: var(--cream); border: 1px solid #d9cfb8; padding: .6in .7in; height: 100%; font-size: 13pt; line-height: 1.7; position: relative; }
-  .letter .for { font-family: "Fredoka", sans-serif; letter-spacing: .14em; text-transform: uppercase; font-size: 9.5pt; color: var(--muted); display: flex; justify-content: space-between; margin-bottom: 18px; }
-  .letter h1 { font-size: 28pt; margin: 8px 0 18px; }
-  .letter .redact { background: var(--ink); color: var(--ink); border-radius: 2px; padding: 0 4px; }
-  .letter .sig { font-family: "Fredoka", sans-serif; font-size: 20pt; margin-top: 24px; }
-  .letter .stampbox { position: absolute; right: .8in; top: 1.3in; }
-  .parents { font-size: 10pt; color: var(--muted); border-top: 1.5px dashed var(--line); margin-top: 22px; padding-top: 10px; line-height: 1.45; }
+  .letter { background: var(--cream); border: 1px solid #d9cfb8; padding: .42in .6in .4in; height: 9.9in; font-size: 12pt; line-height: 1.45; position: relative; display: flex; flex-direction: column; }
+  .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .hq { font-family: "Fredoka", sans-serif; letter-spacing: .14em; text-transform: uppercase; font-size: 9pt; color: var(--muted); }
+  .to { font-family: "Fredoka", sans-serif; font-size: 20pt; margin: 6px 0 8px; }
+  .to .blank { min-width: 2.6in; }
+  .letter p { margin: 0 0 7px; }
+  .letter ol { margin: 4px 0 8px; padding-left: 1.3em; } .letter li { margin-bottom: 4px; }
+  .big { font-weight: 800; letter-spacing: .04em; }
+  .test { border: 2.5px solid var(--ink); border-radius: 12px; padding: 10px 16px; margin: 8px 0 10px; background: #fff; }
+  .test .lab { font-family: "Fredoka", sans-serif; font-size: 10pt; letter-spacing: .12em; text-transform: uppercase; color: var(--coral-dark); }
+  .code { font-family: ui-monospace, Menlo, monospace; font-size: 14pt; font-weight: 800; letter-spacing: 0; white-space: nowrap; margin: 4px 0 8px; }
+  .mirror { display: inline-block; transform: scaleX(-1); font-family: "Fredoka", sans-serif; font-size: 22pt; font-weight: 700; letter-spacing: .08em; margin-top: 2px; }
+  .logi { border-top: 1.5px dashed #c9bfa6; padding-top: 8px; margin-top: 2px; }
+  .logi b { font-family: "Fredoka", sans-serif; letter-spacing: .08em; text-transform: uppercase; font-size: 10pt; color: var(--grape); white-space: nowrap; }
+  .logi p { display: grid; grid-template-columns: 1.25in 1fr; gap: 6px; align-items: baseline; }
+  .sig { margin-top: auto; display: flex; justify-content: space-between; align-items: flex-end; }
+  .sig .name { font-family: "Fredoka", sans-serif; font-size: 18pt; margin-right: 16px; line-height: 1.1; white-space: nowrap; }
+  .sig .name small { display: block; font-family: "Nunito"; font-size: 9.5pt; color: var(--muted); font-weight: 400; }
+  .sig .accept { font-weight: 800; font-size: 11pt; }
+  .stampbox { position: absolute; right: .55in; top: .78in; }
 </style>
 </head>
 <body>
-<div class="toolbar"><b>✉️ Recruitment letter</b><span class="muted">1 page · goes home in the manila case file five days before the party</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/recruitment-letter.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
+<div class="toolbar"><b>✉️ Recruitment letter</b><span class="muted">1 page · goes home in the manila folder five days before the party (kid-tested, five drafts)</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/recruitment-letter.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
 <section class="page fill">
   <div class="letter">
-    <div class="stampbox"><span class="stamp">Confidential</span></div>
-    <div class="for"><span>Mrs. Driscoll's Detective Bureau</span><span>For: <span class="blank" style="min-width:2in"></span> only</span></div>
-    <h1>Detective,</h1>
-    <p>You have been recruited by Mrs. Driscoll's Detective Bureau.</p>
-    <p>Report to the Bureau on <strong>Friday, October 30, at 1:30 PM.</strong></p>
-    <p>There has been an incident. We can't say more in writing. What we can say: there are suspects. There is evidence. And we need you.</p>
-    <p>Your training will cover <strong>footprint analysis, chemical testing, code-breaking, witness interviews,</strong> and one task we would rather not describe. It involves <span class="redact">toilet paper</span>.</p>
-    <p><strong>Dress code:</strong> anything you don't mind getting wrapped in <span class="redact">toilet paper</span>. Costumes are welcome and not required. Every detective receives a badge at the door.</p>
-    <p><strong>Bring:</strong> the enclosed Detective ID, filled in.</p>
-    <p><strong>Tell:</strong> your family. No one else. Especially not older siblings. They talk.</p>
-    <div class="sig">— The Detective</div>
-    <div class="parents"><strong>For grown-ups:</strong> the Halloween party is a detective-themed whodunit run by parent volunteers, 1:30 to 3:00 on Oct 30. No food is required for the party to work; if snacks are approved, they'll be store-bought, sealed, and nut-free. Costumes are optional. Every child gets a detective badge and takes home a small non-food prize. Questions: <span class="blank" style="min-width:2.4in"></span></div>
+    <div class="stampbox"><span class="stamp" style="font-size:9.5pt">Classified</span></div>
+    <div class="top"><span class="tape"><span>Top secret · Your eyes only</span></span><span class="hq">Mrs. Driscoll's Detective HQ</span></div>
+    <div class="to">DETECTIVE <span class="blank"></span>:</div>
+    <p>Nobody got hurt. But something got <span class="big">TAKEN</span> from our classroom. The door was locked the whole time.</p>
+    <p style="margin-bottom:2px"><strong>What we know:</strong></p>
+    <ol>
+      <li>Footprints. And a white powder that <span class="big">FIZZES</span> when you test it.</li>
+      <li>A note in secret code. The thief thinks we can't read it. The thief also has terrible handwriting.</li>
+      <li>A witness. It's a mummy. It only talks to other mummies, so one volunteer gets wrapped head to toe. (Only if you want to.)</li>
+    </ol>
+    <p>The suspects are grown-ups. You have walked past every one of them in the hallway. Nobody is going to jail. Probably.</p>
+    <p>One more clue can't go on paper. It only shows up when we dim the lights. <span class="big">It glows.</span></p>
+    <div class="test">
+      <div class="lab">Your first test. Crack it. (A=1, B=2, C=3 … Z=26)</div>
+      <div class="code">4-15 &nbsp;&nbsp; 14-15-20 &nbsp;&nbsp; 15-16-5-14 &nbsp;&nbsp; 20-8-5 &nbsp;&nbsp; 10-1-18</div>
+      <div class="lab">Bonus, for the fast ones. Hold this up to a mirror:</div>
+      <div><span class="mirror">CHECK THEIR FEET</span></div>
+    </div>
+    <p>Got both? Then you already know more than the suspects think you do.</p>
+    <div class="logi">
+      <p><b>Report to HQ</b><span>Friday, October 30, 1:30 PM.</span></p>
+      <p><b>Bring</b><span>your Detective ID (in this folder), filled in, with a codename.</span></p>
+      <p><b>Wear</b><span>anything you don't mind getting wrapped in toilet paper.</span></p>
+      <p><b>Tell</b><span>your family. <span class="big">NOBODY ELSE.</span> Especially not older siblings. They crack under pressure.</span></p>
+    </div>
+    <div class="sig">
+      <div class="name">— Agent Shadow<small>(Real name: classified.)</small></div>
+      <div class="accept">MISSION ACCEPTED. Sign your codename: <span class="blank" style="min-width:2in"></span></div>
+    </div>
   </div>
 </section>
 </body>

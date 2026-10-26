@@ -62,7 +62,7 @@ function casePage(s) {
   return `
 <section class="page ${s.key}">
   <div class="hdr">
-    <div><span class="tape"><span>Confidential</span></span><div class="case" style="margin-top:8px">Room 12 Detective Bureau · Case #1031</div><h1>The Case of the Missing <span class="blank" style="min-width:2.2in"></span></h1></div>
+    <div><span class="tape"><span>Confidential</span></span><div class="case" style="margin-top:8px">Mrs. Driscoll's Detective Bureau · Case #1031</div><h1>The Case of the Missing <span class="blank" style="min-width:2.2in"></span></h1></div>
     <div class="squadtag"><div class="case">Squad</div><div class="name"><span class="squad-dot" style="background:var(--squad)"></span>${s.name}</div><div class="small muted">${s.band} wristbands</div></div>
   </div>
   <div class="facts">
@@ -96,12 +96,12 @@ function casePage(s) {
 
   <div class="sec">Your station order <span class="small muted" style="font-weight:400;font-family:Nunito">(cross each off as you go)</span></div>
   <div class="order">${ord.map((n, i) => `<span class="st">${STATIONS[n][1]} ${n} · ${STATIONS[n][0]}<small>rot ${i + 1}</small></span>${i < 3 ? '<span class="arrow">→</span>' : ''}`).join("")}</div>
-  <div class="footer-note"><span>Room 12 Detective Bureau · Case #1031 · Squad ${s.name}</span><span>When all four clues are in, write your Arrest Warrant and drop it in the cauldron.</span></div>
+  <div class="footer-note"><span>Mrs. Driscoll's Detective Bureau · Case #1031 · Squad ${s.name}</span><span>When all four clues are in, write your Arrest Warrant and drop it in the cauldron.</span></div>
 </section>
 <section class="page fill ${s.key}">
   <div class="warrant">
     <div class="seal"><span class="stamp">Official</span></div>
-    <div class="case center" style="font-family:Fredoka;font-size:9pt;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Room 12 Detective Bureau · Case #1031</div>
+    <div class="case center" style="font-family:Fredoka;font-size:9pt;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Mrs. Driscoll's Detective Bureau · Case #1031</div>
     <h1>Arrest Warrant</h1>
     <div class="sub">Issued by Squad ${s.name}</div>
     <div class="we">We, the detectives of Squad <strong style="color:var(--squad)">${s.name}</strong>, having examined all four pieces of evidence, hereby accuse</div>

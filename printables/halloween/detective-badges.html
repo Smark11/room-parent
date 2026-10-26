@@ -9,7 +9,7 @@
 <style>
   .sheet { display: grid; grid-template-columns: 1fr 1fr; gap: .25in .3in; }
   .badge { width: 3.5in; height: 2.3in; border: 2.5px solid #111; border-radius: 14px; overflow: hidden; background: #fff; font-family: "Fredoka", sans-serif; display: grid; grid-template-rows: auto 1fr; break-inside: avoid; position: relative; }
-  .badge .top { background: #5b21b6; color: #ffd93d; padding: 5px 12px; display: flex; justify-content: space-between; letter-spacing: .12em; font-size: 7.5pt; text-transform: uppercase; }
+  .badge .top { background: #5b21b6; color: #ffd93d; padding: 5px 12px; display: flex; justify-content: space-between; letter-spacing: .08em; font-size: 6.5pt; text-transform: uppercase; white-space: nowrap; }
   .badge .body { display: grid; grid-template-columns: .95in 1fr; gap: 10px; padding: 9px 12px; }
   .badge .photo { width: .95in; height: 1.15in; border: 2px dashed #999; border-radius: 6px; background: repeating-linear-gradient(45deg, #f1f1f1 0 6px, #e4e4e4 6px 12px); display: grid; place-items: center; font-size: 22pt; }
   .badge .field { font-size: 6.5pt; letter-spacing: .1em; text-transform: uppercase; color: #777; margin-top: 4px; }
@@ -22,7 +22,7 @@
 <body>
 <div class="toolbar"><b>🪪 Detective ID badges</b><span class="muted">4 pages · 24 badges (20 kids + 4 spares), 6 per page</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/detective-badges.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
 <script>
-const badge = () => `<div class="badge"><div class="top"><span>🔎 Room 12 Detective Bureau</span><span>Rank: Junior</span></div><div class="hole"></div>
+const badge = () => `<div class="badge"><div class="top"><span>🔎 Mrs. Driscoll's Detective Bureau</span><span>Junior</span></div><div class="hole"></div>
 <div class="body"><div class="photo">🕵️</div><div>
 <div class="field">Detective name</div><div class="value"></div>
 <div class="field">Squad</div><div class="value"></div>

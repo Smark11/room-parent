@@ -3,8 +3,8 @@
    Edit CONFIG to personalize every page at once.
    ===================================================== */
 const CONFIG = {
-  className: "Room 12",             // e.g. "Room 12" or "Ms. Rivera's Class"
-  teacherName: "Ms. Rivera",        // teacher's name as kids say it
+  className: "Room 12",             // e.g. "Room 12" or "Mrs. Driscoll's Class"
+  teacherName: "Mrs. Driscoll",        // teacher's name as kids say it
   grade: "4th Grade",
   school: "Maple Hill Elementary",
   roomParentName: "Mark",           // your first name

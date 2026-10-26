@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suspect Posters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../print.css">
+<style>
+  .poster { border: 6px double var(--ink); height: 100%; padding: .35in .45in; display: flex; flex-direction: column; text-align: center; background: var(--cream); }
+  .poster .wanted { font-family: "Fredoka", sans-serif; font-size: 60pt; font-weight: 700; letter-spacing: .12em; line-height: 1; margin: 0; }
+  .poster .for { font-family: "Fredoka", sans-serif; letter-spacing: .2em; text-transform: uppercase; font-size: 11pt; color: var(--muted); margin: 4px 0 14px; }
+  .poster .photo { width: 3.6in; height: 3.6in; margin: 0 auto; border: 3px solid var(--ink); border-radius: 10px; background: repeating-linear-gradient(45deg, #f3f0e8 0 10px, #e9e4d8 10px 20px); display: grid; place-items: center; font-size: 72pt; position: relative; }
+  .poster .photo small { position: absolute; bottom: 8px; left: 0; right: 0; font-size: 8.5pt; color: var(--muted); font-family: "Nunito"; }
+  .poster .who { font-family: "Fredoka", sans-serif; font-size: 30pt; font-weight: 600; margin: 14px 0 2px; }
+  .poster .role { color: var(--muted); font-size: 11pt; margin-bottom: 12px; }
+  .facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: left; margin: 0 auto; width: 100%; }
+  .facts div { border: 2px solid var(--ink); border-radius: 10px; padding: 8px 10px; background: #fff; }
+  .facts b { display: block; font-family: "Fredoka", sans-serif; font-size: 8pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .facts span { font-size: 13pt; font-weight: 800; }
+  .statement { margin-top: auto; font-size: 12pt; border-top: 2px solid var(--ink); padding-top: 10px; }
+  .declined { display: inline-block; border: 3px solid var(--coral-dark); color: var(--coral-dark); font-family: "Fredoka", sans-serif; letter-spacing: .14em; padding: 2px 12px; transform: rotate(-4deg); font-size: 14pt; border-radius: 4px; margin-top: 4px; }
+  /* board */
+  table.board th, table.board td { padding: 10px 10px; font-size: 12pt; border: 1.5px solid var(--ink); }
+  table.board td:first-child { font-weight: 800; }
+</style>
+</head>
+<body>
+<div class="toolbar"><b>📌 Suspect posters</b><span class="muted">5 pages · four WANTED posters for the wall, plus a suspect board</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/suspect-posters.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
+<script>
+const S = [
+  { who: "The Principal", role: "Runs the building. Allegedly.", face: "🏫", shoe: "10", at: "At a meeting", wears: "Orange", sq: "Owns \"one\" (a cat)", st: "Statement recorded · plays after Station 1" },
+  { who: "The Gym Teacher", role: "Keeper of the dodgeballs.", face: "🏀", shoe: "10", at: "In the building", wears: "Orange", sq: "Doesn't get them", st: "Statement recorded · plays after Station 2" },
+  { who: "The Librarian", role: "Shelves alone from 2:00 to 2:30. Every day.", face: "📚", shoe: "7", at: "In the building", wears: "Orange", sq: "Loves them", st: "Statement recorded · plays after Station 3" },
+  { who: "The Custodian", role: "Has keys to every door. Including that one.", face: "🧹", shoe: "10", at: "In the building", wears: "Blue", sq: "Loves them", st: null },
+];
+let out = S.map(s => `<section class="page fill"><div class="poster">
+  <h1 class="wanted">WANTED</h1>
+  <div class="for">For questioning · Case #1031 · The missing Jar</div>
+  <div class="photo">${s.face}<small>Tape the suspect's photo here (they pick the photo)</small></div>
+  <div class="who">${s.who}</div>
+  <div class="role">${s.role}</div>
+  <div class="facts"><div><b>Shoe size</b><span>${s.shoe}</span></div><div><b>At 2:15 PM</b><span>${s.at}</span></div><div><b>Usually wears</b><span>${s.wears}</span></div><div><b>Squishies</b><span>${s.sq}</span></div></div>
+  <div class="statement">${s.st ? s.st : '<span class="declined">Declined to comment</span><div class="small muted" style="margin-top:6px">Refused to record a statement. Make of that what you will.</div>'}</div>
+</div></section>`).join("");
+out += `<section class="page"><span class="eyebrow">For the wall</span><h1>Suspect board</h1><p class="muted">Tape this beside the four posters. Squads can check it from across the room during deliberation. The Chief is not on it. That's the point.</p>
+<table class="board"><thead><tr><th>Suspect</th><th>Shoe size</th><th>Where at 2:15?</th><th>Usually wears</th><th>Squishies?</th><th>Statement</th></tr></thead><tbody>
+${S.map(s => `<tr><td>${s.face} ${s.who}</td><td>${s.shoe}</td><td>${s.at}</td><td>${s.wears}</td><td>${s.sq}</td><td>${s.st ? "Recorded" : "<em>Declined</em>"}</td></tr>`).join("")}
+<tr><td><span class="blank" style="min-width:1.6in"></span></td><td><span class="blank short"></span></td><td><span class="blank"></span></td><td><span class="blank short"></span></td><td><span class="blank"></span></td><td></td></tr>
+</tbody></table>
+<div class="box soft" style="margin-top:18px"><h4>How the board works</h4><p class="small" style="margin:0">Every station produces one fact about the thief. A fact doesn't point at anyone; it rules people out. Cross off whoever doesn't match. Footprint: size 10. Ghost words: seen in the hall at 2:15. Ransom P.S.: orange sweater. Witness: loves squishies. When everyone on the list is crossed off, ask the only question left: who else was in the building, wears orange, is a size 10, and loves squishies?</p></div>
+<div class="box dashed" style="margin-top:14px"><h4>Detective only: the answer key</h4><p class="small" style="margin:0">Footprint clears the Librarian (size 7). Ghost words clear the Principal (at a meeting). Orange sweater clears the Custodian (blue). Loves squishies clears the Gym Teacher. The Chief matches all four. Cut this box off before you hang the board.</p></div>
+</section>`;
+document.write(out);
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Witness Statements · Mummy Witness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../print.css">
+<style>
+  .half { height: 4.85in; display: flex; flex-direction: column; background: var(--cream); border: 1px solid #d9cfb8; padding: .35in .45in; background-image: repeating-linear-gradient(transparent 0 .36in, rgba(0,0,0,.06) .36in calc(.36in + 1px)); }
+  .half .head { display: flex; justify-content: space-between; font-size: 9pt; letter-spacing: .14em; text-transform: uppercase; color: #8a6d00; font-weight: 800; margin-bottom: 10px; }
+  .half h2 { font-size: 16pt; margin-bottom: 8px; }
+  .half p { font-size: 14pt; line-height: 1.55; margin: 0; }
+  .half .sig { margin-top: auto; font-family: "Fredoka", sans-serif; font-size: 15pt; text-align: right; color: #444; }
+  .labels { display: grid; grid-template-columns: 1fr 1fr; gap: .25in; }
+  .label { border: 2.5px solid var(--ink); border-radius: 12px; padding: 14px 16px; height: 2.2in; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+  .label .big { font-family: "Fredoka", sans-serif; font-size: 20pt; font-weight: 600; }
+  .label .squad { font-family: "Fredoka", sans-serif; font-size: 26pt; color: var(--squad); }
+</style>
+</head>
+<body>
+<div class="toolbar"><b>🧻 Witness statements</b><span class="muted">3 pages · four statements (two per page) and four envelope labels</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/witness-statements.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
+<script>
+const W = [
+  ["A", "Nightshade", "nightshade", `I was on the shelf. I'm always on the shelf. Nobody notices a mummy on a shelf. At 2:15 somebody picked up the Jar, held it very close, reached in, <strong>squeezed one</strong>, and whispered, <strong>"so satisfying."</strong> Then they left. Nobody says "so satisfying" about candy.`],
+  ["B", "Raven", "raven", `I saw the whole thing. They got as far as the door, stopped, opened the lid, <strong>squeezed one</strong>. Then closed the lid. Then opened it again and <strong>squeezed another one</strong>. Then they <strong>giggled</strong>. Then they left. It took a very long time to leave.`],
+  ["C", "Specter", "specter", `What I can tell you is this. The person did not dig around. They reached straight in, through all the others, and pulled out <strong>the avocado one</strong>. First try. Without looking. <strong>Only a true fan knows where the avocado is.</strong> Then they put it back, patted the lid, and took the whole Jar.`],
+  ["D", "Ember", "ember", `They didn't carry the Jar. They <strong>hugged</strong> it. Both arms. Chin on the lid. Like it was a <strong>puppy</strong>. I have seen a lot of people carry a lot of things past this shelf, and <strong>nobody hugs candy like that.</strong>`],
+];
+const stmt = w => `<div class="half ${w[2]}"><div class="head"><span>Case #1031 · Witness statement</span><span>${w[0]} · for Squad ${w[1]}</span></div><h2>Statement of the Mummy</h2><p>${w[3]}</p><div class="sig">— The Mummy (witness)</div></div>`;
+let out = `<section class="page">${stmt(W[0])}<div class="cut"></div>${stmt(W[1])}</section><section class="page">${stmt(W[2])}<div class="cut"></div>${stmt(W[3])}</section>`;
+out += `<section class="page"><span class="eyebrow teal">Envelope labels</span><h1>Witness box labels</h1><p class="muted">Cut out and glue one to each envelope. Only the squad named on the envelope may open it, and only a mummy may take it from the box.</p>
+<div class="labels">${W.map(w => `<div class="label ${w[2]}"><div class="small muted" style="letter-spacing:.14em;text-transform:uppercase">Sealed witness statement</div><div class="squad">Squad ${w[1]}</div><div class="small">Only a mummy may open this.</div></div>`).join("")}</div>
+<div class="box soft" style="margin-top:18px"><h4>Station lead: what each one means</h4><ul class="small" style="margin:0"><li><strong>Nightshade:</strong> squeezed one and whispered "so satisfying."</li><li><strong>Raven:</strong> squeezed one, squeezed another, giggled.</li><li><strong>Specter:</strong> knew exactly which one was the avocado.</li><li><strong>Ember:</strong> hugged the jar like a puppy.</li></ul><p class="small" style="margin:8px 0 0">All four add up to the same fact: <strong>the thief loves squishies</strong>. That's Clue 4. If a squad reads theirs and says "so... they like squishies?", say: "Write that down, detective."</p></div>
+<div class="box dashed"><h4>Witness box sign</h4><p class="center" style="font-family:Fredoka;font-size:22pt;margin:0">WITNESS BOX · MUMMIES ONLY</p></div>
+</section>`;
+document.write(out);
+</script>
+</body>
+</html>

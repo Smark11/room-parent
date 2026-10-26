@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shoe Size Chart and Footprint · Evidence Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../print.css">
+<style>
+  table.chart th, table.chart td { font-size: 15pt; padding: 9px 14px; border: 1.5px solid var(--ink); text-align: center; }
+  table.chart th { font-size: 12pt; }
+  .foot-wrap { position: relative; height: 8.3in; }
+  .foot { position: absolute; left: 50%; top: 56%; transform: translate(-50%, -50%) rotate(-38deg); width: 11cm; height: 27cm; }
+  .ruler { position: absolute; left: 0; bottom: 0; width: 10cm; height: .6cm; border: 1.5px solid var(--ink); background: repeating-linear-gradient(90deg, transparent 0 .95cm, var(--ink) .95cm 1cm); }
+  .ruler small { position: absolute; left: 0; top: -1.3em; font-size: 8pt; white-space: nowrap; }
+  .powders { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 10px; }
+  .powders div { border: 2px solid var(--ink); border-radius: 10px; padding: 10px; text-align: center; font-family: "Fredoka", sans-serif; font-size: 14pt; height: 1.2in; display: grid; place-items: center; }
+</style>
+</head>
+<body>
+<div class="toolbar"><b>👣 Shoe size chart + footprint</b><span class="muted">3 pages · the Bureau size chart, a life-size 27 cm footprint template, powder cup labels</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/shoe-size-chart.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
+<section class="page">
+  <span class="eyebrow">Evidence Lab</span>
+  <h1>Bureau shoe size chart</h1>
+  <p class="muted">Measure the footprint heel to toe in centimeters. Measure twice. Then find the row.</p>
+  <table class="chart"><thead><tr><th>Footprint length</th><th>Shoe size</th><th>Footprint length</th><th>Shoe size</th></tr></thead><tbody>
+    <tr><td>22 cm</td><td>4</td><td>27 cm</td><td>10</td></tr>
+    <tr><td>23 cm</td><td>5</td><td>28 cm</td><td>11</td></tr>
+    <tr><td>24 cm</td><td>6</td><td>29 cm</td><td>12</td></tr>
+    <tr><td>25 cm</td><td>7</td><td>30 cm</td><td>13</td></tr>
+    <tr><td>26 cm</td><td>8</td><td>31 cm</td><td>14</td></tr>
+    <tr><td>26.5 cm</td><td>9</td><td>32 cm</td><td>15</td></tr>
+  </tbody></table>
+  <div class="box soft" style="margin-top:18px"><h4>Detective's tip</h4><p style="margin:0">Line the zero on the ruler up with the back of the heel. Read the number at the very tip of the toe. If your squad gets two different numbers, measure once more, together, and agree on one before you look at the chart.</p></div>
+  <p class="small muted" style="margin-top:14px">This is the Bureau's own chart, simplified so every centimeter maps to one size. Real shoe charts are messier; nobody at this party will mind.</p>
+  <div class="footer-note"><span>Room 12 Detective Bureau · Evidence Lab</span><span>Station 1 · Clue 1</span></div>
+</section>
+<section class="page fill">
+  <div><span class="eyebrow">Footprint template</span><h2 style="margin:0">Life-size footprint: 27 cm, heel to toe</h2><p class="small muted">Print at 100% (not "fit to page"). Check the ruler at the bottom left against a real ruler. Trace or cut out, then make the print: brush washable paint on the paper shape and press it onto plain paper, or just tape this page under the clear sheet protector at the scene.</p></div>
+  <div class="foot-wrap">
+    <svg class="foot" viewBox="0 0 110 270" xmlns="http://www.w3.org/2000/svg" aria-label="Footprint outline">
+      <path d="M55 2 C 84 2, 102 24, 102 58 C 102 86, 92 110, 86 134 C 80 158, 84 182, 88 206 C 92 234, 80 268, 52 268 C 24 268, 12 240, 16 208 C 20 182, 28 158, 24 132 C 20 108, 8 86, 8 58 C 8 24, 26 2, 55 2 Z" fill="none" stroke="#141829" stroke-width="2.2"/>
+      <path d="M26 160 C 40 150, 70 150, 84 160" fill="none" stroke="#141829" stroke-width="1.2" stroke-dasharray="3 3"/>
+      <path d="M24 70 C 40 62, 70 62, 86 70" fill="none" stroke="#141829" stroke-width="1.2" stroke-dasharray="3 3"/>
+      <g fill="none" stroke="#141829" stroke-width="1.4">
+        <path d="M14 76 h 82"/><path d="M14 76 v -4 M96 76 v -4 M14 76 v 4 M96 76 v 4"/>
+        <path d="M12 60 h 86"/><path d="M12 60 v -4 M98 60 v -4 M12 60 v 4 M98 60 v 4"/>
+        <path d="M32 100 h 46"/><path d="M38 118 h 34"/>
+        <path d="M30 236 h 48"/><path d="M34 250 h 40"/><path d="M28 222 h 52"/>
+      </g>
+      <text x="55" y="140" font-family="Fredoka, sans-serif" font-size="9" text-anchor="middle" fill="#6b7088" transform="rotate(90 55 140)">27 cm · size 10</text>
+    </svg>
+    <div class="ruler"><small>10 cm check ruler (each tick is 1 cm)</small></div>
+  </div>
+</section>
+<section class="page">
+  <span class="eyebrow">Evidence Lab</span>
+  <h1>Powder cup labels</h1>
+  <p class="muted">Cut out and tape to four cups. Three are the known powders; one is the "scene powder" and is secretly baking soda too. Only baking soda fizzes with vinegar, so the scene powder matches, which is the key to Station 2.</p>
+  <div class="powders"><div>BAKING SODA</div><div>CORNSTARCH</div><div>POWDERED SUGAR</div><div style="border-color:var(--coral-dark);color:var(--coral-dark)">EVIDENCE<br><span class="small" style="font-family:Nunito;color:var(--muted)">scene powder</span></div></div>
+  <div class="box soft" style="margin-top:20px"><h4>Running the powder test</h4><ol class="small" style="margin:0"><li>A pinch of each known powder on the tray, in a row, labels facing the squad.</li><li>One pipette of vinegar on each. Which fizzes? (Baking soda.)</li><li>Now a pinch of the EVIDENCE powder. One pipette. It fizzes. "So the powder at the scene was baking soda. Interesting. Remember that at Station 2."</li><li>Pipettes, not pouring. Fizz happens on the tray only. Wipe between squads.</li></ol></div>
+  <div class="box dashed" style="margin-top:14px"><h4>Fast squad bonus</h4><p class="small" style="margin:0">Lift a fingerprint: rub a pencil on paper to make graphite dust, press a finger in it, press the finger onto clear tape, stick the tape to white paper. Instant evidence.</p></div>
+</section>
+</body>
+</html>

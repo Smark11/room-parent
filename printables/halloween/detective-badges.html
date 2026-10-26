@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Detective ID Badges</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../print.css">
+<style>
+  .sheet { display: grid; grid-template-columns: 1fr 1fr; gap: .25in .3in; }
+  .badge { width: 3.5in; height: 2.3in; border: 2.5px solid #111; border-radius: 14px; overflow: hidden; background: #fff; font-family: "Fredoka", sans-serif; display: grid; grid-template-rows: auto 1fr; break-inside: avoid; position: relative; }
+  .badge .top { background: #5b21b6; color: #ffd93d; padding: 5px 12px; display: flex; justify-content: space-between; letter-spacing: .12em; font-size: 7.5pt; text-transform: uppercase; }
+  .badge .body { display: grid; grid-template-columns: .95in 1fr; gap: 10px; padding: 9px 12px; }
+  .badge .photo { width: .95in; height: 1.15in; border: 2px dashed #999; border-radius: 6px; background: repeating-linear-gradient(45deg, #f1f1f1 0 6px, #e4e4e4 6px 12px); display: grid; place-items: center; font-size: 22pt; }
+  .badge .field { font-size: 6.5pt; letter-spacing: .1em; text-transform: uppercase; color: #777; margin-top: 4px; }
+  .badge .value { border-bottom: 1.5px solid #111; height: 1.15em; }
+  .badge .stamp2 { position: absolute; right: 10px; bottom: 7px; transform: rotate(-10deg); border: 2px solid #e04e4e; color: #e04e4e; padding: 0 6px; font-size: 7.5pt; letter-spacing: .1em; border-radius: 3px; opacity: .85; }
+  .badge .hole { position: absolute; left: 50%; top: 24px; width: 14px; height: 5px; border: 1.5px solid #bbb; border-radius: 3px; transform: translateX(-50%); background: #fff; }
+  .intro { margin-bottom: 14px; }
+</style>
+</head>
+<body>
+<div class="toolbar"><b>🪪 Detective ID badges</b><span class="muted">4 pages · 24 badges (20 kids + 4 spares), 6 per page</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/detective-badges.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
+<script>
+const badge = () => `<div class="badge"><div class="top"><span>🔎 Room 12 Detective Bureau</span><span>Rank: Junior</span></div><div class="hole"></div>
+<div class="body"><div class="photo">🕵️</div><div>
+<div class="field">Detective name</div><div class="value"></div>
+<div class="field">Squad</div><div class="value"></div>
+<div class="field">Specialty</div><div class="value"></div>
+<div class="field">Favorite candy</div><div class="value"></div>
+</div></div><div class="stamp2">TOP SECRET</div></div>`;
+let out = "";
+for (let p = 0; p < 4; p++) {
+  out += `<section class="page">${p === 0 ? '<p class="intro small muted">Print on cardstock. Cut on the badge edges. Slide into a badge holder, punch the top and add yarn, or tape to a shirt. Send one home blank in the case file so kids fill it in before the party; hand spares out at the door.</p>' : ''}<div class="sheet">${Array.from({ length: 6 }, badge).join("")}</div></section>`;
+}
+document.write(out);
+</script>
+</body>
+</html>

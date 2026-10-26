@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ghost Word Slips · Ghostbuster Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../print.css">
+<style>
+  .slips { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px 8px; }
+  .slip { border: 1.5px dashed #999; border-radius: 4px; height: .62in; display: grid; place-items: center; font-family: "Fredoka", sans-serif; font-size: 16pt; font-weight: 600; letter-spacing: .06em; position: relative; }
+  .slip small { position: absolute; left: 4px; top: 2px; font-size: 6.5pt; color: #aaa; font-family: Nunito; }
+  .recipe { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
+</style>
+</head>
+<body>
+<div class="toolbar"><b>👻 Ghost word slips</b><span class="muted">1 page · 25 slips (5 words × 5 sets) plus the ghost recipe</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/ghost-word-slips.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
+<section class="page">
+  <span class="eyebrow teal">Ghostbuster Lab</span>
+  <h1>Word slips for the ghosts</h1>
+  <p class="small muted">Five words make the sentence. One set of five per squad, plus a spare set. Cut on the dashed lines, laminate or cover with clear tape, roll each slip tight, and bury one inside each baking-soda ghost. The tiny number in the corner tells you which set it belongs to, not the word order.</p>
+  <div class="slips">
+    <script>
+      const words = ["SEEN", "IN", "HALL", "AT", "2:15"];
+      let o = ""; for (let set = 1; set <= 5; set++) words.forEach(w => o += `<div class="slip"><small>set ${set}</small>${w}</div>`);
+      document.write(o);
+    </script>
+  </div>
+  <div class="recipe">
+    <div class="box soft"><h4>Baking-soda ghosts (makes 25)</h4><ol class="small" style="margin:0">
+      <li>In a bowl, mix <strong>2 boxes of baking soda</strong> with water, a tablespoon at a time, until it packs like damp sand (about 6 to 8 tablespoons).</li>
+      <li>Pack a golf-ball amount into your palm, push a rolled slip into the middle, and shape a 3-inch ghost with a rounded head. Press two googly eyes in.</li>
+      <li>Set each ghost in a muffin tin. Dry overnight, uncovered.</li>
+      <li>Transport in the muffin tins. They crumble if they roll around.</li>
+    </ol></div>
+    <div class="box soft"><h4>At the station</h4><ul class="small" style="margin:0">
+      <li>Five ghosts in the bin, one per detective. Each detective gets a syringe of green vinegar (white vinegar + a few drops of green food coloring).</li>
+      <li>Bust the ghost until it fizzes apart and the slip appears. Sleeves up.</li>
+      <li>Squad lays out its five words: <strong>SEEN IN HALL AT 2:15</strong>. Write it in the case file.</li>
+      <li>Between squads: scoop out the fizz, set five fresh ghosts. The residue is harmless.</li>
+    </ul></div>
+  </div>
+</section>
+</body>
+</html>

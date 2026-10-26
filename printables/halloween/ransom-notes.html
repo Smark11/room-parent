@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ransom Notes · Pigpen cipher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../print.css">
+<style>
+  .note { height: 100%; background: var(--cream); background-image: repeating-linear-gradient(transparent 0 .42in, rgba(0,0,0,.06) .42in calc(.42in + 1px)); border: 1px solid #d9cfb8; padding: .5in .55in; position: relative; display: flex; flex-direction: column; }
+  .note .head { display: flex; justify-content: space-between; font-size: 9pt; letter-spacing: .14em; text-transform: uppercase; color: #8a6d00; font-weight: 800; margin-bottom: .3in; }
+  .note .to { font-family: "Fredoka", sans-serif; font-size: 20pt; margin-bottom: .25in; }
+  .pigpen { line-height: 1; font-size: 0; }
+  .pp-word { display: inline-flex; gap: 6px; margin: 10px 30px 10px 0; vertical-align: middle; }
+  .pp-g { display: inline-flex; width: 44px; height: 44px; color: #1a1a1a; }
+  .pp-g svg { width: 44px; height: 44px; }
+  .pp-txt { font-size: 30px; line-height: 44px; }
+  .note .sig { margin-top: auto; font-family: "Fredoka", sans-serif; font-size: 24pt; text-align: right; color: #333; }
+  .note .psarea { height: 1in; border-top: 1px dashed rgba(0,0,0,.15); margin-top: .2in; position: relative; }
+  .note .psarea::after { content: "write the P.S. here in yellow highlighter, then it disappears"; position: absolute; left: 0; top: 4px; font-size: 7pt; color: rgba(0,0,0,.18); }
+  .key .pp-g, .key .pp-g svg { width: 50px; height: 50px; color: #111; }
+  .pigpen-key { display: grid; grid-template-columns: repeat(9, 1fr); gap: 16px 8px; margin-top: 14px; }
+  .pp-key-item { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 16pt; font-family: "Fredoka", sans-serif; }
+  .how { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
+  .ans .pp-g, .ans .pp-g svg { width: 18px; height: 18px; } .ans .pp-word { gap: 2px; margin: 2px 8px 2px 0; } .ans .pp-txt { font-size: 12px; line-height: 18px; }
+</style>
+</head>
+<body>
+<div class="toolbar"><b>📜 Ransom notes</b><span class="muted">6 pages · four notes (one per squad), the Pigpen key, the answers</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/ransom-notes.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
+<script>
+const NOTES = [
+  ["A", "Nightshade", "YOU WILL NEVER FIND IT DETECTIVES"],
+  ["B", "Raven", "THE JAR IS MINE NOW NICE TRY"],
+  ["C", "Specter", "STOP LOOKING IT IS GONE FOREVER"],
+  ["D", "Ember", "YOU ARE GETTING COLDER DETECTIVES"],
+];
+let out = NOTES.map(n => `<section class="page fill"><div class="note">
+  <div class="head"><span>Slipped under the door · Room 12</span><span>Note ${n[0]} · for Squad ${n[1]}</span></div>
+  <div class="to">To the detectives of Squad ${n[1]}:</div>
+  <div class="pigpen" data-text="${n[2]}"></div>
+  <div class="sig">— ?</div>
+  <div class="psarea"></div>
+</div></section>`).join("");
+out += `<section class="page key"><span class="eyebrow grape">Cipher Room</span><h1>Pigpen cipher key</h1>
+<p>Every letter lives in a cell of a tic-tac-toe grid or an X. The symbol for a letter is the <strong>shape of its cell</strong>. Letters J through R and W through Z add a dot. Match the shapes to the letters. Nobody has to memorize anything.</p>
+<div class="pigpen-key" data-pigpen-key></div>
+<div class="how"><div class="box soft"><h4>How to decode as a squad</h4><ol class="small" style="margin:0"><li>Split the note: one or two words per detective.</li><li>Find each shape on this key. Write the letter under the shape in pencil.</li><li>Read the words together out loud.</li><li>Then sweep the blacklight across the whole page. Thieves always leave something behind.</li></ol></div>
+<div class="box soft"><h4>Why the thief used it</h4><p class="small" style="margin:0">Pigpen is a 400-year-old substitution cipher. It looks impossible and takes about four minutes once you know the trick. Our thief is a show-off. Show-offs make mistakes.</p></div></div>
+<p class="small muted" style="margin-top:14px">Print two: one taped to the Cipher Room table, one in the station lead's folder.</p>
+</section>
+<section class="page"><span class="eyebrow">Station lead only</span><h1>Answers and how to make the notes</h1>
+<table><thead><tr><th>Note</th><th>Squad</th><th>Decodes to</th></tr></thead><tbody>
+${NOTES.map(n => `<tr><td>${n[0]}</td><td>${n[1]}</td><td><strong>${n[2]}</strong><div class="ans pigpen" data-text="${n[2]}"></div></td></tr>`).join("")}
+</tbody></table>
+<div class="box" style="margin-top:16px"><h4>The hidden P.S. on every note (this is Clue 3)</h4><p style="font-size:14pt;margin:0"><em>"P.S. Snagged my orange sweater on the shelf. Worth it."</em></p></div>
+<h3>Making the notes</h3>
+<ol>
+  <li>Print pages 1 through 4 on plain paper (cream or white).</li>
+  <li>Below the dashed line on each note, write the P.S. in <strong>yellow highlighter</strong> in your own messy handwriting. Fresh highlighter glows brightest. Test one under the blacklight before you do all four.</li>
+  <li>Crumple each note and flatten it once so it looks like it was slipped under a door.</li>
+  <li>Fold and label the outside with the squad name so the station lead hands out the right one.</li>
+  <li>Hint budget at the station: two free hints per squad. Make them ask. If a squad is stuck, give them the first word.</li>
+</ol>
+<p class="small muted">Want the notes to say something else? Edit the <code>data-text</code> on each note in <code>printables/halloween/ransom-notes.html</code>; the glyphs redraw themselves.</p>
+</section>`;
+document.write(out);
+</script>
+<script src="../../assets/pigpen.js"></script>
+</body>
+</html>

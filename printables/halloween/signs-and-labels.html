@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Signs, Labels, Title Cards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../print.css">
+<style>
+  .jar { border: 5px solid var(--ink); border-radius: 18px; padding: .3in .4in; text-align: center; background: #fff; }
+  .jar .t { font-family: "Fredoka", sans-serif; font-weight: 700; letter-spacing: .08em; line-height: 1.05; }
+  .jar .warn { background: var(--ink); color: var(--sun); font-family: "Fredoka", sans-serif; letter-spacing: .16em; padding: 6px 12px; margin-top: 10px; font-size: 14pt; }
+  .door { height: 100%; display: flex; flex-direction: column; justify-content: center; text-align: center; background: repeating-linear-gradient(135deg, var(--sun) 0 .35in, #111 .35in .7in); padding: .5in; }
+  .door .inner { background: #fff; padding: .5in .4in; border: 4px solid #111; }
+  .door h1 { font-size: 44pt; letter-spacing: .06em; line-height: 1; }
+  .door .big { font-size: 60pt; line-height: 1; }
+  .stsign { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border: 6px solid var(--ink); border-radius: 24px; }
+  .stsign .n { font-family: "Fredoka", sans-serif; font-size: 200pt; font-weight: 700; line-height: .9; color: var(--coral-dark); }
+  .stsign .e { font-size: 72pt; line-height: 1; }
+  .stsign h1 { font-size: 40pt; }
+  .stsign .c { font-size: 14pt; color: var(--muted); }
+  .labels { display: grid; grid-template-columns: repeat(3, 1fr); gap: .2in; }
+  .lab { border: 2.5px solid var(--ink); border-radius: 8px; height: 1.35in; display: grid; place-items: center; text-align: center; font-family: "Fredoka", sans-serif; font-size: 18pt; letter-spacing: .1em; padding: 6px; }
+  .lab small { display: block; font-family: Nunito; font-size: 8pt; letter-spacing: 0; color: var(--muted); }
+  .tags { display: grid; grid-template-columns: repeat(2, 1fr); gap: .15in; }
+  .tag { border: 2px dashed #999; border-radius: 10px; height: 1.5in; padding: 10px 14px; display: flex; flex-direction: column; }
+  .tag .h { display: flex; justify-content: space-between; font-family: "Fredoka", sans-serif; letter-spacing: .12em; font-size: 10pt; }
+  .tag .mark { flex: 1; border: 1.5px dashed #ccc; border-radius: 6px; margin-top: 8px; display: grid; place-items: center; font-size: 8pt; color: #aaa; }
+  .tc { height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; }
+  .tc .k { font-family: "Fredoka", sans-serif; letter-spacing: .3em; text-transform: uppercase; font-size: 16pt; color: var(--sun); }
+  .tc h1 { font-size: 54pt; color: #fff; margin: 10px 0; }
+  .tc .m { font-size: 18pt; opacity: .8; letter-spacing: .1em; }
+  .tc .rec { margin-top: 30px; display: inline-flex; align-items: center; gap: 10px; font-family: "Fredoka", sans-serif; letter-spacing: .2em; color: var(--coral); }
+  .tc .rec::before { content: ""; width: 14px; height: 14px; background: var(--coral); border-radius: 50%; }
+</style>
+</head>
+<body>
+<div class="toolbar"><b>🪧 Signs, labels, title cards</b><span class="muted">13 pages · the Jar label, door sign, station signs, EVIDENCE labels, 20 evidence tags, video title cards</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/signs-and-labels.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
+
+<section class="page">
+  <span class="eyebrow">Day −7</span><h1>The Jar label</h1>
+  <p class="small muted">Two sizes. Tape the big one to the front of the opaque jar and the small one on the lid, under the three strips of packing tape. Then put it on a high shelf and say one sentence: "That's for Friday. Nobody touches it."</p>
+  <div class="jar" style="margin-bottom:.35in"><div class="t" style="font-size:54pt">PARTY<br>CANDY</div><div class="warn">DO NOT OPEN UNTIL OCT 30</div><div class="small muted" style="margin-top:8px">Property of Room 12 · Hands off</div></div>
+  <div class="cut"></div>
+  <div class="jar" style="width:4.2in;margin:.3in auto 0"><div class="t" style="font-size:28pt">PARTY CANDY</div><div class="warn" style="font-size:10pt">DO NOT OPEN UNTIL OCT 30</div></div>
+</section>
+
+<section class="page fill"><div class="door"><div class="inner"><div class="big">🚧</div><h1>ACTIVE<br>INVESTIGATION</h1><p style="font-size:18pt;margin:10px 0 0">Do not disturb the scene.</p><p style="font-family:Fredoka;font-size:26pt;margin:14px 0 0">Detectives report at 1:30 PM.</p><p class="small muted" style="margin:16px 0 0">Room 12 Detective Bureau · Case #1031</p></div></div></section>
+
+<section class="page fill"><div class="stsign"><div class="e">👣</div><div class="n">1</div><h1>Evidence Lab</h1><div class="c">Footprints and mystery powder</div></div></section>
+<section class="page fill"><div class="stsign"><div class="e">👻</div><div class="n">2</div><h1>Ghostbuster Lab</h1><div class="c">Fizz open the evidence</div></div></section>
+<section class="page fill"><div class="stsign"><div class="e">📜</div><div class="n">3</div><h1>The Cipher Room</h1><div class="c">Ransom note and invisible ink</div></div></section>
+<section class="page fill"><div class="stsign"><div class="e">🧻</div><div class="n">4</div><h1>The Mummy Witness</h1><div class="c">Wrap and escape relay</div></div></section>
+
+<section class="page">
+  <span class="eyebrow">Labels</span><h1>EVIDENCE labels</h1>
+  <p class="small muted">For the manila-folder station signs, snack bags, the scene powder cup, the Evidence Locker box, the witness box, the cauldron, and anything else that needs to look official. Cut and tape.</p>
+  <div class="labels">
+    <div class="lab">EVIDENCE</div><div class="lab">EVIDENCE</div><div class="lab">EVIDENCE</div>
+    <div class="lab">EVIDENCE</div><div class="lab">EVIDENCE</div><div class="lab">EVIDENCE</div>
+    <div class="lab">EXHIBIT A<small>water · do not shake</small></div><div class="lab">EXHIBIT A<small>water · do not shake</small></div><div class="lab">EXHIBIT A<small>water · do not shake</small></div>
+    <div class="lab">EVIDENCE LOCKER<small>loot · keep covered</small></div><div class="lab">WITNESS BOX<small>mummies only</small></div><div class="lab">ARREST WARRANTS<small>drop here</small></div>
+    <div class="lab">CONFIDENTIAL<small>case file</small></div><div class="lab">CONFIDENTIAL<small>case file</small></div><div class="lab">CONFIDENTIAL<small>case file</small></div>
+  </div>
+</section>
+
+<script>
+let tags = "";
+for (let p = 0; p < 2; p++) {
+  tags += `<section class="page">${p === 0 ? '<span class="eyebrow grape">Finale</span><h1>Evidence tags (20)</h1><p class="small muted">Print on index-card stock or plain paper. Draw a big squiggle inside the dashed box with a <strong>yellow highlighter</strong>: invisible in room light, bright under the blacklight. The Floater hides all 20 around the room during rotation 3. One tag trades for one squishy.</p>' : ''}<div class="tags">`;
+  for (let i = 1; i <= 10; i++) { const n = p * 10 + i; tags += `<div class="tag"><div class="h"><span>🔦 EVIDENCE TAG</span><span>#${String(n).padStart(2, "0")} of 20</span></div><div class="mark">highlighter squiggle goes here</div><div class="tiny muted" style="margin-top:6px">Found it? Hold on to it. One tag = one squishy from the Jar.</div></div>`; }
+  tags += `</div></section>`;
+}
+document.write(tags);
+const cards = [["Interview 1", "The Principal", "9:12 AM"], ["Interview 2", "The Gym Teacher", "11:05 AM"], ["Interview 3", "The Librarian", "12:30 PM"], ["Interview 4", "The Chief", "1:15 PM · recorded under protest"]];
+document.write(cards.map(c => `<section class="page dark fill"><div class="tc"><div class="k">Case #1031 · Witness statement</div><h1>${c[1]}</h1><div class="m">${c[0]} · ${c[2]}</div><div class="rec">REC</div></div></section>`).join(""));
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Junior Detective Certificates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../print.css">
+<style>
+  @page { size: letter landscape; margin: 0.5in; }
+  .page { width: 11in; min-height: 8.5in; }
+  @media print { .page { width: auto; min-height: 7.4in; } .page.fill { height: 7.4in; min-height: 0; } }
+  .cert { height: 100%; border: 8px double var(--ink); padding: .45in .6in; text-align: center; display: flex; flex-direction: column; background: var(--cream); position: relative; }
+  .cert .bureau { font-family: "Fredoka", sans-serif; letter-spacing: .24em; text-transform: uppercase; font-size: 11pt; color: var(--muted); }
+  .cert h1 { font-size: 46pt; margin: 6px 0 0; letter-spacing: .04em; }
+  .cert .sub { font-size: 13pt; color: var(--ink-2); margin-bottom: 18px; }
+  .cert .name { font-family: "Fredoka", sans-serif; font-size: 30pt; border-bottom: 2.5px solid var(--ink); width: 6.5in; margin: 10px auto 6px; height: .7in; }
+  .cert .body { font-size: 13.5pt; max-width: 8in; margin: 0 auto; line-height: 1.5; }
+  .cert .skills { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin: 14px 0; }
+  .cert .skills span { border: 2px solid var(--ink); border-radius: 999px; padding: 3px 14px; font-weight: 800; font-size: 10.5pt; background: #fff; }
+  .cert .sigs { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; margin-top: auto; }
+  .cert .sigs div { border-top: 2px solid var(--ink); padding-top: 6px; font-size: 10pt; color: var(--muted); }
+  .cert .seal { position: absolute; right: .7in; top: .6in; width: 1.5in; height: 1.5in; border-radius: 50%; border: 4px solid var(--coral-dark); color: var(--coral-dark); display: grid; place-items: center; font-family: "Fredoka", sans-serif; font-size: 11pt; text-align: center; line-height: 1.1; transform: rotate(10deg); background: #fff; }
+  .cert .badge-art { position: absolute; left: .7in; top: .6in; font-size: 52pt; }
+  .stickers { display: grid; grid-template-columns: repeat(4, 1fr); gap: .25in; }
+  .sticker { width: 2.2in; height: 2.2in; border-radius: 50%; border: 4px solid var(--grape); display: grid; place-items: center; text-align: center; font-family: "Fredoka", sans-serif; font-size: 15pt; line-height: 1.1; color: var(--grape); padding: 10px; margin: 0 auto; }
+  .sticker small { font-family: Nunito; font-size: 8pt; color: var(--muted); display: block; margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="toolbar"><b>🏅 Certificates</b><span class="muted">2 pages · Junior Detective certificate (print 20) and Lead Detective stickers</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/certificates.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
+<section class="page fill">
+  <div class="cert">
+    <div class="badge-art">🕵️</div>
+    <div class="seal">CASE<br>#1031<br>CLOSED</div>
+    <div class="bureau">Room 12 Detective Bureau</div>
+    <h1>Junior Detective</h1>
+    <div class="sub">Certificate of Investigation · The Case of the Missing Candy</div>
+    <div class="small muted">This certifies that</div>
+    <div class="name"></div>
+    <div class="body">measured the footprint, busted the ghosts, cracked the cipher, interrogated the mummy, survived the Principal's statement, and correctly identified the culprit, who shall remain nameless because she is still the teacher.</div>
+    <div class="skills"><span>👣 Footprint analysis</span><span>🧪 Chemical testing</span><span>📜 Code-breaking</span><span>🧻 Witness interviews</span><span>🔦 Blacklight recovery</span></div>
+    <div class="sigs"><div>The Detective</div><div>The Chief (reformed)</div><div>Date</div></div>
+  </div>
+</section>
+<section class="page">
+  <span class="eyebrow grape">Stickers</span>
+  <h1>Lead Detective stickers</h1>
+  <p class="small muted">For any squad whose warrant names the Chief. Print on full-sheet label paper or plain paper and tape. Eight per page.</p>
+  <div class="stickers">
+    <script>document.write(Array.from({ length: 8 }, () => '<div class="sticker">⭐<br>LEAD<br>DETECTIVE<small>Case #1031 · Got it right</small></div>').join(""));</script>
+  </div>
+</section>
+</body>
+</html>

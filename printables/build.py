@@ -102,6 +102,20 @@ vs = f'''<!doctype html>
 (SRC / "video-scripts.html").write_text(vs)
 print("generated video-scripts.html")
 
+# one file per suspect: the guide page plus that person's script only
+SOLO = [("ivs1", "script-principal", "The Principal"), ("ivs3", "script-gym-teacher", "The Gym Teacher"),
+        ("ivs4", "script-librarian", "The Librarian"), ("ivs5", "script-chief", "The Chief (teacher)")]
+for (id_, when, note), (id2, fname, who) in zip(scripts, SOLO):
+    assert id_ == id2
+    part = parts[[x[0] for x in scripts].index(id_)]
+    solo = vs.replace("<title>Video Scripts · Four confessionals</title>", f"<title>Video Script · {who}</title>")
+    solo = solo.replace("<b>🎥 Video scripts</b><span class=\"muted\">5 pages · the self-recording guide and all four confessional scripts (generated from the plan page)</span>",
+                        f"<b>🎥 Video script · {who}</b><span class=\"muted\">2 pages · the self-recording guide and this person's script only. Send just this file.</span>")
+    solo = solo.replace(f"../../downloads/halloween/video-scripts.pdf", f"../../downloads/halloween/{fname}.pdf")
+    solo = solo.replace(chr(10).join(parts), part)
+    (SRC / f"{fname}.html").write_text(solo)
+    print("generated", fname + ".html")
+
 # ---------- 2. PDFs ----------
 if not os.path.exists(CHROME):
     sys.exit("Chrome not found at " + CHROME)

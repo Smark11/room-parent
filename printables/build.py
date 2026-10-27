@@ -92,15 +92,15 @@ guide = '''<section class="page">
       <li><strong>Length:</strong> 60 to 90 seconds. Start recording, wait two seconds, begin. Stop two seconds after the last line.</li>
       <li><strong>Send it:</strong> text or AirDrop the raw video to whoever sent you the script. They add the title card and load it onto the classroom laptop.</li></ul></div>
   </div>
-  <div class="box soft" style="margin-top:4px"><h4>Making the script yours</h4><p class="small" style="margin:0">Words in <span style="background:rgba(255,217,61,.45);padding:0 3px;border-radius:3px">[brackets]</span> are adjustable. The facts the kids check (shoe size, where you were, what you wore, how you feel about squishies) live on your <strong>Suspect Statement form</strong>, not in this video; your answer card tells you what to write there. The box at the top of your script lists the one or two things the video has to agree with, and the lines you should keep word for word. Everything else is flavor. Swap in your real life, your real subject, your real habits. Wear whatever you like. True details get the biggest laughs.</p></div>
+  <div class="box soft" style="margin-top:4px"><h4>Making the script yours</h4><p class="small" style="margin:0">Words in <span style="background:rgba(255,217,61,.45);padding:0 3px;border-radius:3px">[brackets]</span> are adjustable. The facts the kids check (shoe size, where you were, what you wore, how you feel about squishies) live on your <strong>Suspect Statement form</strong>, not in this video. The box at the top of your script gives you the four answers to write on the form, the one or two things the video has to agree with, and the lines to keep word for word. Everything else is flavor. Swap in your real life, your real subject, your real habits. Wear whatever you like. True details get the biggest laughs.</p></div>
   <h3 style="margin-top:10px;font-size:12pt">The ask (email or text to each suspect)</h3>
   <div class="box soft ask" style="white-space:pre-wrap">''' + html.escape(ask or "") + '''</div>
-  <p class="small muted">The Custodian gets a different ask: "You're a suspect who declined to comment. That's it. That's the whole job. Please act shifty in the hallway on Oct 30."</p>
+  <p class="small muted" style="margin:4px 0 0">The Custodian gets a different ask: "You're a suspect who declined to comment. That's it. That's the whole job. Please act shifty in the hallway on Oct 30."</p>
 </section>'''
 
 # ---------- 1b. suspect statement forms ----------
-# One questionnaire per suspect. Four answers are scripted (they are the four traits the clues test);
-# the rest are suggestions. The Custodian's is pre-stamped. The Chief's stays hidden until deliberation.
+# The scripted statement answers per suspect (the four traits the clues test), used for the answer-key page.
+# The same answers are repeated in each script's MAKE IT YOURS box on events/halloween.html.
 FORMS = [
   dict(key="principal", who="The Principal", form="S-1",
        q1="In a meeting. A meeting about the next meeting.", q2="Everyone at the meeting. All nine of them.",
@@ -149,20 +149,12 @@ FORM_CSS = """
 .acard .why { font-size: 9.5pt; }
 .howtbl td, .howtbl th { font-size: 9.5pt; padding: 4px 8px; vertical-align: top; }
 """
-def form_page(f):
-    who = html.escape(f["who"])
-    declined = f.get("declined")
-    official = ('<div class="records"><b>From Bureau records (suspect declined to comment)</b>'
-                'Shoe size: <strong>10</strong> (boot closet). &nbsp; At 2:15: <strong>in the building</strong> (sign-in log). &nbsp; '
-                'Wearing: <strong>blue</strong> uniform, every day. &nbsp; Squishies: <strong>loves them</strong> (seen squeezing one in the boiler room).</div>'
-                if declined else
-                '<div class="official"><b>Official use only</b>Cleared by: <span class="chk"></span> Clue 1 footprint &nbsp; <span class="chk"></span> Clue 2 timeline &nbsp; <span class="chk"></span> Clue 3 orange sweater &nbsp; <span class="chk"></span> Clue 4 witness</div>')
-    return f"""<section class="page form">
-  {'<div class="declined">Declined to comment</div>' if declined else ''}
-  <div class="fhdr"><div><span class="tape"><span>Suspect statement</span></span><div class="case">Mrs. Driscoll's Detective Bureau · Case #1031 · Form {f['form']}</div></div><div><span class="stamp" style="font-size:9pt">Official</span></div></div>
+def form_page():
+    return """<section class="page form">
+  <div class="fhdr"><div><span class="tape"><span>Suspect statement</span></span><div class="case">Mrs. Driscoll's Detective Bureau · Case #1031</div></div><div><span class="stamp" style="font-size:9pt">Official</span></div></div>
   <h1>Suspect Statement</h1>
   <p class="small muted" style="margin-bottom:4px">Answer every question. Print clearly. This will be read by detectives aged nine and ten. They notice everything.</p>
-  <div class="two"><div class="q"><label>Name</label><div class="ans"></div></div><div class="q"><label>Job at this school</label><div class="ans filled">{who}</div></div></div>
+  <div class="two"><div class="q"><label>Name</label><div class="ans"></div></div><div class="q"><label>Job at this school</label><div class="ans"></div></div></div>
   <div class="q"><label>1. Where were you yesterday at 2:15 PM?</label><div class="ans"></div><div class="ans"></div></div>
   <div class="q"><label>2. Who can confirm that?</label><div class="ans"></div></div>
   <div class="two"><div class="q"><label>3. Shoe size <small>(we will check)</small></label><div class="ans"></div></div><div class="q"><label>4. What were you wearing yesterday? <small>Color counts.</small></label><div class="ans"></div></div></div>
@@ -171,80 +163,52 @@ def form_page(f):
   <div class="q"><label>7. Did you take the Jar?</label><div class="ans"></div></div>
   <div class="q"><label>8. Anything else the detectives should know?</label><div class="ans"></div><div class="ans"></div><div class="ans"></div></div>
   <div class="two"><div class="q"><label>Signature</label><div class="ans"></div></div><div class="q"><label>Date</label><div class="ans"></div></div></div>
-  {official}
+  <div class="official"><b>Official use only</b>Cleared by: <span class="chk"></span> Clue 1 footprint &nbsp; <span class="chk"></span> Clue 2 timeline &nbsp; <span class="chk"></span> Clue 3 orange sweater &nbsp; <span class="chk"></span> Clue 4 witness</div>
 </section>"""
 
-def answer_card(f):
-    who = html.escape(f["who"])
-    if f.get("declined"):
-        body = f'<p>{html.escape(f["note"])}</p>'
-    else:
-        rows = [("1. Where were you at 2:15?", f["q1"], True), ("2. Who can confirm that?", f["q2"], False),
-                ("3. Shoe size", f["q3"], True), ("4. What were you wearing?", f["q4"], True),
-                ("5. Squishies?", f["q5"], True), ("6. Inside Mrs. Driscoll's room?", f["q6"], False),
-                ("7. Did you take the Jar?", f["q7"], False), ("8. Anything else?", f["q8"], False)]
-        tr = "".join(f'<tr><td>{"<span class=star>★</span> " if st else ""}{html.escape(q)}</td><td>{html.escape(a)}</td></tr>' for q, a, st in rows)
-        body = (f'<p class="small">Fill out the attached form in your own handwriting. The four answers marked <span class="star">★</span> are scripted, because the detectives check them against printed evidence: copy those exactly. '
-                f'The rest are suggestions; write anything you like, and true is funnier. Hand the form back to whoever sent you this by [Oct 23], with your video.</p>'
-                f'<table>{tr}</table><p class="why"><strong>Why these answers:</strong> {html.escape(f["note"])}</p>')
-    return f"""<section class="page acard">
-  <span class="eyebrow grape">Answer card · {who}</span>
-  <h1 style="font-size:20pt;margin:4px 0 6px">Your Suspect Statement: what to write</h1>
-  {body}
-  <div class="footer-note static"><span>The Case of the Missing Candy · Answer card · {who}</span><span>Keep this card. Hand in the form.</span></div>
-</section>"""
-
-forms_guide = """<section class="page">
-  <span class="eyebrow">Ties the clues to the suspects</span>
-  <h1>Suspect statement forms</h1>
-  <p class="muted small" style="margin-bottom:8px">A one-page questionnaire each suspect fills in by hand. Four of its answers are the four traits the clues test, and we script those; everything else is theirs. The kids compare each clue to the forms, so no real person has to wear, own, or be anything.</p>
-  <div class="two">
-    <div class="box soft"><h4>Who fills one out</h4><ul class="small" style="margin:0">
-      <li><strong>The Principal, the Gym Teacher, the Librarian:</strong> send each their script, their answer card, and a blank form together. Forms come back with the videos by [Oct 23].</li>
-      <li><strong>The Custodian:</strong> nothing to do. The form is pre-stamped DECLINED TO COMMENT with the Bureau's "records" printed on it.</li>
-      <li><strong>The Chief (teacher):</strong> fills one out too, from her answer card. It matches every clue. It stays in the Detective's folder until deliberation.</li></ul></div>
-    <div class="box soft"><h4>Where they go on the day</h4><ul class="small" style="margin:0">
-      <li>Four forms (not the Chief's) go on the suspect board beside the WANTED posters, from 1:30. Squads can walk over and read them any time.</li>
-      <li>The typed summary of the same four forms is the suspect table in every case file, so squads can cross off at their station without leaving it.</li>
-      <li>At 2:28, when a squad has crossed off all four, the Detective produces the fifth form. See below.</li></ul></div>
-  </div>
-  <table class="howtbl" style="margin:4px 0 10px"><thead><tr><th>Form question</th><th>Clue that tests it</th><th>Answer that gets someone cleared</th></tr></thead><tbody>
-    <tr><td>3. Shoe size</td><td>Clue 1 · Evidence Lab: footprint = 27 cm = size 10</td><td>The Librarian wrote 7</td></tr>
-    <tr><td>1. Where at 2:15?</td><td>Clue 2 · Ghostbuster Lab: "seen in hall at 2:15"</td><td>The Principal wrote "in a meeting"</td></tr>
-    <tr><td>4. What were you wearing?</td><td>Clue 3 · Cipher Room: "snagged my orange sweater"</td><td>The Custodian's records say blue</td></tr>
-    <tr><td>5. Squishies?</td><td>Clue 4 · Mummy Witness: the thief loves squishies</td><td>The Gym Teacher ticked "don't get them"</td></tr>
+def answer_key_page():
+    rows = ""
+    for f in FORMS:
+        if f.get("declined"):
+            rows += f'<tr><td><strong>{html.escape(f["who"])}</strong></td><td colspan="4">Write DECLINED TO COMMENT across the form yourself, then add "From Bureau records: shoe size 10, in the building at 2:15, blue uniform, loves squishies (seen squeezing one in the boiler room)."</td><td>Nothing. Act shifty on Oct 30.</td></tr>'
+        else:
+            rows += (f'<tr><td><strong>{html.escape(f["who"])}</strong></td><td>{html.escape(f["q1"])}</td><td>{html.escape(f["q3"])}</td><td>{html.escape(f["q4"])}</td>'
+                     f'<td>{html.escape(f["q5"])}</td><td>{html.escape(f["q7"])} / {html.escape(f["q8"])}</td></tr>')
+    return f"""<section class="page">
+  <span class="eyebrow">Recruiter only · do not post</span>
+  <h1>Statement answer key</h1>
+  <p class="muted small" style="margin-bottom:8px">Every suspect fills out the same one-page Suspect Statement. Four answers are scripted because the clues test them (Q1 where at 2:15, Q3 shoe size, Q4 what they wore, Q5 squishies); each person's script box lists theirs. The rest of the form is theirs to answer however they like. Collect the forms with the videos by [Oct 23]. Four go on the suspect board; the Chief's stays in the Detective's folder until deliberation (2:28).</p>
+  <table class="howtbl"><thead><tr><th>Suspect</th><th>Q1 · At 2:15</th><th>Q3 · Shoe</th><th>Q4 · Wore</th><th>Q5 · Squishies</th><th>Suggested Q7 / Q8</th></tr></thead><tbody>{rows}</tbody></table>
+  <table class="howtbl" style="margin-top:12px"><thead><tr><th>Form question</th><th>Clue that tests it</th><th>Who it clears</th></tr></thead><tbody>
+    <tr><td>Q3 shoe size</td><td>Clue 1 · Evidence Lab: footprint 27 cm = size 10</td><td>The Librarian (7)</td></tr>
+    <tr><td>Q1 where at 2:15</td><td>Clue 2 · Ghostbuster Lab: "seen in hall at 2:15"</td><td>The Principal (in a meeting)</td></tr>
+    <tr><td>Q4 what they wore</td><td>Clue 3 · Cipher Room: "snagged my orange sweater"</td><td>The Custodian (blue)</td></tr>
+    <tr><td>Q5 squishies</td><td>Clue 4 · Mummy Witness: the thief loves squishies</td><td>The Gym Teacher (doesn't get them)</td></tr>
   </tbody></table>
-  <div class="box"><h4>The deliberation script (2:28)</h4><p class="small" style="margin:0 0 4px">A squad says: "Everyone's crossed off." The Detective, loud enough for the room:</p>
-  <p class="small" style="margin:0 0 4px">"Then your list is too short. Four clues, four facts about the thief. Size 10. In the building at 2:15. Orange sweater. Loves squishies. Who else was in this building yesterday?" <em>(Let them guess. Someone will say the Chief. The Chief: "I am NOT a suspect.")</em></p>
-  <p class="small" style="margin:0 0 4px">"Chief, you filled out a statement form like everyone else. For completeness. I have it right here." <em>(Pin it to the board next to the other four. Read it aloud, including the crossed-out "Don't be ridiculous.")</em> "Detectives, check it against your clues. Then write your warrants."</p>
-  <p class="small muted" style="margin:0">Optional tell for the sharp ones: the Chief wears something orange all party (a scarf from the bin is fine), and keeps one squishy on her desk, "confiscated."</p></div>
+  <div class="box" style="margin-top:12px"><h4>The deliberation script (2:28)</h4><p class="small" style="margin:0 0 4px">A squad says "everyone's crossed off." The Detective, for the room: "Then your list is too short. Size 10. In the building at 2:15. Orange sweater. Loves squishies. Who else was in this building yesterday?" <em>(Someone says the Chief. The Chief: "I am NOT a suspect.")</em></p>
+  <p class="small" style="margin:0">"Chief, you filled out a statement form like everyone else. For completeness. I have it right here." <em>(Pin it beside the other four. Read it aloud, including the crossed-out "Don't be ridiculous.")</em> "Detectives, check it against your clues. Then write your warrants."</p></div>
 </section>"""
-
-forms_parts = []
-for f in FORMS:
-    forms_parts.append(answer_card(f) + "\n" + form_page(f))
-forms_section = forms_guide + "\n" + "\n".join(forms_parts)
 
 forms_html = f"""<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Suspect Statement Forms</title>
+<title>Suspect Statement Form</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../print.css">
-<style>{FORM_CSS} .footer-note.static {{ position: static; margin-top: 12px; }}</style>
+<style>{FORM_CSS}</style>
 </head>
 <body>
-<div class="toolbar"><b>📝 Suspect statement forms</b><span class="muted">11 pages · the guide, then an answer card and a blank form for each of the five suspects</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/suspect-statement-forms.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
-{forms_section}
+<div class="toolbar"><b>📝 Suspect statement form</b><span class="muted">1 page · the same form for every suspect. Print five.</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/suspect-statement-forms.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
+{form_page()}
 </body>
 </html>
 """
 (SRC / "suspect-statement-forms.html").write_text(forms_html)
 print("generated suspect-statement-forms.html")
 
-SCRIPT_CSS = ".script p { font-size: 10.5pt; margin: 0 0 .4em; } .script .dir { font-size: 9.5pt; } .adj { background: rgba(255,217,61,.45); border-radius: 3px; padding: 0 2px; } .yours { font-size: 8.5pt; margin: 0 0 8px; padding: 7px 12px; line-height: 1.35; } .footer-note.static { position: static; margin-top: 12px; } .ask { font-size: 9pt; line-height: 1.4; } .yours h4 { font-size: 10pt; margin-bottom: 4px; } .yours ul { margin: 0; padding-left: 1.1em; } .yours li { margin-bottom: 2px; } .yours .legend { margin: 4px 0 0; font-weight: 800; } .script .card { margin-bottom: 8px; }"
+SCRIPT_CSS = ".script p { font-size: 10pt; margin: 0 0 .35em; } .script .dir { font-size: 9pt; } .adj { background: rgba(255,217,61,.45); border-radius: 3px; padding: 0 2px; } .yours { font-size: 8pt; margin: 0 0 8px; padding: 6px 12px; line-height: 1.3; } .footer-note.static { position: static; margin-top: 10px; } .ask { font-size: 8.5pt; line-height: 1.35; } .yours h4 { font-size: 10pt; margin-bottom: 4px; } .yours ul { margin: 0; padding-left: 1.1em; } .yours li { margin-bottom: 2px; } .yours .legend { margin: 4px 0 0; font-weight: 800; } .script .card { margin-bottom: 8px; }"
 def shell(title, toolbar_label, toolbar_note, pdf_name, body):
     return f"""<!doctype html>
 <html lang="en">
@@ -263,23 +227,22 @@ def shell(title, toolbar_label, toolbar_note, pdf_name, body):
 </html>
 """
 
-# the recruiter's pack: guide, four scripts, then the forms guide and every answer card + form
-vs = shell("Video Scripts and Statement Forms · The recruiter's pack", "🎥 Video scripts + statement forms",
-           "the recording guide, all four scripts, then the statement-form guide and an answer card + form for each of the five suspects",
-           "video-scripts", guide + "\n" + "\n".join(parts) + "\n" + forms_section)
+# the recruiter's pack: guide, answer key, four scripts, the blank form
+vs = shell("Video Scripts · The recruiter's pack", "🎥 Video scripts (recruiter's pack)",
+           "the recording guide, the statement answer key, all four scripts, and the one-page statement form",
+           "video-scripts", guide + "\n" + answer_key_page() + "\n" + "\n".join(parts) + "\n" + form_page())
 (SRC / "video-scripts.html").write_text(vs)
 print("generated video-scripts.html")
 
-# one file per suspect: guide, that person's script, their answer card, their blank form
-SOLO = [("ivs1", "script-principal", "The Principal", "principal"), ("ivs3", "script-gym-teacher", "The Gym Teacher", "gym-teacher"),
-        ("ivs4", "script-librarian", "The Librarian", "librarian"), ("ivs5", "script-chief", "The Chief (teacher)", "chief")]
-for (id_, when, note), (id2, fname, who, fkey) in zip(scripts, SOLO):
+# one file per suspect: guide, that person's script (its box lists their form answers), the blank form
+SOLO = [("ivs1", "script-principal", "The Principal"), ("ivs3", "script-gym-teacher", "The Gym Teacher"),
+        ("ivs4", "script-librarian", "The Librarian"), ("ivs5", "script-chief", "The Chief (teacher)")]
+for (id_, when, note), (id2, fname, who) in zip(scripts, SOLO):
     assert id_ == id2
     part = parts[[x[0] for x in scripts].index(id_)]
-    f = next(x for x in FORMS if x["key"] == fkey)
-    solo = shell(f"Video Script and Statement Form · {who}", f"🎥 {who}",
-                 "the recording guide, this person's script, their answer card, and a blank statement form. Send just this file.",
-                 fname, guide + "\n" + part + "\n" + answer_card(f) + "\n" + form_page(f))
+    solo = shell(f"Video Script · {who}", f"🎥 {who}",
+                 "the recording guide, this person's script, and the one-page statement form. Send just this file.",
+                 fname, guide + "\n" + part + "\n" + form_page())
     (SRC / f"{fname}.html").write_text(solo)
     print("generated", fname + ".html")
 

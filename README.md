@@ -11,8 +11,9 @@ Live site: https://smark11.github.io/room-parent/
 - `index.html` — home: what a room parent does, key dates, countdown to the next event
 - `events/index.html` — events hub
 - `events/halloween.html` — **The Case of the Missing Candy**, the fully built Halloween whodunit:
-  research, eleven concepts, story, four suspects, four video scripts, run of show, four stations,
-  finale, snacks, decor, inclusion, crew, budget, downloads, printables, checklist, backup plans
+  research, eleven concepts, story, how the deduction works, four suspects, four video scripts,
+  run of show, four stations, finale, snacks, decor, inclusion, crew, budget, downloads, printables,
+  checklist, backup plans
 - `events/secret-agent.html` — **Operation: Fourth Grade**, the Secret Agent Academy party
 - `resources.html` — field-trip chaperone guide, sign-up templates, message templates
 - `party.html` — redirect to the secret-agent page (old link)
@@ -26,8 +27,9 @@ To rebuild after editing (needs Google Chrome installed):
 
     python3 printables/build.py
 
-The script also regenerates `printables/halloween/video-scripts.html` from the four scripts on
-`events/halloween.html`, so edit scripts there.
+The script also regenerates `printables/halloween/video-scripts.html`, the four `script-*.html`
+files, and `suspect-statement-forms.html` from the scripts on `events/halloween.html` and the
+`FORMS` table at the top of `build.py`. Edit scripts on the page and suspect answers in `FORMS`.
 
 ## Personalize it
 

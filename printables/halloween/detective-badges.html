@@ -10,20 +10,20 @@
   .sheet { display: grid; grid-template-columns: 1fr 1fr; gap: .25in .3in; }
   .badge { width: 3.5in; height: 2.3in; border: 2.5px solid #111; border-radius: 14px; overflow: hidden; background: #fff; font-family: "Fredoka", sans-serif; display: grid; grid-template-rows: auto 1fr; break-inside: avoid; position: relative; }
   .badge .top { background: #5b21b6; color: #ffd93d; padding: 5px 12px; display: flex; justify-content: space-between; letter-spacing: .08em; font-size: 6.5pt; text-transform: uppercase; white-space: nowrap; }
-  .badge .body { display: grid; grid-template-columns: .95in 1fr; gap: 10px; padding: 9px 12px; }
-  .badge .photo { width: .95in; height: 1.15in; border: 2.5px solid #fff; box-shadow: 0 0 0 1.5px #111; border-radius: 5px; background: #bae6fd; overflow: hidden; }
+  .badge .body { display: grid; grid-template-columns: 1.5in 1fr; gap: 11px; padding: 7px 11px 7px 8px; }
+  .badge .photo { width: 1.5in; height: 1.8in; border: 2.5px solid #fff; box-shadow: 0 0 0 1.5px #111; border-radius: 5px; background: #bae6fd; overflow: hidden; }
   .badge .photo img { width: 100%; height: 100%; display: block; object-fit: cover; }
-  .badge .field { font-size: 6.5pt; letter-spacing: .1em; text-transform: uppercase; color: #777; margin-top: 4px; }
-  .badge .value { border-bottom: 1.5px solid #111; height: 1.15em; }
+  .badge .field { font-size: 6.5pt; letter-spacing: .1em; text-transform: uppercase; color: #777; margin-top: 5px; }
+  .badge .value { border-bottom: 1.5px solid #111; height: 1.3em; }
   .badge .stamp2 { position: absolute; right: 10px; bottom: 7px; transform: rotate(-10deg); border: 2px solid #e04e4e; color: #e04e4e; padding: 0 6px; font-size: 7.5pt; letter-spacing: .1em; border-radius: 3px; opacity: .85; }
-  .badge .hole { position: absolute; left: 50%; top: 24px; width: 14px; height: 5px; border: 1.5px solid #bbb; border-radius: 3px; transform: translateX(-50%); background: #fff; }
+  .badge .hole { position: absolute; left: 62%; top: 24px; width: 14px; height: 5px; border: 1.5px solid #bbb; border-radius: 3px; transform: translateX(-50%); background: #fff; }
   .intro { margin-bottom: 14px; }
 </style>
 </head>
 <body>
 <div class="toolbar"><b>🪪 Detective ID badges</b><span class="muted">4 pages · 24 badges (20 kids + 4 spares), 6 per page</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/detective-badges.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
 <script>
-const badge = () => `<div class="badge"><div class="top"><span>🔎 Mrs. Driscoll's Detective Bureau</span><span>Junior</span></div><div class="hole"></div>
+const badge = () => `<div class="badge"><div class="top"><span>🔎 Driscoll Detective Bureau</span><span>Junior</span></div><div class="hole"></div>
 <div class="body"><div class="photo"><img src="../../assets/detective-photo.svg" alt=""></div><div>
 <div class="field">Detective name</div><div class="value"></div>
 <div class="field">Squad</div><div class="value"></div>

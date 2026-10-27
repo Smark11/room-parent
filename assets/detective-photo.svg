@@ -1,31 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 116" role="img" aria-label="Detective ID photo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" role="img" aria-label="Detective ID photo: a ghost in a fedora holding a magnifying glass">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0f2fe"/><stop offset="1" stop-color="#bae6fd"/></linearGradient>
-    <clipPath id="frame"><rect width="96" height="116"/></clipPath>
+    <clipPath id="frame"><rect width="100" height="120"/></clipPath>
   </defs>
-  <rect width="96" height="116" fill="url(#bg)"/>
-  <g stroke="#7dd3fc" stroke-width="1.2">
-    <line x1="0" y1="18" x2="96" y2="18"/><line x1="0" y1="42" x2="96" y2="42"/><line x1="0" y1="66" x2="96" y2="66"/><line x1="0" y1="90" x2="96" y2="90"/>
+  <rect width="100" height="120" fill="url(#bg)"/>
+  <g stroke="#7dd3fc" stroke-width="1.3">
+    <line x1="0" y1="16" x2="100" y2="16"/><line x1="0" y1="40" x2="100" y2="40"/><line x1="0" y1="64" x2="100" y2="64"/><line x1="0" y1="88" x2="100" y2="88"/><line x1="0" y1="112" x2="100" y2="112"/>
   </g>
   <g stroke="#7dd3fc" stroke-width="1" opacity=".7">
-    <line x1="0" y1="30" x2="10" y2="30"/><line x1="0" y1="54" x2="10" y2="54"/><line x1="0" y1="78" x2="10" y2="78"/><line x1="0" y1="102" x2="10" y2="102"/>
-    <line x1="86" y1="30" x2="96" y2="30"/><line x1="86" y1="54" x2="96" y2="54"/><line x1="86" y1="78" x2="96" y2="78"/><line x1="86" y1="102" x2="96" y2="102"/>
+    <line x1="0" y1="28" x2="8" y2="28"/><line x1="0" y1="52" x2="8" y2="52"/><line x1="0" y1="76" x2="8" y2="76"/><line x1="0" y1="100" x2="8" y2="100"/>
+    <line x1="92" y1="28" x2="100" y2="28"/><line x1="92" y1="52" x2="100" y2="52"/><line x1="92" y1="76" x2="100" y2="76"/><line x1="92" y1="100" x2="100" y2="100"/>
   </g>
   <g font-family="Fredoka, Nunito, Arial, sans-serif" font-size="6.5" font-weight="700" fill="#38bdf8">
-    <text x="3" y="16">6'</text><text x="3" y="40">5'</text><text x="3" y="64">4'</text><text x="3" y="88">3'</text>
+    <text x="2.5" y="14">6'</text><text x="2.5" y="38">5'</text><text x="2.5" y="62">4'</text><text x="2.5" y="86">3'</text><text x="2.5" y="110">2'</text>
   </g>
   <g clip-path="url(#frame)">
-    <path d="M8 120 C8 94 24 85 48 85 C72 85 88 94 88 120 Z" fill="#1e1b4b"/>
-    <path d="M39 85 L48 103 L57 85 L53 83 L48 95 L43 83 Z" fill="#5b21b6"/>
-    <rect x="42" y="70" width="12" height="18" fill="#1e1b4b"/>
-    <circle cx="48" cy="58" r="17" fill="#1e1b4b"/>
-    <path d="M17 46 C26 41 70 41 79 46 C70 51 26 51 17 46 Z" fill="#0b0a24"/>
-    <path d="M31 46.5 C30 31 36 25 48 25 C60 25 66 31 65 46.5 Z" fill="#0b0a24"/>
-    <path d="M31.2 41 C38 38.2 58 38.2 64.8 41 L65 46.5 L31 46.5 Z" fill="#ffd93d"/>
-    <line x1="63" y1="86" x2="53" y2="100" stroke="#0b0a24" stroke-width="7.5" stroke-linecap="round"/>
-    <line x1="63" y1="86" x2="53" y2="100" stroke="#ffd93d" stroke-width="4.5" stroke-linecap="round"/>
-    <circle cx="70" cy="75" r="12.5" fill="#ffffff" fill-opacity=".6" stroke="#0b0a24" stroke-width="6"/>
-    <circle cx="70" cy="75" r="12.5" fill="none" stroke="#ffd93d" stroke-width="3.2"/>
-    <path d="M62.5 71.5 a9.5 9.5 0 0 1 7 -5.5" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <!-- ghost -->
+    <path d="M19 62 C19 38 32 26 50 26 C68 26 81 38 81 62 L81 114 L73 106 L65 114 L57 106 L50 114 L43 106 L35 114 L27 106 L19 114 Z" fill="#ffffff" stroke="#1e1b4b" stroke-width="3" stroke-linejoin="round"/>
+    <!-- cheeks -->
+    <ellipse cx="33" cy="72" rx="5" ry="3" fill="#fecdd3"/><ellipse cx="67" cy="72" rx="5" ry="3" fill="#fecdd3"/>
+    <!-- eyes -->
+    <ellipse cx="39" cy="62" rx="5.5" ry="7.5" fill="#1e1b4b"/><ellipse cx="61" cy="62" rx="5.5" ry="7.5" fill="#1e1b4b"/>
+    <circle cx="41" cy="59" r="2" fill="#fff"/><circle cx="63" cy="59" r="2" fill="#fff"/>
+    <!-- one raised eyebrow -->
+    <path d="M54 49 Q61 45 68 50" stroke="#1e1b4b" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M32 51 Q39 49 45 51" stroke="#1e1b4b" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- sly smile -->
+    <path d="M41 80 Q50 88 59 79" stroke="#1e1b4b" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- fedora -->
+    <path d="M9 38 C22 31 78 31 91 38 C78 45 22 45 9 38 Z" fill="#0b0a24"/>
+    <path d="M27 38.5 C26 20 34 11 50 11 C66 11 74 20 73 38.5 Z" fill="#0b0a24"/>
+    <path d="M27.3 32 C37 28.6 63 28.6 72.7 32 L73 38.5 L27 38.5 Z" fill="#ffd93d"/>
+    <!-- magnifying glass -->
+    <line x1="68" y1="104" x2="54" y2="120" stroke="#0b0a24" stroke-width="8" stroke-linecap="round"/>
+    <line x1="68" y1="104" x2="54" y2="120" stroke="#ffd93d" stroke-width="4.5" stroke-linecap="round"/>
+    <circle cx="77" cy="92" r="14" fill="#ffffff" fill-opacity=".55" stroke="#0b0a24" stroke-width="6.5"/>
+    <circle cx="77" cy="92" r="14" fill="none" stroke="#ffd93d" stroke-width="3.4"/>
+    <path d="M68.5 88 a11 11 0 0 1 8 -6.5" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round"/>
   </g>
 </svg>

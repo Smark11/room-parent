@@ -79,7 +79,7 @@ for id_, when, note in scripts:
 guide = '''<section class="page">
   <span class="eyebrow">Send with the script</span>
   <h1>Self-recording guide</h1>
-  <p class="muted small" style="margin-bottom:8px">Reality-TV confessional style: you sit alone and talk to the camera, deadpan. No interviewer, so prop up your own phone and record it in five minutes whenever you have a free moment.</p>
+  <p class="muted small" style="margin-bottom:8px">Reality-TV confessional style: you sit and talk to the camera, deadpan. No interviewer, so prop up your own phone, or let whoever sent you this hold it, and record it in five minutes whenever you have a free moment.</p>
   <div class="two">
     <div class="box soft"><h4>Setup</h4><ul class="small" style="margin:0">
       <li><strong>Nobody films you.</strong> Prop your phone horizontal against a stack of books or a mug, at face height, about an arm's length away. Sit in a chair against a plain wall or a bookshelf.</li>
@@ -90,9 +90,9 @@ guide = '''<section class="page">
       <li><strong>The script:</strong> read it from a second screen or a printout taped just under the phone. The <em>(beat)</em> and <em>(pause)</em> marks are where the laughs live. Hold them longer than feels natural.</li>
       <li><strong>Takes:</strong> two max. Send the slightly flubbed one. Don't edit anything.</li>
       <li><strong>Length:</strong> 60 to 90 seconds. Start recording, wait two seconds, begin. Stop two seconds after the last line.</li>
-      <li><strong>Send it:</strong> text or AirDrop the raw video to the room parent. They add the title card and load it onto the classroom laptop.</li></ul></div>
+      <li><strong>Send it:</strong> text or AirDrop the raw video to whoever sent you the script. They add the title card and load it onto the classroom laptop.</li></ul></div>
   </div>
-  <div class="box soft" style="margin-top:4px"><h4>Making the script yours</h4><p class="small" style="margin:0">Words in <span style="background:rgba(255,217,61,.45);padding:0 3px;border-radius:3px">[brackets]</span> are adjustable. The box at the top of your script sorts them: a few <strong>must match the case file</strong> (your clothing color, the time, a shoe size), because the kids cross-check what you say against printed evidence; if one of those is wrong for you, tell the room parent before recording and they'll change it everywhere. The rest is flavor. Swap in your real life, your real subject, your real habits. True details get the biggest laughs.</p></div>
+  <div class="box soft" style="margin-top:4px"><h4>Making the script yours</h4><p class="small" style="margin:0">Words in <span style="background:rgba(255,217,61,.45);padding:0 3px;border-radius:3px">[brackets]</span> are adjustable. The box at the top of your script sorts them: a few <strong>must match the case file</strong> (your clothing color, the time, a shoe size), because the kids cross-check what you say against printed evidence; if one of those is wrong for you, tell whoever sent you this before recording and it gets changed everywhere. Your clothing color only has to be true for "yesterday": wear it on camera if you can, but the lines work if you can't. The rest is flavor. Swap in your real life, your real subject, your real habits. True details get the biggest laughs.</p></div>
   <h3 style="margin-top:10px;font-size:12pt">The ask (email or text to each suspect)</h3>
   <div class="box soft ask" style="white-space:pre-wrap">''' + html.escape(ask or "") + '''</div>
   <p class="small muted">The Custodian gets a different ask: "You're a suspect who declined to comment. That's it. That's the whole job. Please act shifty in the hallway on Oct 30."</p>
@@ -109,7 +109,7 @@ vs = f'''<!doctype html>
 <style>.script p {{ font-size: 10.5pt; margin: 0 0 .4em; }} .script .dir {{ font-size: 9.5pt; }} .adj {{ background: rgba(255,217,61,.45); border-radius: 3px; padding: 0 2px; }} .yours {{ font-size: 8.5pt; margin: 0 0 8px; padding: 7px 12px; line-height: 1.35; }} .footer-note.static {{ position: static; margin-top: 12px; }} .ask {{ font-size: 9pt; line-height: 1.4; }} .yours h4 {{ font-size: 10pt; margin-bottom: 4px; }} .yours ul {{ margin: 0; padding-left: 1.1em; }} .yours li {{ margin-bottom: 2px; }} .yours .legend {{ margin: 4px 0 0; font-weight: 800; }} .script .card {{ margin-bottom: 8px; }}</style>
 </head>
 <body>
-<div class="toolbar"><b>🎥 Video scripts</b><span class="muted">5 pages · the self-recording guide and all four confessional scripts (generated from the plan page)</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/video-scripts.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
+<div class="toolbar"><b>🎥 Video scripts</b><span class="muted">7 pages · the recording guide, the ask, and all four confessional scripts, for whoever recruits the cast</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/video-scripts.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
 {guide}
 {chr(10).join(parts)}
 </body>
@@ -125,7 +125,7 @@ for (id_, when, note), (id2, fname, who) in zip(scripts, SOLO):
     assert id_ == id2
     part = parts[[x[0] for x in scripts].index(id_)]
     solo = vs.replace("<title>Video Scripts · Four confessionals</title>", f"<title>Video Script · {who}</title>")
-    solo = solo.replace("<b>🎥 Video scripts</b><span class=\"muted\">5 pages · the self-recording guide and all four confessional scripts (generated from the plan page)</span>",
+    solo = solo.replace("<b>🎥 Video scripts</b><span class=\"muted\">7 pages · the recording guide, the ask, and all four confessional scripts, for whoever recruits the cast</span>",
                         f"<b>🎥 Video script · {who}</b><span class=\"muted\">2 pages · the self-recording guide and this person's script only. Send just this file.</span>")
     solo = solo.replace(f"../../downloads/halloween/video-scripts.pdf", f"../../downloads/halloween/{fname}.pdf")
     solo = solo.replace(chr(10).join(parts), part)

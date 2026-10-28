@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../print.css">
 <style>
-  .letter { background: var(--cream); border: 1px solid #d9cfb8; padding: .38in .6in .36in; height: 9.9in; font-size: 12.5pt; line-height: 1.45; position: relative; display: flex; flex-direction: column; }
+  .letter { background: var(--cream); border: 1px solid #d9cfb8; padding: .38in .6in .36in; height: 9.9in; font-size: 12pt; line-height: 1.42; position: relative; display: flex; flex-direction: column; }
   .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
   .hq { font-family: "Fredoka", sans-serif; letter-spacing: .14em; text-transform: uppercase; font-size: 9pt; color: var(--muted); }
   .to { font-family: "Fredoka", sans-serif; font-size: 20pt; margin: 6px 0 8px; }
@@ -17,7 +17,11 @@
   .big { font-weight: 800; letter-spacing: .04em; }
   .test { border: 2.5px solid var(--ink); border-radius: 12px; padding: 10px 16px; margin: 8px 0 10px; background: #fff; }
   .test .lab { font-family: "Fredoka", sans-serif; font-size: 10pt; letter-spacing: .12em; text-transform: uppercase; color: var(--coral-dark); }
-  .code { font-family: ui-monospace, Menlo, monospace; font-size: 14pt; font-weight: 800; letter-spacing: 0; white-space: nowrap; margin: 4px 0 8px; }
+  .code { display: flex; flex-wrap: wrap; gap: 4px 22px; margin: 6px 0 4px; }
+  .code .word { display: flex; gap: 5px; }
+  .code .ch { display: flex; flex-direction: column; align-items: center; width: .34in; }
+  .code .ch .n { font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 10.5pt; line-height: 1; color: var(--coral-dark); }
+  .code .ch .l { width: 100%; height: .26in; border-bottom: 2px solid var(--ink); margin-top: 2px; }
   .test .t { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center; padding: 5px 0; }
   .test .t + .t { border-top: 1.5px dashed #d9cfb8; }
   .test .t p { margin: 0; font-size: 12pt; line-height: 1.4; }
@@ -50,15 +54,15 @@
     </ol>
     <p>That is all we can put on paper. Paper gets read by the wrong people. Before your first assignment, you train. Three tests. Pencil only.</p>
     <div class="test">
-      <div class="t"><div><div class="lab">Test 1 · Crack it. (A=1, B=2, C=3 … Z=26)</div><div class="code">8-1-16-16-25 &nbsp;&nbsp;&nbsp; 8-1-12-12-15-23-5-5-14</div></div></div>
+      <div class="t"><div><div class="lab">Test 1 · Crack it. A=1, B=2, C=3 … Z=26. One letter per line.</div><div class="code"><span class="word"><span class="ch"><span class="n">8</span><span class="l"></span></span><span class="ch"><span class="n">1</span><span class="l"></span></span><span class="ch"><span class="n">16</span><span class="l"></span></span><span class="ch"><span class="n">16</span><span class="l"></span></span><span class="ch"><span class="n">25</span><span class="l"></span></span></span><span class="word"><span class="ch"><span class="n">8</span><span class="l"></span></span><span class="ch"><span class="n">1</span><span class="l"></span></span><span class="ch"><span class="n">12</span><span class="l"></span></span><span class="ch"><span class="n">12</span><span class="l"></span></span><span class="ch"><span class="n">15</span><span class="l"></span></span><span class="ch"><span class="n">23</span><span class="l"></span></span><span class="ch"><span class="n">5</span><span class="l"></span></span><span class="ch"><span class="n">5</span><span class="l"></span></span><span class="ch"><span class="n">14</span><span class="l"></span></span></span></div></div></div>
       <div class="t"><p><span class="lab">Test 2 · Leave your mark.</span><br>Scribble the gray box black with your pencil. Rub your thumb in it. Press your thumb in the white box, flat, no wiggling. That is your fingerprint. No two detectives on Earth have the same one. Keep it; HQ may need it.</p><div class="pair"><div class="scribble">scribble<br>here</div><div class="printbox">thumb here</div></div></div>
       <div class="t"><p><span class="lab">Test 3 · Become someone else.</span><br>Pick a codename. Write it on the Detective ID you were just handed, then fill in the rest. The color of your ID is your squad. Learn your squad number. Guard the ID.</p></div>
     </div>
     <p>Passed all three? Good. You're in. Until the briefing, say nothing.</p>
     <div class="logi">
-      <p><b>Briefing</b><span>Friday, October 30, 1:30 PM. Right here. Lights will be off. That's normal.</span></p>
+      <p><b>Briefing</b><span>Friday, October 30, 1:30 PM. Right here.</span></p>
       <p><b>Wear</b><span>your costume and your ID. The best detectives work undercover.</span></p>
-      <p><b>Tell</b><span><span class="big">NOBODY.</span> Especially not older siblings. They crack under pressure.</span></p>
+      <p><b>Tell</b><span><span class="big">NOBODY.</span> Not even older siblings. They crack under pressure.</span></p>
     </div>
     <div class="sig">
       <div class="name">— Agent Shadow<small>(Real name: classified.)</small></div>

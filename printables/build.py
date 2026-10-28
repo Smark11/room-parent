@@ -104,7 +104,7 @@ guide = '''<section class="page">
 FORMS = [
   dict(key="principal", who="The Principal", form="S-1",
        q1="In a meeting. A meeting about the next meeting.", q2="Everyone at the meeting. All nine of them.",
-       q3="9", q4="An blue sweater. School spirit.", q5="Tick LOVE THEM. Explain: “I own ONE. It’s a cat. It’s for stress.”",
+       q3="9", q4="A blue sweater. School spirit.", q5="Tick LOVE THEM. Explain: “I own ONE. It’s a cat. It’s for stress.”",
        q6="Tick DEFINE “INSIDE.”", q7="No. Absolutely not. No.", q8="I did not say squishies.",
        note="Your meeting alibi is what clears you (Clue 2, the timeline). Everything else keeps you looking guilty, which is the job."),
   dict(key="reading-specialist", who="The Reading Specialist", form="S-2",
@@ -208,7 +208,7 @@ forms_html = f"""<!doctype html>
 (SRC / "suspect-statement-forms.html").write_text(forms_html)
 print("generated suspect-statement-forms.html")
 
-SCRIPT_CSS = ".script p { font-size: 10pt; margin: 0 0 .35em; } .script .dir { font-size: 9pt; } .adj { background: rgba(255,217,61,.45); border-radius: 3px; padding: 0 2px; } .yours { font-size: 8pt; margin: 0 0 8px; padding: 6px 12px; line-height: 1.3; } .footer-note.static { position: static; margin-top: 10px; } .ask { font-size: 8.5pt; line-height: 1.35; } .yours h4 { font-size: 10pt; margin-bottom: 4px; } .yours ul { margin: 0; padding-left: 1.1em; } .yours li { margin-bottom: 2px; } .yours .legend { margin: 4px 0 0; font-weight: 800; } .script .card { margin-bottom: 8px; }"
+SCRIPT_CSS = ".script p { font-size: 10pt; margin: 0 0 .3em; line-height: 1.35; } .script .dir { font-size: 9pt; } .adj { background: rgba(255,217,61,.45); border-radius: 3px; padding: 0 2px; } .yours { font-size: 8pt; margin: 0 0 8px; padding: 6px 12px; line-height: 1.3; } .footer-note.static { position: static; margin-top: 4px; } .ask { font-size: 8.5pt; line-height: 1.35; } .yours h4 { font-size: 10pt; margin-bottom: 4px; } .yours ul { margin: 0; padding-left: 1.1em; } .yours li { margin-bottom: 2px; } .yours .legend { margin: 4px 0 0; font-weight: 800; } .script .card { margin-bottom: 8px; }"
 def shell(title, toolbar_label, toolbar_note, pdf_name, body):
     return f"""<!doctype html>
 <html lang="en">

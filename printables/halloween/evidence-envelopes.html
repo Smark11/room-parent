@@ -15,27 +15,25 @@
   .clue .fact { font-size: 14pt; line-height: 1.4; font-weight: 800; }
   .clue .fact em { color: var(--grape); }
   .clue .q { margin-top: auto; border-top: 1.5px dashed var(--line); padding-top: 8px; font-size: 10pt; color: var(--ink-2); }
-  .clue .squad { position: absolute; right: 14px; bottom: 12px; font-family: "Fredoka", sans-serif; color: var(--squad); font-size: 11pt; }
+  .clue .squad { position: absolute; right: 14px; bottom: 12px; font-family: "Fredoka", sans-serif; color: var(--muted); font-size: 9pt; }
   .fronts { display: grid; grid-template-columns: repeat(2, 1fr); gap: .2in; }
   .front { border: 2px solid var(--ink); border-radius: 10px; padding: 10px 14px; height: 1.55in; text-align: center; display: flex; flex-direction: column; justify-content: center; }
   .front .big { font-family: "Fredoka", sans-serif; font-size: 18pt; font-weight: 600; letter-spacing: .06em; }
-  .front .sq { color: var(--squad); font-weight: 800; }
+  .front .sq { color: var(--grape); font-weight: 800; }
 </style>
 </head>
 <body>
-<div class="toolbar"><b>✉️ Evidence envelopes</b><span class="muted">6 pages · 16 clue cards (4 clues × 4 squads) and 16 envelope fronts</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/evidence-envelopes.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
+<div class="toolbar"><b>✉️ Evidence envelopes</b><span class="muted">2 pages · four clue cards and four envelope fronts. Print four copies (one set per squad).</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/evidence-envelopes.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
 <script>
-const SQ = [["Nightshade", "nightshade"], ["Raven", "raven"], ["Specter", "specter"], ["Ember", "ember"]];
 const CLUES = [
   { n: 1, st: "Evidence Lab", title: "The footprint", fact: `The footprint by the shelf measures <em>26 cm</em>. On the Bureau chart, that is a <em>size 9</em> shoe.`, q: "Check the statements: who on your list does NOT wear a size 9? Cross them off." },
   { n: 2, st: "Ghostbuster Lab", title: "The timeline", fact: `The ghosts gave it up: the thief was <em>seen in the hall at 2:15</em>, right when the Jar disappeared.`, q: "Check the statements: who on your list was NOT in the building at 2:15? Cross them off." },
   { n: 3, st: "Cipher Room", title: "The orange thread", fact: `In the thief's own hidden words: <em>"Snagged my orange sweater on the shelf. Worth it."</em>`, q: "Check the statements: who on your list did NOT wear orange yesterday? Cross them off." },
   { n: 4, st: "Mummy Witness", title: "The sour ones", fact: `The witness is certain. Whoever took the Jar <em>loves squishies</em>. Nobody treats candy like that.`, q: "Check the statements: who on your list does NOT love squishies? Cross them off. Who's left? If nobody, tell the Detective." },
 ];
-let out = CLUES.map(c => `<section class="page"><div class="cards">${SQ.map(s => `<div class="clue ${s[1]}"><div class="top"><span>Sealed evidence · Case #1031</span><span>Station ${c.n} · ${c.st}</span></div><div class="n">${c.n}</div><h3>Clue ${c.n}: ${c.title}</h3><div class="fact">${c.fact}</div><div class="q"><strong>Detective's question:</strong> ${c.q}</div><div class="squad">Squad ${s[0]}</div></div>`).join("")}</div></section>`).join("");
-const fronts = [];
-CLUES.forEach(c => SQ.forEach(s => fronts.push(`<div class="front ${s[1]}"><div class="small muted" style="letter-spacing:.14em;text-transform:uppercase">Sealed evidence · Do not open until the bell</div><div class="big">CLUE ${c.n}</div><div class="sq">Squad ${s[0]}</div><div class="tiny muted">Station ${c.n} · ${c.st}</div></div>`)));
-out += `<section class="page"><span class="eyebrow">Envelope fronts</span><h1>Evidence envelope labels</h1><p class="small muted">Sixteen envelopes: four clues times four squads. Print, cut, glue to small envelopes, seal a matching clue card inside each. Each station lead gets the four envelopes for their clue and hands the right one to each squad at the bell.</p><div class="fronts">${fronts.slice(0, 8).join("")}</div></section><section class="page"><div class="fronts">${fronts.slice(8).join("")}</div><div class="box soft" style="margin-top:14px"><h4>Stuffing guide</h4><p class="small" style="margin:0">Station 1 lead: Clue 1 × Nightshade, Raven, Specter, Ember. Station 2 lead: Clue 2 × four. Station 3 lead: Clue 3 × four. Station 4 lead: Clue 4 × four. The clue card is the same for all four squads at a station; the squad name just keeps the envelopes from getting mixed up.</p></div></section>`;
+let out = `<section class="page"><div class="cards">${CLUES.map(c => `<div class="clue"><div class="top"><span>Sealed evidence · Case #1031</span><span>Station ${c.n} · ${c.st}</span></div><div class="n">${c.n}</div><h3>Clue ${c.n}: ${c.title}</h3><div class="fact">${c.fact}</div><div class="q"><strong>Detective's question:</strong> ${c.q}</div><div class="squad">One per squad</div></div>`).join("")}</div></section>`;
+const fronts = CLUES.map(c => `<div class="front"><div class="small muted" style="letter-spacing:.14em;text-transform:uppercase">Sealed evidence · Do not open until the bell</div><div class="big">CLUE ${c.n}</div><div class="sq">Station ${c.n}</div><div class="tiny muted">${c.st}</div></div>`);
+out += `<section class="page"><span class="eyebrow">Envelope fronts</span><h1>Evidence envelope labels</h1><p class="small muted">Print this file four times. Cut, glue each front to a small envelope, and seal the matching clue card inside. You end up with sixteen envelopes: each station lead gets four of their clue, one for every squad that comes through.</p><div class="fronts">${fronts.join("")}</div><div class="box soft" style="margin-top:14px"><h4>Stuffing guide</h4><p class="small" style="margin:0">Station 1 lead: four CLUE 1 envelopes. Station 2 lead: four CLUE 2. Station 3 lead: four CLUE 3. Station 4 lead: four CLUE 4. Every squad gets the same card at a station, so nothing can get mixed up.</p></div></section>`;
 document.write(out);
 </script>
 </body>

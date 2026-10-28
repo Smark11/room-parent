@@ -26,13 +26,13 @@
 const badge = () => `<div class="badge"><div class="top"><span>🔎 Driscoll Detective Bureau</span><span>Junior</span></div><div class="hole"></div>
 <div class="body"><div class="photo"><img src="../../assets/detective-photo.svg" alt=""></div><div>
 <div class="field">Detective name</div><div class="value"></div>
-<div class="field">Squad</div><div class="value"></div>
+<div class="field">Codename</div><div class="value"></div>
 <div class="field">Specialty</div><div class="value"></div>
 <div class="field">Favorite candy</div><div class="value"></div>
 </div></div><div class="stamp2">TOP SECRET</div></div>`;
 let out = "";
 for (let p = 0; p < 4; p++) {
-  out += `<section class="page">${p === 0 ? '<p class="intro small muted">Print on cardstock. Cut on the badge edges. Slide into a badge holder, punch the top and add yarn, or tape to a shirt. The photo is printed, so kids only fill in the four lines. Send one home blank in the case file; hand spares out at the door.</p>' : ''}<div class="sheet">${Array.from({ length: 6 }, badge).join("")}</div></section>`;
+  out += `<section class="page">${p === 0 ? '<p class="intro small muted">Print on cardstock. Cut on the badge edges. Slide into a badge holder, punch the top and add yarn, or tape to a shirt. The photo is printed, so kids only fill in the four lines. Send one home blank with the recruitment letter; hand spares out at the door.</p>' : ''}<div class="sheet">${Array.from({ length: 6 }, badge).join("")}</div></section>`;
 }
 document.write(out);
 </script>

@@ -104,7 +104,7 @@ guide = '''<section class="page">
 FORMS = [
   dict(key="principal", who="The Principal", form="S-1",
        q1="Off campus at a meeting, 1:00 to 3:00. A meeting about the next meeting.", q2="Everyone at the meeting. All nine of them.",
-       q3="9", q4="A blue sweater. School spirit.", q5="Tick LOVE THEM. Explain: “I own ONE. It’s a cat. It’s for stress.”",
+       q3="9", q4="A blue sweater. School spirit.", q5="Tick LOVE THEM. Explain: “I own ONE. An avocado. It was a gift. It’s for stress.”",
        q6="Tick DEFINE “INSIDE.”", q7="No. Absolutely not. No.", q8="I did not say squishies.",
        note="Your meeting alibi is what clears you (Clue 2, the timeline). Everything else keeps you looking guilty, which is the job."),
   dict(key="reading-specialist", who="The Reading Specialist", form="S-2",

@@ -28,7 +28,7 @@ To rebuild after editing (needs Google Chrome installed):
     python3 printables/build.py
 
 The script also regenerates `printables/halloween/video-scripts.html`, the four `script-*.html`
-files, and `suspect-statement-forms.html` from the scripts on `events/halloween.html` and the
+files, and `suspect-statement-forms.html; `evidence-chart.html` is the one-page clue-by-suspect matrix` from the scripts on `events/halloween.html` and the
 `FORMS` table at the top of `build.py`. Edit scripts on the page and suspect answers in `FORMS`.
 
 ## Personalize it

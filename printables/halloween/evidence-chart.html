@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evidence Chart · How the clues add up</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../print.css">
+<style>
+  h1 { margin: 2px 0 2px; }
+  .lead { color: var(--muted); margin: 0 0 8px; font-size: 9pt; }
+  table.ev { width: 100%; border-collapse: separate; border-spacing: 0; table-layout: fixed; font-size: 9pt; }
+  table.ev th, table.ev td { border: 1.5px solid var(--line); padding: 4px 6px; vertical-align: top; }
+  table.ev thead th { background: #f3f0e8; font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 9.5pt; text-align: center; }
+  table.ev thead th:first-child { text-align: left; width: 1.75in; }
+  table.ev th.chief { background: rgba(255,107,107,.18); border-color: var(--coral); }
+  table.ev td.clue { background: #fcfbf7; }
+  table.ev td.clue .st { font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 10pt; display: block; }
+  table.ev td.clue .fact { display: block; margin-top: 2px; }
+  table.ev td.clue .q { display: block; margin-top: 2px; color: var(--muted); font-size: 7.5pt; }
+  td.ok, td.no { text-align: center; }
+  td.ok { background: rgba(46,196,182,.12); }
+  td.no { background: rgba(255,107,107,.16); }
+  td.ok .m, td.no .m { font-family: "Fredoka", sans-serif; font-size: 12pt; line-height: 1; display: block; }
+  td.ok .m { color: var(--teal-dark); } td.no .m { color: var(--coral-dark); }
+  td .w { display: block; font-size: 7.5pt; margin-top: 1px; }
+  td.no .w { font-weight: 800; color: var(--coral-dark); }
+  td.chiefcol { background: rgba(255,107,107,.07); }
+  tr.result td { background: #111; color: #fff; text-align: center; font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 9.5pt; }
+  tr.result td:first-child { text-align: left; }
+  tr.result td.chiefcol { background: var(--coral); }
+  .flow { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr; gap: 6px; align-items: stretch; margin: 8px 0 8px; }
+  .flow .step { border: 2px solid var(--ink); border-radius: 10px; padding: 5px 8px; font-size: 8pt; }
+  .flow .step b { display: block; font-family: "Fredoka", sans-serif; font-size: 9.5pt; margin-bottom: 1px; }
+  .flow .arrow { align-self: center; font-size: 16pt; color: var(--muted); }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+  .two .box { margin: 0; }
+  .two ol, .two ul { margin: 0; padding-left: 1.1em; font-size: 7.8pt; line-height: 1.28; }
+  .two li { margin-bottom: 2px; }
+</style>
+</head>
+<body>
+<div class="toolbar"><b>🧮 Evidence chart</b><span class="muted">1 page · four clues, five suspects, one survivor</span><span class="grow"></span><a href="../../events/halloween.html#howitworks">← Back to the plan</a><a href="../../downloads/halloween/evidence-chart.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
+<section class="page">
+  <span class="eyebrow">Detective only · Case #1031</span>
+  <h1>How the evidence adds up</h1>
+  <p class="lead">Rule of the Bureau: a clue never says who did it. It says who <strong>didn't</strong>. Each station produces one fact; the squad checks it against the suspects' own statement forms and crosses off whoever doesn't match. Four stations, four suspects, four cross-offs. Whoever is left wasn't on the list.</p>
+
+  <div class="flow">
+    <div class="step"><b>1 · Do the station</b>Measure, fizz, decode, or wrap. Every kid has a job.</div><div class="arrow">→</div>
+    <div class="step"><b>2 · Open the clue</b>The sealed envelope states the fact in plain words.</div><div class="arrow">→</div>
+    <div class="step"><b>3 · Check the statements</b>Read the four forms on the wall (and the case file table).</div><div class="arrow">→</div>
+    <div class="step"><b>4 · Cross one off</b>Whoever doesn't match is cleared. Write "Clears:" in the log.</div>
+  </div>
+
+  <table class="ev">
+    <thead><tr>
+      <th>Clue</th><th>🏫 Principal</th><th>📖 Reading Specialist</th><th>📚 Librarian</th><th>🧹 Custodian</th><th class="chief">🍎 The Chief<br><span class="small" style="font-weight:400">not on the list</span></th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td class="clue"><span class="st">👣 1 · Evidence Lab</span><span class="fact">Footprint by the shelf: 26 cm = <strong>size 9</strong>.</span><span class="q">Who does NOT wear a 9?</span></td>
+        <td class="ok"><span class="m">✓</span><span class="w">size 9</span></td>
+        <td class="ok"><span class="m">✓</span><span class="w">size 9</span></td>
+        <td class="no"><span class="m">✗</span><span class="w">size 7 · cleared</span></td>
+        <td class="ok"><span class="m">✓</span><span class="w">size 9</span></td>
+        <td class="ok chiefcol"><span class="m">✓</span><span class="w">size 9</span></td>
+      </tr>
+      <tr>
+        <td class="clue"><span class="st">👻 2 · Ghostbuster Lab</span><span class="fact">Ghost words: SEEN IN HALL AT <strong>2:15</strong>. Now the time is known.</span><span class="q">Who was NOT in the building at 2:15?</span></td>
+        <td class="no"><span class="m">✗</span><span class="w">off campus 1:00–3:00 · cleared</span></td>
+        <td class="ok"><span class="m">✓</span><span class="w">reading room, all afternoon</span></td>
+        <td class="ok"><span class="m">✓</span><span class="w">shelving 2:00–2:30</span></td>
+        <td class="ok"><span class="m">✓</span><span class="w">in the building, all afternoon</span></td>
+        <td class="ok chiefcol"><span class="m">✓</span><span class="w">classroom, all afternoon</span></td>
+      </tr>
+      <tr>
+        <td class="clue"><span class="st">📜 3 · Cipher Room</span><span class="fact">Hidden P.S. on the note: "Snagged my <strong>blue sweater</strong> on the shelf."</span><span class="q">Who did NOT wear blue?</span></td>
+        <td class="ok"><span class="m">✓</span><span class="w">blue sweater</span></td>
+        <td class="ok"><span class="m">✓</span><span class="w">blue, school color</span></td>
+        <td class="ok"><span class="m">✓</span><span class="w">blue cardigan</span></td>
+        <td class="no"><span class="m">✗</span><span class="w">gray · cleared</span></td>
+        <td class="ok chiefcol"><span class="m">✓</span><span class="w">blue sweater</span></td>
+      </tr>
+      <tr>
+        <td class="clue"><span class="st">🧻 4 · Mummy Witness</span><span class="fact">The witness: squeezed one, whispered "so satisfying." The thief <strong>loves squishies</strong>.</span><span class="q">Who does NOT love squishies?</span></td>
+        <td class="ok"><span class="m">✓</span><span class="w">loves them ("just one")</span></td>
+        <td class="no"><span class="m">✗</span><span class="w">doesn't get them · cleared</span></td>
+        <td class="ok"><span class="m">✓</span><span class="w">one on every cart</span></td>
+        <td class="ok"><span class="m">✓</span><span class="w">loves them (records)</span></td>
+        <td class="ok chiefcol"><span class="m">✓</span><span class="w">"Fine. Love them."</span></td>
+      </tr>
+      <tr class="result">
+        <td>After four clues</td>
+        <td>Cleared by Clue 2</td><td>Cleared by Clue 4</td><td>Cleared by Clue 1</td><td>Cleared by Clue 3</td><td class="chiefcol">Matches all four</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="two">
+    <div class="box"><h4>2:28 · How the Chief gets caught</h4><ol>
+      <li>A squad says "everyone's crossed off." The Detective: "Then your list is too short. Size 9, in the building at 2:15, blue sweater, loves squishies. Who else was in this building yesterday?"</li>
+      <li>The Detective produces the <strong>fifth statement form</strong>, the Chief's, "filled out for completeness," and pins it to the board.</li>
+      <li>The squad checks it line by line: size 9 ✓, classroom all afternoon ✓, blue sweater ✓, "Don't be ridiculous" crossed out, "Fine. Love them." ✓</li>
+      <li>Warrants name the Chief. Video 4 is her confession, and it tells them where the squishies are: "you'd need a very special light."</li>
+    </ol></div>
+    <div class="box soft"><h4>The breadcrumbs (for the kid who asks "how were we supposed to know?")</h4><ul>
+      <li>The opening: "Chief Mrs. Driscoll has assured me she is not a suspect."</li>
+      <li>After Video 1, the Chief's live flinch: "Candy. ...Mostly. Candy-adjacent."</li>
+      <li>The Principal's slip: who told <em>him</em> they were squishies?</li>
+      <li>The Librarian saw someone hugging something "like a puppy," which is exactly what the witness saw.</li>
+      <li>The Librarian's whisper: "check their feet."</li>
+    </ul></div>
+  </div>
+  <div class="footer-note"><span>Mrs. Driscoll's Detective Bureau · The Case of the Missing Candy</span><span>✓ matches the clue · ✗ doesn't match, cross them off</span></div>
+</section>
+</body>
+</html>

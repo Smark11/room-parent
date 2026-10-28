@@ -484,3 +484,14 @@ footer .container { display: flex; justify-content: space-between; flex-wrap: wr
 .dl p { font-size: .93rem; color: var(--ink-2); flex: 1; }
 .dl .meta { margin: 6px 0 4px; }
 .dl .btn-row { margin-top: 8px; gap: 8px; }
+
+/* Evidence chart (how-it-works) */
+.evchart { width: 100%; border-collapse: separate; border-spacing: 0; font-size: .88rem; }
+.evchart th, .evchart td { border: 1px solid var(--line); padding: 8px 10px; vertical-align: top; text-align: center; }
+.evchart th:first-child, .evchart td:first-child { text-align: left; }
+.evchart thead th { background: var(--surface-2, rgba(127,127,127,.08)); font-family: "Fredoka", sans-serif; font-weight: 600; }
+.evchart td.ok { background: rgba(46,196,182,.12); color: var(--teal-dark, #0f766e); font-weight: 700; }
+.evchart td.no { background: rgba(255,107,107,.16); color: var(--coral-dark, #b91c1c); font-weight: 800; }
+.evchart th.chief, .evchart td.chief { box-shadow: inset 3px 0 0 var(--coral, #ff6b6b); }
+.evchart tr.result td { background: #111; color: #fff; font-family: "Fredoka", sans-serif; font-weight: 600; }
+.evchart tr.result td.chief { background: var(--coral, #ff6b6b); color: #111; }

@@ -2,23 +2,28 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Recruitment Letter · Goes home in the case file</title>
+<title>Recruitment Letter · Detective training sheet</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../print.css">
 <style>
-  .letter { background: var(--cream); border: 1px solid #d9cfb8; padding: .42in .6in .4in; height: 9.9in; font-size: 13pt; line-height: 1.5; position: relative; display: flex; flex-direction: column; }
+  .letter { background: var(--cream); border: 1px solid #d9cfb8; padding: .38in .6in .36in; height: 9.9in; font-size: 12.5pt; line-height: 1.45; position: relative; display: flex; flex-direction: column; }
   .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
   .hq { font-family: "Fredoka", sans-serif; letter-spacing: .14em; text-transform: uppercase; font-size: 9pt; color: var(--muted); }
   .to { font-family: "Fredoka", sans-serif; font-size: 20pt; margin: 6px 0 8px; }
   .to .blank { min-width: 2.6in; }
-  .letter p { margin: 0 0 7px; }
+  .letter p { margin: 0 0 6px; }
   .letter ol { margin: 4px 0 8px; padding-left: 1.3em; } .letter li { margin-bottom: 4px; }
   .big { font-weight: 800; letter-spacing: .04em; }
   .test { border: 2.5px solid var(--ink); border-radius: 12px; padding: 10px 16px; margin: 8px 0 10px; background: #fff; }
   .test .lab { font-family: "Fredoka", sans-serif; font-size: 10pt; letter-spacing: .12em; text-transform: uppercase; color: var(--coral-dark); }
   .code { font-family: ui-monospace, Menlo, monospace; font-size: 14pt; font-weight: 800; letter-spacing: 0; white-space: nowrap; margin: 4px 0 8px; }
-  .mirror { display: inline-block; transform: scaleX(-1); font-family: "Fredoka", sans-serif; font-size: 22pt; font-weight: 700; letter-spacing: .08em; margin-top: 2px; }
+  .test .t { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center; padding: 5px 0; }
+  .test .t + .t { border-top: 1.5px dashed #d9cfb8; }
+  .test .t p { margin: 0; font-size: 12pt; line-height: 1.4; }
+  .scribble { width: 1.05in; height: .85in; border: 2px solid var(--ink); border-radius: 8px; background: repeating-linear-gradient(45deg, #fff 0 2px, #e9e4d6 2px 4px); display: grid; place-items: center; font-family: "Fredoka", sans-serif; font-size: 8pt; color: var(--muted); text-align: center; }
+  .printbox { width: 1.05in; height: .85in; border: 2px solid var(--ink); border-radius: 8px; background: #fff; display: grid; place-items: end center; font-family: "Fredoka", sans-serif; font-size: 8pt; color: var(--muted); padding-bottom: 3px; }
+  .pair { display: flex; gap: 8px; }
   .logi { border-top: 1.5px dashed #c9bfa6; padding-top: 8px; margin-top: 2px; }
   .logi b { font-family: "Fredoka", sans-serif; letter-spacing: .08em; text-transform: uppercase; font-size: 10pt; color: var(--grape); white-space: nowrap; }
   .logi p { display: grid; grid-template-columns: 1.25in 1fr; gap: 6px; align-items: baseline; }
@@ -30,33 +35,30 @@
 </style>
 </head>
 <body>
-<div class="toolbar"><b>✉️ Recruitment letter</b><span class="muted">1 page · goes home in the manila folder five days before the party (kid-tested, five drafts)</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/recruitment-letter.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
+<div class="toolbar"><b>✉️ Recruitment letter</b><span class="muted">1 page · handed out with the blank badge at detective training, the day before or the first ten minutes Friday. Nothing goes home.</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/recruitment-letter.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
 <section class="page fill">
   <div class="letter">
     <div class="stampbox"><span class="stamp" style="font-size:9.5pt">Classified</span></div>
     <div class="top"><span class="tape"><span>Top secret · Your eyes only</span></span><span class="hq">Mrs. Driscoll's Detective HQ</span></div>
     <div class="to">DETECTIVE <span style="font-size:13pt;color:var(--muted)">(yes, you)</span>:</div>
-    <p>You have been selected. On Friday, our classroom becomes Detective HQ. There is a <span class="big">MYSTERY</span> to solve, and you are on the case.</p>
+    <p>You have been selected. This classroom is now Detective HQ. There is a <span class="big">MYSTERY</span> to solve, and you are on the case.</p>
     <p style="margin-bottom:2px"><strong>Your questions, answered:</strong></p>
     <ol>
       <li>What is the mystery? <span class="big">CLASSIFIED.</span></li>
       <li>Who is involved? <span class="big">CLASSIFIED.</span></li>
       <li>What will you need? Sharp eyes. A good memory. A codename.</li>
     </ol>
-    <p>That is all we can put on paper. Paper gets read by the wrong people.</p>
-    <p>Between now and Friday, train. Here is your first test.</p>
+    <p>That is all we can put on paper. Paper gets read by the wrong people. Before your first assignment, you train. Three tests. Pencil only.</p>
     <div class="test">
-      <div class="lab">Crack it. (A=1, B=2, C=3 … Z=26)</div>
-      <div class="code">8-1-16-16-25 &nbsp;&nbsp;&nbsp; 8-1-12-12-15-23-5-5-14</div>
-      <div class="lab">Bonus, for the fast ones. Hold this up to a mirror:</div>
-      <div><span class="mirror">TRUST NO ONE</span></div>
+      <div class="t"><div><div class="lab">Test 1 · Crack it. (A=1, B=2, C=3 … Z=26)</div><div class="code">8-1-16-16-25 &nbsp;&nbsp;&nbsp; 8-1-12-12-15-23-5-5-14</div></div></div>
+      <div class="t"><p><span class="lab">Test 2 · Leave your mark.</span><br>Scribble the gray box black with your pencil. Rub your thumb in it. Press your thumb in the white box, flat, no wiggling. That is your fingerprint. No two detectives on Earth have the same one. Keep it; HQ may need it.</p><div class="pair"><div class="scribble">scribble<br>here</div><div class="printbox">thumb here</div></div></div>
+      <div class="t"><p><span class="lab">Test 3 · Become someone else.</span><br>Pick a codename. Write it on the Detective ID you were just handed, then fill in the rest. The color of your ID is your squad. Learn your squad number. Guard the ID.</p></div>
     </div>
-    <p>Got both? Good. You're in. On Friday, everything becomes clear. Until then, say nothing.</p>
+    <p>Passed all three? Good. You're in. Until the briefing, say nothing.</p>
     <div class="logi">
-      <p><b>Report to HQ</b><span>Friday, October 30, 1:30 PM.</span></p>
-      <p><b>Bring</b><span>your Detective ID (it came with this letter), filled in, with a codename. Its color is your squad. Guard it.</span></p>
-      <p><b>Wear</b><span>your costume. The best detectives work undercover.</span></p>
-      <p><b>Tell</b><span>your family. <span class="big">NOBODY ELSE.</span> Especially not older siblings. They crack under pressure.</span></p>
+      <p><b>Briefing</b><span>Friday, October 30, 1:30 PM. Right here. Lights will be off. That's normal.</span></p>
+      <p><b>Wear</b><span>your costume and your ID. The best detectives work undercover.</span></p>
+      <p><b>Tell</b><span><span class="big">NOBODY.</span> Especially not older siblings. They crack under pressure.</span></p>
     </div>
     <div class="sig">
       <div class="name">— Agent Shadow<small>(Real name: classified.)</small></div>

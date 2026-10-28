@@ -33,7 +33,7 @@ const badge = (sq) => `<div class="badge" style="border-color:${sq[2]}"><div cla
 </div></div><div class="stamp2">TOP SECRET</div></div>`;
 let out = "";
 for (let p = 0; p < 4; p++) {
-  out += `<section class="page">${p === 0 ? '<p class="intro small muted">Print on cardstock. Cut on the badge edges. Slide into a badge holder, punch the top and add yarn, or tape to a shirt. One page per squad: the color and the squad number are on the badge, so the badge is the squad. Each kid takes home a blank badge in their squad\'s color with the recruitment letter; the spares go to the door.</p>' : ''}<div class="sheet">${Array.from({ length: 6 }, () => badge(SQUADS[p])).join("")}</div></section>`;
+  out += `<section class="page">${p === 0 ? '<p class="intro small muted">Print on cardstock. Cut on the badge edges. Slide into a badge holder, punch the top and add yarn, or tape to a shirt. One page per squad: the color and the squad number are on the badge, so the badge is the squad. Kids fill them in at detective training (with the training sheet), the day before or the first ten minutes Friday; badges stay at school. The spares go to the door.</p>' : ''}<div class="sheet">${Array.from({ length: 6 }, () => badge(SQUADS[p])).join("")}</div></section>`;
 }
 document.write(out);
 </script>

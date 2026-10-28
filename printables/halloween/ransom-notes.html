@@ -24,11 +24,20 @@
   .pigpen-key { display: grid; grid-template-columns: repeat(9, 1fr); gap: 16px 8px; margin-top: 14px; }
   .pp-key-item { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 16pt; font-family: "Fredoka", sans-serif; }
   .how { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
+  .cards6 { display: grid; grid-template-columns: 1fr 1fr; gap: .2in; }
+  .thc { border: 1.5px dashed #999; border-radius: 8px; padding: 8px 10px; height: 2.55in; display: flex; flex-direction: column; break-inside: avoid; }
+  .thc .hd { display: flex; justify-content: space-between; font-size: 7.5pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 800; }
+  .thc .lines { flex: 1; margin: 6px 0; background: repeating-linear-gradient(transparent 0 .34in, #c9c2b0 .34in calc(.34in + 1px)); }
+  .thc .mini { display: grid; grid-template-columns: repeat(13, 1fr); gap: 2px 1px; }
+  .thc .mini .pp-key-item { font-size: 6.5pt; gap: 0; }
+  .thc .mini .pp-g, .thc .mini .pp-g svg { width: 15px; height: 15px; }
+  .thc .mini .pp-key-item b { font-weight: 800; }
+  .thc .tip { font-size: 7pt; color: var(--muted); margin-top: 2px; }
   .ans .pp-g, .ans .pp-g svg { width: 18px; height: 18px; } .ans .pp-word { gap: 2px; margin: 2px 8px 2px 0; } .ans .pp-txt { font-size: 12px; line-height: 18px; }
 </style>
 </head>
 <body>
-<div class="toolbar"><b>📜 Ransom notes</b><span class="muted">3 pages · the note (print four), the Pigpen key, the answer</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/ransom-notes.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
+<div class="toolbar"><b>📜 Ransom notes</b><span class="muted">4 pages · the note (print four), the Pigpen key, the answer, take-home message cards (print four)</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/ransom-notes.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
 <script>
 const NOTES = [
   ["", "", "YOU WILL NEVER FIND IT"],
@@ -61,6 +70,9 @@ ${NOTES.map(n => `<tr><td><strong>${n[2]}</strong> (5 words, 18 letters, one wor
   <li>Hint budget at the station: two free hints per squad. Make them ask. If a squad is stuck, give them the first word.</li>
 </ol>
 <p class="small muted">Want the note to say something else? Keep it to five words and edit the <code>data-text</code> in <code>printables/halloween/ransom-notes.html</code>; the glyphs redraw themselves.</p>
+</section>`;
+out += `<section class="page"><span class="eyebrow grape">Take-home message cards</span><h1>Secret message cards</h1><p class="small muted" style="margin:0 0 10px">Print this page four times (six cards each, 24 total), cut on the dashed lines. At the station each detective writes a one-line message in Pigpen on the lines, then takes the card home. The mini key at the bottom means anyone at home can crack it; no blacklight needed. Fast squads write a second one for the next squad.</p>
+<div class="cards6">${Array.from({ length: 6 }, () => `<div class="thc"><div class="hd"><span>Top secret · from Detective ________</span><span>Case #1031</span></div><div class="lines"></div><div class="mini" data-pigpen-key></div><div class="tip">Crack it: each symbol is the shape of the cell its letter lives in. A dot means the second set.</div></div>`).join("")}</div>
 </section>`;
 document.write(out);
 </script>

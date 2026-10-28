@@ -13,6 +13,7 @@
   .squadtag { text-align: right; }
   .squadtag .name { font-family: "Fredoka", sans-serif; font-size: 16pt; font-weight: 600; color: var(--squad); margin-left: auto; }
   .page { --squad: #5b21b6; }
+  table.sus th:nth-child(4), table.sus td:nth-child(4) { min-width: 1.6in; }
   .facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 8px; }
   .facts div { border: 1.5px solid var(--line); border-radius: 8px; padding: 6px 8px; font-size: 9.5pt; }
   .facts b { display: block; font-family: "Fredoka", sans-serif; font-size: 8pt; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
@@ -59,18 +60,18 @@ function casePage() {
     <div class="squadtag"><div class="case">Squad</div><div class="name" style="border-bottom:2px solid #111;min-width:1.2in;height:1.3em"></div><div class="small muted" style="white-space:nowrap">1 purple · 2 black · 3 teal · 4 orange</div></div>
   </div>
   <div class="facts">
-    <div><b>Time of theft</b>2:15 PM, yesterday</div><div><b>Location</b>Mrs. Driscoll's room, the high shelf</div><div><b>Door</b>Locked</div><div><b>Window</b>Shut</div>
+    <div><b>Time of theft</b>Afternoon. Exactly when? <span class="blank" style="min-width:.55in"></span></div><div><b>Location</b>Mrs. Driscoll's room, the high shelf</div><div><b>Door</b>Locked</div><div><b>Window</b>Shut</div>
   </div>
   <div class="stolen"><span>Item stolen:</span><span class="big">CANDY</span><span class="muted small">If new information comes in, cross it out and correct it:</span><span class="blank long"></span></div>
 
   <div class="sec">Suspects</div>
   <table class="sus">
-    <thead><tr><th></th><th>Name</th><th>Shoe size</th><th>Where at 2:15?</th><th>Wore yesterday</th><th>Squishies?</th><th>Statement</th></tr></thead>
+    <thead><tr><th></th><th>Name</th><th>Shoe size</th><th>Yesterday afternoon</th><th>Wore yesterday</th><th>Squishies?</th><th>Statement</th></tr></thead>
     <tbody>
-      <tr><td><span class="chk"></span></td><td><strong>The Principal</strong></td><td>9</td><td>At a meeting</td><td>Blue</td><td>Loves them ("just one")</td><td>Video 1</td></tr>
-      <tr><td><span class="chk"></span></td><td><strong>The Reading Specialist</strong></td><td>9</td><td>In the building</td><td>Blue</td><td>Doesn't get them</td><td>Video 2</td></tr>
-      <tr><td><span class="chk"></span></td><td><strong>The Librarian</strong></td><td>7</td><td>In the building</td><td>Blue</td><td>Loves them</td><td>Video 3</td></tr>
-      <tr><td><span class="chk"></span></td><td><strong>The Custodian</strong></td><td>9</td><td>In the building</td><td>Gray</td><td>Loves them</td><td><em>Declined to comment</em></td></tr>
+      <tr><td><span class="chk"></span></td><td><strong>The Principal</strong></td><td>9</td><td>Off campus, 1:00 to 3:00</td><td>Blue</td><td>Loves them ("just one")</td><td>Video 1</td></tr>
+      <tr><td><span class="chk"></span></td><td><strong>The Reading Specialist</strong></td><td>9</td><td>Reading room, all afternoon</td><td>Blue</td><td>Doesn't get them</td><td>Video 2</td></tr>
+      <tr><td><span class="chk"></span></td><td><strong>The Librarian</strong></td><td>7</td><td>Shelving, 2:00 to 2:30</td><td>Blue</td><td>Loves them</td><td>Video 3</td></tr>
+      <tr><td><span class="chk"></span></td><td><strong>The Custodian</strong></td><td>9</td><td>In the building, all afternoon</td><td>Gray</td><td>Loves them</td><td><em>Declined to comment</em></td></tr>
       <tr><td><span class="chk"></span></td><td><span class="blank" style="min-width:1.3in"></span><div class="tiny muted">Anyone else who fits?</div></td><td><span class="blank short"></span></td><td><span class="blank" style="min-width:.9in"></span></td><td><span class="blank short"></span></td><td><span class="blank" style="min-width:.9in"></span></td><td></td></tr>
     </tbody>
   </table>

@@ -29,10 +29,10 @@
 <div class="toolbar"><b>📌 Suspect posters</b><span class="muted">5 pages · four WANTED posters for the wall, plus a suspect board</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/suspect-posters.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
 <script>
 const S = [
-  { who: "The Principal", role: "Runs the building. Allegedly.", face: "🏫", shoe: "9", at: "At a meeting", wears: "Blue", sq: "Loves them (\"just one\")", st: "Statement recorded · plays after Station 1" },
-  { who: "The Reading Specialist", role: "Keeper of the chapter books.", face: "📖", shoe: "9", at: "In the building", wears: "Blue", sq: "Doesn't get them", st: "Statement recorded · plays after Station 2" },
-  { who: "The Librarian", role: "Shelves alone from 2:00 to 2:30. Every day.", face: "📚", shoe: "7", at: "In the building", wears: "Blue", sq: "Loves them", st: "Statement recorded · plays after Station 3" },
-  { who: "The Custodian", role: "Has keys to every door. Including that one.", face: "🧹", shoe: "9", at: "In the building", wears: "Gray", sq: "Loves them", st: null },
+  { who: "The Principal", role: "Runs the building. Allegedly.", face: "🏫", shoe: "9", at: "Off campus, 1:00 to 3:00", wears: "Blue", sq: "Loves them (\"just one\")", st: "Statement recorded · plays after Station 1" },
+  { who: "The Reading Specialist", role: "Keeper of the chapter books.", face: "📖", shoe: "9", at: "Reading room, all afternoon", wears: "Blue", sq: "Doesn't get them", st: "Statement recorded · plays after Station 2" },
+  { who: "The Librarian", role: "Shelves alone from 2:00 to 2:30. Every day.", face: "📚", shoe: "7", at: "Shelving, 2:00 to 2:30", wears: "Blue", sq: "Loves them", st: "Statement recorded · plays after Station 3" },
+  { who: "The Custodian", role: "Has keys to every door. Including that one.", face: "🧹", shoe: "9", at: "In the building, all afternoon", wears: "Gray", sq: "Loves them", st: null },
 ];
 let out = S.map(s => `<section class="page fill"><div class="poster">
   <h1 class="wanted">WANTED</h1>
@@ -40,16 +40,16 @@ let out = S.map(s => `<section class="page fill"><div class="poster">
   <div class="photo">${s.face}<small>Tape the suspect's photo here (they pick the photo)</small></div>
   <div class="who">${s.who}</div>
   <div class="role">${s.role}</div>
-  <div class="facts"><div><b>Shoe size</b><span>${s.shoe}</span></div><div><b>At 2:15 PM</b><span>${s.at}</span></div><div><b>Wore yesterday</b><span>${s.wears}</span></div><div><b>Squishies</b><span>${s.sq}</span></div></div>
+  <div class="facts"><div><b>Shoe size</b><span>${s.shoe}</span></div><div><b>Yesterday afternoon</b><span>${s.at}</span></div><div><b>Wore yesterday</b><span>${s.wears}</span></div><div><b>Squishies</b><span>${s.sq}</span></div></div>
   <div class="statement">${s.st ? s.st : '<span class="declined">Declined to comment</span><div class="small muted" style="margin-top:6px">Refused to record a statement. Make of that what you will.</div>'}</div>
 </div></section>`).join("");
 out += `<section class="page"><span class="eyebrow">For the wall</span><h1>Suspect board</h1><p class="muted">Tape this beside the four posters and the four handwritten statement forms. Squads can check it from across the room during deliberation. The Chief is not on it. That's the point.</p>
-<table class="board"><thead><tr><th>Suspect</th><th>Shoe size</th><th>Where at 2:15?</th><th>Wore yesterday</th><th>Squishies?</th><th>Statement</th></tr></thead><tbody>
+<table class="board"><thead><tr><th>Suspect</th><th>Shoe size</th><th>Yesterday afternoon</th><th>Wore yesterday</th><th>Squishies?</th><th>Statement</th></tr></thead><tbody>
 ${S.map(s => `<tr><td>${s.face} ${s.who}</td><td>${s.shoe}</td><td>${s.at}</td><td>${s.wears}</td><td>${s.sq}</td><td>${s.st ? "Recorded" : "<em>Declined</em>"}</td></tr>`).join("")}
 <tr><td><span class="blank" style="min-width:1.6in"></span></td><td><span class="blank short"></span></td><td><span class="blank"></span></td><td><span class="blank short"></span></td><td><span class="blank"></span></td><td></td></tr>
 </tbody></table>
 <div class="box soft" style="margin-top:18px"><h4>How the board works</h4><p class="small" style="margin:0">Every station produces one fact about the thief. A fact doesn't point at anyone; it rules people out. Cross off whoever doesn't match. Footprint: size 9. Ghost words: seen in the hall at 2:15. Ransom P.S.: blue sweater. Witness: loves squishies. Every fact comes from the suspects' own statement forms, hanging right here. When everyone on the list is crossed off, ask the only question left: who else filled out a statement? The Detective has one more.</p></div>
-<div class="box dashed" style="margin-top:14px"><h4>Detective only: the answer key</h4><p class="small" style="margin:0">Footprint clears the Librarian (size 7). Ghost words clear the Principal (at a meeting). Blue sweater clears the Custodian (gray). Loves squishies clears the Reading Specialist. The Chief matches all four, and her statement form (in the Detective's folder until 2:28) is the proof the kids pin up last. Cut this box off before you hang the board.</p></div>
+<div class="box dashed" style="margin-top:14px"><h4>Detective only: the answer key</h4><p class="small" style="margin:0">Footprint clears the Librarian (size 7). Ghost words clear the Principal (off campus 1:00 to 3:00). Blue sweater clears the Custodian (gray). Loves squishies clears the Reading Specialist. The Chief matches all four, and her statement form (in the Detective's folder until 2:28) is the proof the kids pin up last. Cut this box off before you hang the board.</p></div>
 </section>`;
 document.write(out);
 </script>

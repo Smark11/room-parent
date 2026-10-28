@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Recruitment Letter · Detective training sheet</title>
+<title>Recruitment Letter · Detective training sheet (2 sides)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../print.css">
@@ -36,10 +36,27 @@
   .sig .name small { display: block; font-family: "Nunito"; font-size: 9.5pt; color: var(--muted); font-weight: 400; }
   .sig .accept { font-weight: 800; font-size: 11pt; }
   .stampbox { position: absolute; right: .55in; top: .78in; }
+  .bonus { border: 2.5px solid var(--ink); border-radius: 12px; padding: 8px 16px 10px; background: #fff; margin: 8px 0 0; }
+  .bonus h3 { font-family: "Fredoka", sans-serif; font-size: 15pt; margin: 0 0 2px; }
+  .bonus .lab { font-family: "Fredoka", sans-serif; font-size: 10pt; letter-spacing: .12em; text-transform: uppercase; color: var(--coral-dark); }
+  .bonus p { font-size: 12pt; line-height: 1.4; margin: 0 0 5px; }
+  .obs { list-style: none; padding: 0; margin: 4px 0 0; counter-reset: q; }
+  .obs li { font-size: 11.5pt; display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: end; margin-bottom: 3px; counter-increment: q; }
+  .obs li::before { content: counter(q) "."; font-family: "Fredoka", sans-serif; color: var(--coral-dark); grid-row: 1; margin-right: -4px; }
+  .obs li { grid-template-columns: auto auto 1fr; }
+  .obs li span.ln { border-bottom: 1.5px solid var(--ink); height: .22in; min-width: 1.5in; }
+  .score { display: flex; gap: 14px; flex-wrap: wrap; font-size: 10.5pt; margin-top: 6px; }
+  .score b { font-family: "Fredoka", sans-serif; }
+  .key { display: grid; grid-template-columns: repeat(13, 1fr); gap: 3px; margin: 4px 0 6px; }
+  .key div { border: 1.5px solid var(--line); border-radius: 5px; text-align: center; font-size: 9.5pt; line-height: 1.15; padding: 2px 0; }
+  .key div b { display: block; font-family: "Fredoka", sans-serif; font-size: 11pt; }
+  .rule { border-bottom: 1.5px solid var(--ink); height: .3in; }
+  .rule + .rule { margin-top: 2px; }
+  .mini { font-family: "Fredoka", sans-serif; font-size: 9.5pt; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin: 8px 0 2px; }
 </style>
 </head>
 <body>
-<div class="toolbar"><b>✉️ Recruitment letter</b><span class="muted">1 page · handed out with the blank badge at detective training, the day before or the first ten minutes Friday. Nothing goes home.</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/recruitment-letter.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
+<div class="toolbar"><b>✉️ Recruitment letter</b><span class="muted">2 pages, print double-sided · the training sheet, plus two bonus tests on the back for early finishers. Handed out with the blank badge at detective training. Nothing goes home.</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/recruitment-letter.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
 <section class="page fill">
   <div class="letter">
     <div class="stampbox"><span class="stamp" style="font-size:9.5pt">Classified</span></div>
@@ -67,6 +84,40 @@
     <div class="sig">
       <div class="name">— Agent Shadow<small>(Real name: classified.)</small></div>
       <div class="accept">MISSION ACCEPTED. Sign your codename: <span class="blank" style="min-width:2in"></span></div>
+    </div>
+  </div>
+</section>
+<section class="page fill">
+  <div class="letter">
+    <div class="top"><span class="tape"><span>Advanced training</span></span><span class="hq">Mrs. Driscoll's Detective HQ</span></div>
+    <p style="margin-top:4px">Done already? Then you're faster than most. Fast is good. Careful is better. Two more tests. Pencil only. No talking, except in Test 5, and only in code.</p>
+    <div class="bonus">
+      <div class="lab">Test 4 · The room test</div>
+      <h3>Do not look up. Seriously. Eyes on this page.</h3>
+      <p>A detective notices everything, even things nobody asked about. Answer from memory. Then look up and check.</p>
+      <ol class="obs">
+        <li>How many windows are in this room?<span class="ln"></span></li>
+        <li>What color is the classroom door?<span class="ln"></span></li>
+        <li>Is there a clock? What time does it say?<span class="ln"></span></li>
+        <li>Name something on the Chief's desk.<span class="ln"></span></li>
+        <li>What is on the board right now?<span class="ln"></span></li>
+        <li>Shoes on the person to your left: what color?<span class="ln"></span></li>
+      </ol>
+      <div class="score"><span><b>6 right:</b> Eagle Eye.</span><span><b>4–5:</b> Sharp.</span><span><b>2–3:</b> Promising.</span><span><b>0–1:</b> You would walk past a dinosaur.</span></div>
+    </div>
+    <div class="bonus">
+      <div class="lab">Test 5 · Send a coded message</div>
+      <h3>Write a message in numbers. Trade with another finished detective. Crack theirs.</h3>
+      <p>Rules: numbers only, a dash between letters, a gap between words. Keep it kind. No real names; codenames are fine.</p>
+      <div class="key"><div><b>A</b>1</div><div><b>B</b>2</div><div><b>C</b>3</div><div><b>D</b>4</div><div><b>E</b>5</div><div><b>F</b>6</div><div><b>G</b>7</div><div><b>H</b>8</div><div><b>I</b>9</div><div><b>J</b>10</div><div><b>K</b>11</div><div><b>L</b>12</div><div><b>M</b>13</div><div><b>N</b>14</div><div><b>O</b>15</div><div><b>P</b>16</div><div><b>Q</b>17</div><div><b>R</b>18</div><div><b>S</b>19</div><div><b>T</b>20</div><div><b>U</b>21</div><div><b>V</b>22</div><div><b>W</b>23</div><div><b>X</b>24</div><div><b>Y</b>25</div><div><b>Z</b>26</div></div>
+      <div class="mini">Your message (in numbers)</div>
+      <div class="rule"></div><div class="rule"></div>
+      <div class="mini">The message you cracked (in letters)</div>
+      <div class="rule"></div><div class="rule"></div>
+    </div>
+    <div class="sig" style="margin-top:auto">
+      <div class="name">— Agent Shadow<small>(Still classified.)</small></div>
+      <div class="accept">Both done? Sit tight. Say nothing. Look innocent.</div>
     </div>
   </div>
 </section>

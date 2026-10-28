@@ -9,7 +9,7 @@
 <style>
   .sheet { display: grid; grid-template-columns: 1fr 1fr; gap: .25in .3in; }
   .badge { width: 3.5in; height: 2.3in; border: 2.5px solid #111; border-radius: 14px; overflow: hidden; background: #fff; font-family: "Fredoka", sans-serif; display: grid; grid-template-rows: auto 1fr; break-inside: avoid; position: relative; }
-  .badge .top { background: #5b21b6; color: #ffd93d; padding: 5px 12px; display: flex; justify-content: space-between; letter-spacing: .08em; font-size: 6.5pt; text-transform: uppercase; white-space: nowrap; }
+  .badge .top { padding: 5px 12px; display: flex; justify-content: space-between; letter-spacing: .08em; font-size: 6.5pt; text-transform: uppercase; white-space: nowrap; }
   .badge .body { display: grid; grid-template-columns: 1.5in 1fr; gap: 11px; padding: 7px 11px 7px 8px; }
   .badge .photo { width: 1.5in; height: 1.8in; border: 2.5px solid #fff; box-shadow: 0 0 0 1.5px #111; border-radius: 5px; background: #bae6fd; overflow: hidden; }
   .badge .photo img { width: 100%; height: 100%; display: block; object-fit: cover; }
@@ -21,9 +21,10 @@
 </style>
 </head>
 <body>
-<div class="toolbar"><b>🪪 Detective ID badges</b><span class="muted">4 pages · 24 badges (20 kids + 4 spares), 6 per page</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/detective-badges.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
+<div class="toolbar"><b>🪪 Detective ID badges</b><span class="muted">4 pages · one page per squad in its color, 6 badges each (5 kids + 1 spare)</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/detective-badges.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
 <script>
-const badge = () => `<div class="badge"><div class="top"><span>🔎 Driscoll Detective Bureau</span><span>Junior</span></div><div class="hole"></div>
+const SQUADS = [["1", "Purple", "#5b21b6", "#ffd93d"], ["2", "Black", "#111318", "#ffd93d"], ["3", "Teal", "#0f766e", "#ffffff"], ["4", "Orange", "#ea580c", "#111318"]];
+const badge = (sq) => `<div class="badge" style="border-color:${sq[2]}"><div class="top" style="background:${sq[2]};color:${sq[3]}"><span>🔎 Driscoll Detective Bureau</span><span>Squad ${sq[0]} · ${sq[1]}</span></div><div class="hole"></div>
 <div class="body"><div class="photo"><img src="../../assets/detective-photo.svg" alt=""></div><div>
 <div class="field">Detective name</div><div class="value"></div>
 <div class="field">Codename</div><div class="value"></div>
@@ -32,7 +33,7 @@ const badge = () => `<div class="badge"><div class="top"><span>🔎 Driscoll Det
 </div></div><div class="stamp2">TOP SECRET</div></div>`;
 let out = "";
 for (let p = 0; p < 4; p++) {
-  out += `<section class="page">${p === 0 ? '<p class="intro small muted">Print on cardstock. Cut on the badge edges. Slide into a badge holder, punch the top and add yarn, or tape to a shirt. The photo is printed, so kids only fill in the four lines. Send one home blank with the recruitment letter; hand spares out at the door.</p>' : ''}<div class="sheet">${Array.from({ length: 6 }, badge).join("")}</div></section>`;
+  out += `<section class="page">${p === 0 ? '<p class="intro small muted">Print on cardstock. Cut on the badge edges. Slide into a badge holder, punch the top and add yarn, or tape to a shirt. One page per squad: the color and the squad number are on the badge, so the badge is the squad. Each kid takes home a blank badge in their squad\'s color with the recruitment letter; the spares go to the door.</p>' : ''}<div class="sheet">${Array.from({ length: 6 }, () => badge(SQUADS[p])).join("")}</div></section>`;
 }
 document.write(out);
 </script>

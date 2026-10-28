@@ -107,10 +107,10 @@ FORMS = [
        q3="10", q4="An orange sweater. School spirit.", q5="Tick LOVE THEM. Explain: “I own ONE. It’s a cat. It’s for stress.”",
        q6="Tick DEFINE “INSIDE.”", q7="No. Absolutely not. No.", q8="I did not say squishies.",
        note="Your meeting alibi is what clears you (Clue 2, the timeline). Everything else keeps you looking guilty, which is the job."),
-  dict(key="gym-teacher", who="The Gym Teacher", form="S-2",
-       q1="The gym. Where I always am.", q2="The dodgeballs.",
+  dict(key="reading-specialist", who="The Reading Specialist", form="S-2",
+       q1="The reading room. Where I always am.", q2="Twenty-two chapter books. They don’t talk.",
        q3="10", q4="Orange. It’s a school color. Half the building wears orange.", q5="Tick DON’T GET THEM. Explain: “You squeeze it. It goes back. That’s it.”",
-       q6="Tick YES. Add: “To return a kickball. Once.”", q7="No. If I wanted to steal something, I’d steal a good jump rope.", q8="I just don’t understand the obsession these days.",
+       q6="Tick YES. Add: “To pull a reading group. Daily.”", q7="No. If I wanted to steal something, I’d steal a good chapter book.", q8="I just don’t understand the obsession these days.",
        note="Not getting squishies is what clears you (Clue 4, the witness). Don’t soften it."),
   dict(key="librarian", who="The Librarian", form="S-3",
        q1="Shelving. Alone. In the back. 2:00 to 2:30, every day.", q2="No witnesses. That sounded worse than I meant it to.",
@@ -183,7 +183,7 @@ def answer_key_page():
     <tr><td>Q3 shoe size</td><td>Clue 1 · Evidence Lab: footprint 27 cm = size 10</td><td>The Librarian (7)</td></tr>
     <tr><td>Q1 where at 2:15</td><td>Clue 2 · Ghostbuster Lab: "seen in hall at 2:15"</td><td>The Principal (in a meeting)</td></tr>
     <tr><td>Q4 what they wore</td><td>Clue 3 · Cipher Room: "snagged my orange sweater"</td><td>The Custodian (blue)</td></tr>
-    <tr><td>Q5 squishies</td><td>Clue 4 · Mummy Witness: the thief loves squishies</td><td>The Gym Teacher (doesn't get them)</td></tr>
+    <tr><td>Q5 squishies</td><td>Clue 4 · Mummy Witness: the thief loves squishies</td><td>The Reading Specialist (doesn't get them)</td></tr>
   </tbody></table>
   <div class="box" style="margin-top:12px"><h4>The deliberation script (2:28)</h4><p class="small" style="margin:0 0 4px">A squad says "everyone's crossed off." The Detective, for the room: "Then your list is too short. Size 10. In the building at 2:15. Orange sweater. Loves squishies. Who else was in this building yesterday?" <em>(Someone says the Chief. The Chief: "I am NOT a suspect.")</em></p>
   <p class="small" style="margin:0">"Chief, you filled out a statement form like everyone else. For completeness. I have it right here." <em>(Pin it beside the other four. Read it aloud, including the crossed-out "Don't be ridiculous.")</em> "Detectives, check it against your clues. Then write your warrants."</p></div>
@@ -235,7 +235,7 @@ vs = shell("Video Scripts · The recruiter's pack", "🎥 Video scripts (recruit
 print("generated video-scripts.html")
 
 # one file per suspect: guide, that person's script (its box lists their form answers), the blank form
-SOLO = [("ivs1", "script-principal", "The Principal"), ("ivs3", "script-gym-teacher", "The Gym Teacher"),
+SOLO = [("ivs1", "script-principal", "The Principal"), ("ivs3", "script-reading-specialist", "The Reading Specialist"),
         ("ivs4", "script-librarian", "The Librarian"), ("ivs5", "script-chief", "The Chief (teacher)")]
 for (id_, when, note), (id2, fname, who) in zip(scripts, SOLO):
     assert id_ == id2

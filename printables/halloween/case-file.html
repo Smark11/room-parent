@@ -75,7 +75,7 @@ function casePage(s) {
     <thead><tr><th></th><th>Name</th><th>Shoe size</th><th>Where at 2:15?</th><th>Wore yesterday</th><th>Squishies?</th><th>Statement</th></tr></thead>
     <tbody>
       <tr><td><span class="chk"></span></td><td><strong>The Principal</strong></td><td>10</td><td>At a meeting</td><td>Orange</td><td>Loves them ("just one")</td><td>Video 1</td></tr>
-      <tr><td><span class="chk"></span></td><td><strong>The Gym Teacher</strong></td><td>10</td><td>In the building</td><td>Orange</td><td>Doesn't get them</td><td>Video 2</td></tr>
+      <tr><td><span class="chk"></span></td><td><strong>The Reading Specialist</strong></td><td>10</td><td>In the building</td><td>Orange</td><td>Doesn't get them</td><td>Video 2</td></tr>
       <tr><td><span class="chk"></span></td><td><strong>The Librarian</strong></td><td>7</td><td>In the building</td><td>Orange</td><td>Loves them</td><td>Video 3</td></tr>
       <tr><td><span class="chk"></span></td><td><strong>The Custodian</strong></td><td>10</td><td>In the building</td><td>Blue</td><td>Loves them</td><td><em>Declined to comment</em></td></tr>
       <tr><td><span class="chk"></span></td><td><span class="blank" style="min-width:1.3in"></span><div class="tiny muted">Anyone else who fits?</div></td><td><span class="blank short"></span></td><td><span class="blank" style="min-width:.9in"></span></td><td><span class="blank short"></span></td><td><span class="blank" style="min-width:.9in"></span></td><td></td></tr>
@@ -92,7 +92,7 @@ function casePage(s) {
   </div>
 
   <div class="sec">Video notes <span class="small muted" style="font-weight:400;font-family:Nunito">(anything suspicious? anything funny?)</span></div>
-  <div class="vid"><div><b>1 · The Principal</b></div><div><b>2 · The Gym Teacher</b></div><div><b>3 · The Librarian</b></div><div><b>4 · ???</b></div></div>
+  <div class="vid"><div><b>1 · The Principal</b></div><div><b>2 · The Reading Specialist</b></div><div><b>3 · The Librarian</b></div><div><b>4 · ???</b></div></div>
 
   <div class="sec">Your station order <span class="small muted" style="font-weight:400;font-family:Nunito">(cross each off as you go)</span></div>
   <div class="order">${ord.map((n, i) => `<span class="st">${STATIONS[n][1]} ${n} · ${STATIONS[n][0]}<small>rot ${i + 1}</small></span>${i < 3 ? '<span class="arrow">→</span>' : ''}`).join("")}</div>

@@ -104,24 +104,24 @@ guide = '''<section class="page">
 FORMS = [
   dict(key="principal", who="The Principal", form="S-1",
        q1="In a meeting. A meeting about the next meeting.", q2="Everyone at the meeting. All nine of them.",
-       q3="10", q4="An orange sweater. School spirit.", q5="Tick LOVE THEM. Explain: “I own ONE. It’s a cat. It’s for stress.”",
+       q3="9", q4="An orange sweater. School spirit.", q5="Tick LOVE THEM. Explain: “I own ONE. It’s a cat. It’s for stress.”",
        q6="Tick DEFINE “INSIDE.”", q7="No. Absolutely not. No.", q8="I did not say squishies.",
        note="Your meeting alibi is what clears you (Clue 2, the timeline). Everything else keeps you looking guilty, which is the job."),
   dict(key="reading-specialist", who="The Reading Specialist", form="S-2",
        q1="The reading room. Where I always am.", q2="Twenty-two chapter books. They don’t talk.",
-       q3="10", q4="Orange. It’s a school color. Half the building wears orange.", q5="Tick DON’T GET THEM. Explain: “You squeeze it. It goes back. That’s it.”",
+       q3="9", q4="Orange. It’s a school color. Half the building wears orange.", q5="Tick DON’T GET THEM. Explain: “You squeeze it. It goes back. That’s it.”",
        q6="Tick YES. Add: “To pull a reading group. Daily.”", q7="No. If I wanted to steal something, I’d steal a good chapter book.", q8="I just don’t understand the obsession these days.",
        note="Not getting squishies is what clears you (Clue 4, the witness). Don’t soften it."),
   dict(key="librarian", who="The Librarian", form="S-3",
        q1="Shelving. Alone. In the back. 2:00 to 2:30, every day.", q2="No witnesses. That sounded worse than I meant it to.",
        q3="7", q4="My orange cardigan.", q5="Tick LOVE THEM. Explain: “One on every cart. Shelving is stressful.”",
        q6="Tick YES. Add: “Overdue books.”", q7="No. If I had, they would be alphabetized by now.", q8="Whoever took them... check their feet.",
-       note="Your shoe size is what clears you (Clue 1, the footprint is a 10). Write 7 whatever your real size is."),
+       note="Your shoe size is what clears you (Clue 1, the footprint is a 9). Write 7 whatever your real size is."),
   dict(key="custodian", who="The Custodian", form="S-4", declined=True,
        note="Nothing to fill in. The form is pre-stamped DECLINED TO COMMENT and the Bureau’s own records are printed on it. Sign the bottom if you like. On Oct 30, act shifty in the hallway."),
   dict(key="chief", who="The Chief (Mrs. Driscoll)", form="S-5",
        q1="In my classroom. Teaching. I live here, basically.", q2="Twenty children.",
-       q3="10", q4="An orange sweater. It’s festive.", q5="Write “Don’t be ridiculous,” cross it out with ONE line so it can still be read, then tick LOVE THEM and write “Fine. Love them.”",
+       q3="9", q4="An orange sweater. It’s festive.", q5="Write “Don’t be ridiculous,” cross it out with ONE line so it can still be read, then tick LOVE THEM and write “Fine. Love them.”",
        q6="Write: “It’s MY room.”", q7="The Chief is never a suspect.", q8="I would like it noted that I am not a suspect.",
        note="You match all four clues on purpose. This form stays in the Detective’s folder until deliberation (2:28). When a squad has crossed off everyone, the Detective produces it, pins it to the board, and the room turns on you. Keep it off the wall until then."),
 ]
@@ -170,7 +170,7 @@ def answer_key_page():
     rows = ""
     for f in FORMS:
         if f.get("declined"):
-            rows += f'<tr><td><strong>{html.escape(f["who"])}</strong></td><td colspan="4">Write DECLINED TO COMMENT across the form yourself, then add "From Bureau records: shoe size 10, in the building at 2:15, blue uniform, loves squishies (seen squeezing one in the boiler room)."</td><td>Nothing. Act shifty on Oct 30.</td></tr>'
+            rows += f'<tr><td><strong>{html.escape(f["who"])}</strong></td><td colspan="4">Write DECLINED TO COMMENT across the form yourself, then add "From Bureau records: shoe size 9, in the building at 2:15, blue uniform, loves squishies (seen squeezing one in the boiler room)."</td><td>Nothing. Act shifty on Oct 30.</td></tr>'
         else:
             rows += (f'<tr><td><strong>{html.escape(f["who"])}</strong></td><td>{html.escape(f["q1"])}</td><td>{html.escape(f["q3"])}</td><td>{html.escape(f["q4"])}</td>'
                      f'<td>{html.escape(f["q5"])}</td><td>{html.escape(f["q7"])} / {html.escape(f["q8"])}</td></tr>')
@@ -180,12 +180,12 @@ def answer_key_page():
   <p class="muted small" style="margin-bottom:8px">Every suspect fills out the same one-page Suspect Statement. Four answers are scripted because the clues test them (Q1 where at 2:15, Q3 shoe size, Q4 what they wore, Q5 squishies); each person's script box lists theirs. The rest of the form is theirs to answer however they like. Collect the forms with the videos by [Oct 23]. Four go on the suspect board; the Chief's stays in the Detective's folder until deliberation (2:28).</p>
   <table class="howtbl"><thead><tr><th>Suspect</th><th>Q1 · At 2:15</th><th>Q3 · Shoe</th><th>Q4 · Wore</th><th>Q5 · Squishies</th><th>Suggested Q7 / Q8</th></tr></thead><tbody>{rows}</tbody></table>
   <table class="howtbl" style="margin-top:12px"><thead><tr><th>Form question</th><th>Clue that tests it</th><th>Who it clears</th></tr></thead><tbody>
-    <tr><td>Q3 shoe size</td><td>Clue 1 · Evidence Lab: footprint 27 cm = size 10</td><td>The Librarian (7)</td></tr>
+    <tr><td>Q3 shoe size</td><td>Clue 1 · Evidence Lab: footprint 26 cm = size 9</td><td>The Librarian (7)</td></tr>
     <tr><td>Q1 where at 2:15</td><td>Clue 2 · Ghostbuster Lab: "seen in hall at 2:15"</td><td>The Principal (in a meeting)</td></tr>
     <tr><td>Q4 what they wore</td><td>Clue 3 · Cipher Room: "snagged my orange sweater"</td><td>The Custodian (blue)</td></tr>
     <tr><td>Q5 squishies</td><td>Clue 4 · Mummy Witness: the thief loves squishies</td><td>The Reading Specialist (doesn't get them)</td></tr>
   </tbody></table>
-  <div class="box" style="margin-top:12px"><h4>The deliberation script (2:28)</h4><p class="small" style="margin:0 0 4px">A squad says "everyone's crossed off." The Detective, for the room: "Then your list is too short. Size 10. In the building at 2:15. Orange sweater. Loves squishies. Who else was in this building yesterday?" <em>(Someone says the Chief. The Chief: "I am NOT a suspect.")</em></p>
+  <div class="box" style="margin-top:12px"><h4>The deliberation script (2:28)</h4><p class="small" style="margin:0 0 4px">A squad says "everyone's crossed off." The Detective, for the room: "Then your list is too short. Size 9. In the building at 2:15. Orange sweater. Loves squishies. Who else was in this building yesterday?" <em>(Someone says the Chief. The Chief: "I am NOT a suspect.")</em></p>
   <p class="small" style="margin:0">"Chief, you filled out a statement form like everyone else. For completeness. I have it right here." <em>(Pin it beside the other four. Read it aloud, including the crossed-out "Don't be ridiculous.")</em> "Detectives, check it against your clues. Then write your warrants."</p></div>
 </section>"""
 

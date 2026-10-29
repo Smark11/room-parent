@@ -23,11 +23,10 @@
   .warn { margin: 20px 20px 0; background: var(--jar-orange); border: 4px solid var(--jar-black); border-radius: 14px; text-align: center; padding: 10px 12px 12px; box-shadow: 6px 6px 0 var(--jar-black); }
   .warn .big { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 34pt; letter-spacing: .06em; line-height: 1; color: var(--jar-black); }
   .warn .date { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 46pt; line-height: 1; color: #fff; text-shadow: -2px -2px 0 var(--jar-black), 2px -2px 0 var(--jar-black), -2px 2px 0 var(--jar-black), 2px 2px 0 var(--jar-black), 0 -2px 0 var(--jar-black), 0 2px 0 var(--jar-black), -2px 0 0 var(--jar-black), 2px 0 0 var(--jar-black), 5px 5px 0 var(--jar-black); margin-top: 2px; }
-  .count { margin: 18px 20px 0; display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: center; }
-  .count .lab { font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 11pt; letter-spacing: .1em; text-transform: uppercase; line-height: 1.15; color: var(--jar-black); }
-  .count .days { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
-  .count .d { border: 3px solid var(--jar-black); border-radius: 10px; background: #fff; height: .72in; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 10pt; letter-spacing: .12em; padding-bottom: 4px; color: var(--ink-2); }
-  .count .d.fri { background: var(--sun); color: var(--jar-black); }
+  .count { margin: 18px 20px 0; border: 4px solid var(--jar-black); border-radius: 14px; background: var(--sun); display: grid; grid-template-columns: auto auto 1fr; gap: 0 16px; align-items: center; padding: 6px 22px 8px; }
+  .count .n { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 86pt; line-height: .95; color: #fff; text-shadow: -3px -3px 0 var(--jar-black), 3px -3px 0 var(--jar-black), -3px 3px 0 var(--jar-black), 3px 3px 0 var(--jar-black), 0 -3px 0 var(--jar-black), 0 3px 0 var(--jar-black), -3px 0 0 var(--jar-black), 3px 0 0 var(--jar-black), 7px 7px 0 var(--jar-black); }
+  .count .t { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 28pt; line-height: .95; letter-spacing: .04em; color: var(--jar-black); }
+  .count .side { justify-self: end; text-align: right; font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 12pt; line-height: 1.25; letter-spacing: .06em; text-transform: uppercase; color: var(--jar-black); border-left: 3px solid var(--jar-black); padding-left: 16px; }
   .facts { margin: 16px 20px 0; border: 3px solid var(--jar-black); border-radius: 12px; background: #fff; display: grid; grid-template-columns: repeat(4, 1fr); }
   .facts div { padding: 7px 6px 8px; text-align: center; font-family: "Fredoka", sans-serif; font-size: 8.5pt; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); border-left: 2px solid var(--jar-black); }
   .facts div:first-child { border-left: 0; }
@@ -57,27 +56,24 @@
 <div class="toolbar"><b>🫙 Jar sign</b><span class="muted">2 pages, color · the front label, three lid seals, and a small lid label. Print at 100% on cardstock.</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/jar-sign.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
 
 <section class="page">
-  <p class="intro small muted">Cut on the black border and tape to the front of the opaque jar. The countdown boxes are for the Chief: one big X each morning, in marker, where the class can see it. Then put the jar on a high shelf and say one sentence: "That's for Friday. Nobody touches it."</p>
+  <p class="intro small muted">Cut on the black border and tape to the front of the opaque jar. The jar goes in the day before the party, so the sign says 1 DAY TO GO. Then put the jar on a high shelf and say one sentence: "That's for Friday. Nobody touches it."</p>
   <div class="sign">
     <div class="band">Mrs. Driscoll's Class · Official Reserve</div>
     <div class="hero">
       <span class="word party">PARTY</span>
       <span class="word candy">CANDY</span>
-      <span class="est">Est. Oct 26 · Lot No. 1031 · Net Wt: a lot</span>
+      <span class="est">Est. Oct 29 · Lot No. 1031 · Net Wt: a lot</span>
     </div>
     <div class="warn">
       <div class="big">DO NOT OPEN UNTIL</div>
       <div class="date">OCT 30</div>
     </div>
-    <div class="count">
-      <div class="lab">Days<br>to go</div>
-      <div class="days"><div class="d">Mon</div><div class="d">Tue</div><div class="d">Wed</div><div class="d">Thu</div><div class="d fri">Fri ★</div></div>
-    </div>
+    <div class="count"><div class="n">1</div><div class="t">DAY<br>TO GO</div><div class="side">Opens tomorrow.<br>Friday. 1:30.<br>Not before.</div></div>
     <div class="facts">
       <div>Serving size<b>1 party</b></div>
       <div>Servings per jar<b>20</b></div>
       <div>Suspense<b>100%</b></div>
-      <div>Patience needed<b>5 days</b></div>
+      <div>Patience needed<b>1 day</b></div>
     </div>
     <div class="foot">
       <div class="meta">

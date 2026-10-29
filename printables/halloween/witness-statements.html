@@ -10,8 +10,18 @@
   .half { height: 4.85in; display: flex; flex-direction: column; background: var(--cream); border: 1px solid #d9cfb8; padding: .35in .45in; background-image: repeating-linear-gradient(transparent 0 .36in, rgba(0,0,0,.06) .36in calc(.36in + 1px)); }
   .half .head { display: flex; justify-content: space-between; font-size: 9pt; letter-spacing: .14em; text-transform: uppercase; color: #8a6d00; font-weight: 800; margin-bottom: 10px; }
   .half h2 { font-size: 16pt; margin-bottom: 8px; }
-  .half p { font-size: 14pt; line-height: 1.55; margin: 0; }
-  .half .sig { margin-top: auto; font-family: "Fredoka", sans-serif; font-size: 15pt; text-align: right; color: #444; }
+  .half p { font-size: 12.5pt; line-height: 1.5; margin: 0; }
+  .half .clue { margin-top: 10px; border: 3px solid var(--ink); border-radius: 12px; background: #fff; padding: 8px 12px; font-size: 14pt; line-height: 1.3; }
+  .half .clue .k { display: block; font-size: 8.5pt; letter-spacing: .16em; text-transform: uppercase; font-weight: 800; color: var(--coral-dark); }
+  .half .clue .q { display: block; font-size: 10.5pt; color: var(--muted); margin-top: 2px; }
+  .half .sig { margin-top: auto; font-family: "Fredoka", sans-serif; font-size: 13pt; text-align: right; color: #444; }
+  .boxsign { height: 4.85in; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border: 4px solid var(--ink); border-radius: 18px; padding: .3in .5in; }
+  .boxsign .eye { font-size: 10pt; letter-spacing: .18em; text-transform: uppercase; font-weight: 800; color: var(--coral-dark); margin-bottom: 8px; }
+  .boxsign .big { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 44pt; line-height: 1.05; }
+  .boxsign .mid { font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 24pt; line-height: 1.2; margin-top: 10px; }
+  .boxsign .mid strong { color: var(--coral-dark); font-size: 34pt; display: block; }
+  .boxsign .sub { font-size: 14pt; margin-top: 12px; color: #333; }
+  .boxsign.lid { background: #fffbe6; border-style: dashed; }
   .labels { display: grid; grid-template-columns: 1fr 1fr; gap: .25in; }
   .label { border: 2.5px solid var(--ink); border-radius: 12px; padding: 14px 16px; height: 2.2in; display: flex; flex-direction: column; justify-content: center; text-align: center; }
   .label .big { font-family: "Fredoka", sans-serif; font-size: 20pt; font-weight: 600; }
@@ -19,18 +29,19 @@
 </style>
 </head>
 <body>
-<div class="toolbar"><b>🧻 Witness statements</b><span class="muted">2 pages · the statement (print it twice for four copies) and the envelope labels</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/witness-statements.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
+<div class="toolbar"><b>🧻 Witness statements</b><span class="muted">3 pages · the statement (print it twice for four copies), the envelope labels, and the two box signs</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/witness-statements.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
 <script>
 const W = [
   ["", "", "", `I was on the shelf. I'm always on the shelf. Nobody notices a mummy on a shelf. Somebody picked up the Jar, held it very close, reached straight in through all the others, and pulled out <strong>the avocado one</strong>. First try. Without looking. <strong>Only a true fan knows where the avocado is.</strong> They <strong>squeezed it</strong> and whispered, <strong>"so satisfying."</strong> Then they put it back, patted the lid, and <strong>hugged</strong> the whole Jar out the door like a <strong>puppy</strong>. Nobody says "so satisfying" about candy.`],
 ];
-const stmt = w => `<div class="half ${w[2]}"><div class="head"><span>Case #1031 · Witness statement</span><span>Mummies only</span></div><h2>Statement of the Mummy</h2><p>${w[3]}</p><div class="sig">— The Mummy (witness)</div></div>`;
+const CLUE = `<div class="clue"><span class="k">The clue</span>Whoever took the Jar <strong>REALLY likes squishies.</strong><span class="q">Who on your list does NOT? Cross them off.</span></div>`;
+const stmt = w => `<div class="half ${w[2]}"><div class="head"><span>Case #1031 · Witness statement</span><span>Mummies only</span></div><h2>Statement of the Mummy</h2><p>${w[3]}</p>${CLUE}<div class="sig">— The Mummy (witness)</div></div>`;
 let out = `<section class="page">${stmt(W[0])}<div class="cut"></div>${stmt(W[0])}</section>`;
 out += `<section class="page"><span class="eyebrow teal">Envelope labels</span><h1>Witness box labels</h1><p class="muted">Four envelopes in the witness box, one statement each, all the same. Cut out and glue one label to each. Only a mummy may take one from the box, and each squad takes one.</p>
 <div class="labels">${[1,2,3,4].map(() => `<div class="label"><div class="small muted" style="letter-spacing:.14em;text-transform:uppercase">Sealed witness statement</div><div class="squad">One per squad</div><div class="small">Only a mummy may open this.</div></div>`).join("")}</div>
-<div class="box soft" style="margin-top:18px"><h4>Station lead: what it means</h4><p class="small" style="margin:0">Knew exactly where the avocado one was, squeezed it, whispered "so satisfying," hugged the Jar like a puppy. It all adds up to one fact: <strong>the thief loves squishies</strong>. That's Clue 4. If a squad reads it and says "so... they like squishies?", say: "Write that down, detective."</p></div>
-<div class="box dashed"><h4>Witness box sign</h4><p class="center" style="font-family:Fredoka;font-size:22pt;margin:0">WITNESS BOX · MUMMIES ONLY</p></div>
+<div class="box soft" style="margin-top:18px"><h4>Station lead: what it means</h4><p class="small" style="margin:0">The story (the avocado one, "so satisfying," the puppy hug) is flavor. The clue is printed in the box at the bottom of every statement and again inside the lid of the witness box: <strong>whoever took the Jar REALLY likes squishies</strong>. That's Clue 4. If a squad reads it and says "so... they like squishies?", say: "Write that down, detective."</p></div>
 </section>`;
+out += `<section class="page"><div class="boxsign"><div class="eye">Tape to the front of the box</div><div class="big">WITNESS BOX</div><div class="mid">Mummies only</div><div class="sub">Only a mummy may open this.</div></div><div class="cut"></div><div class="boxsign lid"><div class="eye">Tape inside the lid · Case #1031</div><div class="mid">The witness says:<br>whoever took the Jar<strong>REALLY likes squishies.</strong></div><div class="sub">Who on your list does NOT? Cross them off.</div></div></section>`;
 document.write(out);
 </script>
 </body>

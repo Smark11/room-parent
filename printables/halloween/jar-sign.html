@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jar Sign · PARTY CANDY · Do not open until Oct 30</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../print.css">
+<style>
+  :root { --jar-orange: #ff7a1a; --jar-black: #111318; --jar-cream: #fff6dc; }
+  .page { display: flex; flex-direction: column; align-items: center; }
+  .sign { width: 7.3in; height: 9.05in; background: var(--jar-cream); border: 7px solid var(--jar-black); border-radius: 26px; position: relative; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .sign::before { content: ""; position: absolute; inset: 9px; border: 3px dashed var(--jar-orange); border-radius: 18px; pointer-events: none; }
+  .sign::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, rgba(0,0,0,.028) 0 2px, transparent 2px 7px); pointer-events: none; mix-blend-mode: multiply; }
+  .band { background: var(--jar-black); color: var(--sun); font-family: "Fredoka", sans-serif; font-weight: 600; letter-spacing: .3em; text-transform: uppercase; text-align: center; font-size: 13pt; padding: 12px 0 10px; margin: 20px 20px 0; position: relative; }
+  .band::before, .band::after { content: "★"; position: absolute; top: 9px; color: var(--jar-orange); letter-spacing: 0; }
+  .band::before { left: 16px; } .band::after { right: 16px; }
+  .hero { text-align: center; padding: 14px 20px 0; position: relative; }
+  .hero .word { display: block; font-family: "Fredoka", sans-serif; font-weight: 700; line-height: .9; letter-spacing: .02em; color: var(--jar-black); }
+  .hero .party { font-size: 88pt; }
+  .hero .candy { font-size: 124pt; color: var(--jar-orange); text-shadow: -3px -3px 0 var(--jar-black), 3px -3px 0 var(--jar-black), -3px 3px 0 var(--jar-black), 3px 3px 0 var(--jar-black), 0 -3px 0 var(--jar-black), 0 3px 0 var(--jar-black), -3px 0 0 var(--jar-black), 3px 0 0 var(--jar-black), 8px 8px 0 var(--jar-black); margin-top: 2px; }
+  .hero .est { display: inline-block; margin-top: 14px; font-family: "Fredoka", sans-serif; letter-spacing: .28em; text-transform: uppercase; font-size: 11pt; color: var(--ink-2); border-top: 2px solid var(--jar-black); border-bottom: 2px solid var(--jar-black); padding: 5px 18px; }
+  .warn { margin: 20px 20px 0; background: var(--jar-orange); border: 4px solid var(--jar-black); border-radius: 14px; text-align: center; padding: 10px 12px 12px; box-shadow: 6px 6px 0 var(--jar-black); }
+  .warn .big { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 34pt; letter-spacing: .06em; line-height: 1; color: var(--jar-black); }
+  .warn .date { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 46pt; line-height: 1; color: #fff; text-shadow: -2px -2px 0 var(--jar-black), 2px -2px 0 var(--jar-black), -2px 2px 0 var(--jar-black), 2px 2px 0 var(--jar-black), 0 -2px 0 var(--jar-black), 0 2px 0 var(--jar-black), -2px 0 0 var(--jar-black), 2px 0 0 var(--jar-black), 5px 5px 0 var(--jar-black); margin-top: 2px; }
+  .count { margin: 18px 20px 0; display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: center; }
+  .count .lab { font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 11pt; letter-spacing: .1em; text-transform: uppercase; line-height: 1.15; color: var(--jar-black); }
+  .count .days { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+  .count .d { border: 3px solid var(--jar-black); border-radius: 10px; background: #fff; height: .72in; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 10pt; letter-spacing: .12em; padding-bottom: 4px; color: var(--ink-2); }
+  .count .d.fri { background: var(--sun); color: var(--jar-black); }
+  .facts { margin: 16px 20px 0; border: 3px solid var(--jar-black); border-radius: 12px; background: #fff; display: grid; grid-template-columns: repeat(4, 1fr); }
+  .facts div { padding: 7px 6px 8px; text-align: center; font-family: "Fredoka", sans-serif; font-size: 8.5pt; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); border-left: 2px solid var(--jar-black); }
+  .facts div:first-child { border-left: 0; }
+  .facts b { display: block; font-size: 15pt; letter-spacing: .02em; color: var(--jar-black); text-transform: none; margin-top: 1px; }
+  .foot { margin-top: auto; }
+  .meta { display: flex; justify-content: space-between; align-items: flex-end; padding: 0 28px 10px; font-family: "Fredoka", sans-serif; font-size: 9.5pt; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); }
+  .meta b { display: block; font-size: 12pt; color: var(--jar-black); letter-spacing: .06em; }
+  .meta .seal { border: 3px solid var(--coral-dark); color: var(--coral-dark); border-radius: 6px; padding: 4px 10px; transform: rotate(-6deg); font-weight: 600; letter-spacing: .16em; font-size: 10pt; background: rgba(255,255,255,.7); }
+  .caution { height: 30px; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .caution svg, .seal-strip svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .caution span, .seal-strip span { position: relative; }
+  .caution span { background: var(--jar-black); color: var(--sun); font-family: "Fredoka", sans-serif; font-weight: 600; letter-spacing: .28em; text-transform: uppercase; font-size: 10pt; padding: 3px 18px; }
+  .intro { width: 7.3in; margin: 0 0 8px; font-size: 8.5pt; }
+  /* page 2: lid seals and small label */
+  .seals { width: 7.3in; display: flex; flex-direction: column; gap: .22in; }
+  .seal-strip { height: 1.05in; border: 4px solid var(--jar-black); border-radius: 10px; background: var(--sun); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .seal-strip span { background: var(--jar-black); color: var(--sun); font-family: "Fredoka", sans-serif; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; font-size: 16pt; padding: 8px 26px; border-radius: 6px; }
+  .seal-strip span small { display: block; font-size: 8.5pt; letter-spacing: .3em; color: var(--jar-orange); text-align: center; margin-top: 2px; }
+  .lid { width: 4.4in; margin: .3in auto 0; background: var(--jar-cream); border: 5px solid var(--jar-black); border-radius: 18px; text-align: center; padding: 14px 16px 16px; position: relative; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .lid::before { content: ""; position: absolute; inset: 6px; border: 2px dashed var(--jar-orange); border-radius: 12px; }
+  .lid .t { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 34pt; line-height: 1; color: var(--jar-orange); text-shadow: -1.5px -1.5px 0 var(--jar-black), 1.5px -1.5px 0 var(--jar-black), -1.5px 1.5px 0 var(--jar-black), 1.5px 1.5px 0 var(--jar-black), 0 -1.5px 0 var(--jar-black), 0 1.5px 0 var(--jar-black), -1.5px 0 0 var(--jar-black), 1.5px 0 0 var(--jar-black), 4px 4px 0 var(--jar-black); }
+  .lid .w { margin-top: 8px; background: var(--jar-black); color: var(--sun); font-family: "Fredoka", sans-serif; font-weight: 600; letter-spacing: .18em; font-size: 11pt; padding: 5px 10px; border-radius: 6px; }
+  .lid .p { margin-top: 6px; font-family: "Fredoka", sans-serif; font-size: 8.5pt; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
+</style>
+</head>
+<body>
+<div class="toolbar"><b>🫙 Jar sign</b><span class="muted">2 pages, color · the front label, three lid seals, and a small lid label. Print at 100% on cardstock.</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/jar-sign.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
+
+<section class="page">
+  <p class="intro small muted">Cut on the black border and tape to the front of the opaque jar. The countdown boxes are for the Chief: one big X each morning, in marker, where the class can see it. Then put the jar on a high shelf and say one sentence: "That's for Friday. Nobody touches it."</p>
+  <div class="sign">
+    <div class="band">Mrs. Driscoll's Class · Official Reserve</div>
+    <div class="hero">
+      <span class="word party">PARTY</span>
+      <span class="word candy">CANDY</span>
+      <span class="est">Est. Oct 26 · Lot No. 1031 · Net Wt: a lot</span>
+    </div>
+    <div class="warn">
+      <div class="big">DO NOT OPEN UNTIL</div>
+      <div class="date">OCT 30</div>
+    </div>
+    <div class="count">
+      <div class="lab">Days<br>to go</div>
+      <div class="days"><div class="d">Mon</div><div class="d">Tue</div><div class="d">Wed</div><div class="d">Thu</div><div class="d fri">Fri ★</div></div>
+    </div>
+    <div class="facts">
+      <div>Serving size<b>1 party</b></div>
+      <div>Servings per jar<b>20</b></div>
+      <div>Suspense<b>100%</b></div>
+      <div>Patience needed<b>5 days</b></div>
+    </div>
+    <div class="foot">
+      <div class="meta">
+        <div>Property of<b>Mrs. Driscoll's Class</b></div>
+        <div class="seal">Sealed by the Chief</div>
+        <div style="text-align:right">Contents<b>Under surveillance</b></div>
+      </div>
+      <div class="caution"><svg data-stripes viewBox="0 0 701 30" preserveAspectRatio="none"></svg><span>Hands off · Eyes only · No shaking</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <span class="eyebrow">Page 2</span><h1>Lid seals and lid label</h1>
+  <p class="small muted" style="margin-bottom:14px">Cut out the three strips and tape them over the lid and down the sides so the jar visibly cannot be opened without tearing one. Put the small label on top of the lid. Packing tape over everything. The seals get "broken" when the jar is recovered at the finale.</p>
+  <div class="seals">
+    <div class="seal-strip"><svg data-stripes viewBox="0 0 701 101" preserveAspectRatio="xMidYMid slice"></svg><span>Sealed · Do not break<small>Mrs. Driscoll's Class · Opens Oct 30</small></span></div>
+    <div class="seal-strip"><svg data-stripes viewBox="0 0 701 101" preserveAspectRatio="xMidYMid slice"></svg><span>Sealed · Do not break<small>Mrs. Driscoll's Class · Opens Oct 30</small></span></div>
+    <div class="seal-strip"><svg data-stripes viewBox="0 0 701 101" preserveAspectRatio="xMidYMid slice"></svg><span>Sealed · Do not break<small>Mrs. Driscoll's Class · Opens Oct 30</small></span></div>
+  </div>
+  <div class="lid">
+    <div class="t">PARTY CANDY</div>
+    <div class="w">DO NOT OPEN UNTIL OCT 30</div>
+    <div class="p">Lot 1031 · Sealed by the Chief · Hands off</div>
+  </div>
+</section>
+<script>
+// Diagonal caution stripes drawn as plain polygons: Chrome's PDF output tiles repeating backgrounds, which can leave seams.
+document.querySelectorAll("svg[data-stripes]").forEach(svg => {
+  const [, , w, h] = svg.getAttribute("viewBox").split(" ").map(Number);
+  let out = `<rect width="${w}" height="${h}" fill="#ffd93d"/>`;
+  for (let k = -h - 44; k < w + h; k += 44) out += `<polygon points="${k},0 ${k + 22},0 ${k + 22 - h},${h} ${k - h},${h}" fill="#111318"/>`;
+  svg.innerHTML = out;
+});
+</script>
+</body>
+</html>

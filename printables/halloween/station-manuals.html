@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Station Manuals · One page per station lead</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../print.css">
+<style>
+  .page { font-size: 8.2pt; line-height: 1.3; }
+  .page p, .page li, .page td { font-size: 8.2pt; line-height: 1.3; }
+  .page table.tl { font-size: 8.2pt; }
+  .pack ul { columns: 2; column-gap: 10px; }
+  .pack li { break-inside: avoid; }
+  .head { display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: center; border-bottom: 3px solid var(--ink); padding-bottom: 6px; margin-bottom: 8px; }
+  .head .num { font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 40pt; line-height: 1; color: var(--coral-dark); }
+  .head h1 { font-size: 21pt; margin: 0; line-height: 1; }
+  .head .sub { color: var(--muted); font-size: 9.5pt; margin-top: 3px; }
+  .head .emoji { font-size: 30pt; }
+  .pills { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 5px; }
+  .pill { font-family: "Fredoka", sans-serif; font-size: 7.5pt; letter-spacing: .06em; text-transform: uppercase; border: 1.5px solid var(--line); border-radius: 999px; padding: 1px 8px; }
+  .pill.hot { border-color: var(--coral); color: var(--coral-dark); }
+  .grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 10px; }
+  h3 { font-size: 10pt; margin: 0 0 3px; padding-bottom: 2px; border-bottom: 1.5px solid var(--line); }
+  .sec { margin-bottom: 6px; }
+  ol, ul { margin: 0; padding-left: 1.15em; }
+  li { margin-bottom: 1px; }
+  .story { background: #fcfbf7; border: 1.5px solid var(--line); border-radius: 8px; padding: 5px 9px; margin-bottom: 7px; }
+  .story p { margin: 0 0 3px; }
+  .say { border-left: 4px solid var(--sun); background: rgba(255,217,61,.18); padding: 5px 8px; border-radius: 0 6px 6px 0; margin: 4px 0 6px; font-size: 9pt; }
+  .say b { font-family: "Fredoka", sans-serif; font-size: 7.5pt; letter-spacing: .12em; text-transform: uppercase; color: #7a5d00; display: block; }
+  .clue { border: 2px solid var(--coral-dark); border-radius: 8px; padding: 6px 9px; margin-bottom: 8px; }
+  .clue .fact { font-weight: 800; font-size: 9.5pt; }
+  table.tl { width: 100%; border-collapse: collapse; margin-top: 2px; }
+  table.tl td { padding: 1px 5px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  table.tl td:first-child { font-family: "Fredoka", sans-serif; font-weight: 600; color: var(--coral-dark); white-space: nowrap; width: .55in; }
+  table.tl tr.you td { background: rgba(46,196,182,.12); }
+  ul.cl { padding-left: 0; }
+  ul.cl li { list-style: none; position: relative; padding-left: 1.3em; }
+  ul.cl li::before { content: ""; position: absolute; left: 0; top: 2px; width: 9px; height: 9px; border: 1.5px solid var(--ink); border-radius: 2px; }
+  .rules { background: var(--ink); color: #fff; border-radius: 8px; padding: 6px 9px; margin-bottom: 8px; }
+  .rules h3 { border-color: rgba(255,255,255,.3); color: var(--sun); }
+  .rules li { margin-bottom: 1px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+</style>
+</head>
+<body>
+<div class="toolbar"><b>📘 Station manuals</b><span class="muted">4 pages · one page per station lead: the story, your clue, your afternoon, setup, run-it, words, fixes, pack list. Hand each lead theirs the week before.</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/station-manuals.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
+<script>
+const ORDER = { 1: [1, 4, 3, 2], 2: [2, 1, 4, 3], 3: [3, 2, 1, 4], 4: [4, 3, 2, 1] };
+const SLOTS = ["1:38", "1:51", "2:04", "2:17"];
+const S = [
+  {
+    n: 1, name: "Evidence Lab", emoji: "👣", sub: "Footprints and mystery powder", arrive: "1:05", energy: "Medium energy", pills: ["Calm hands", "Science + math"],
+    say: "Every footprint tells a story. Measure twice. Then let's find out what that powder is.",
+    clue: { title: "Clue 1 · The footprint", fact: "The footprint by the shelf measures 26 cm. On the Bureau chart, that is a size 9 shoe.", clears: "The Librarian, whose statement form says size 7. Everyone else wrote 9." },
+    setup: ["Tape the footprint sheet to the table under the clear sheet protector; 5 rulers and pencils beside it.", "Shoe-size chart face down until the squad has a number.", "On the rimmed tray: FLOUR, POWDERED SUGAR, BAKING SODA cups, a spoon in each; the EVIDENCE bag (secretly baking soda) with its own spoon; one clear cup with an inch of vinegar. Bottle and dump bucket under the table.", "Four sealed CLUE 1 envelopes in your pocket, one per squad. Do not open them."],
+    run: ["Count off 1 to 5 as they arrive: 1 ruler, 2 second ruler, 3 chart reader, 4 chemist, 5 evidence tech.", "Rulers 1 and 2 measure the footprint heel to toe in cm and agree on one number. Different? Measure once more, together.", "Flip the chart. 26 cm = size 9. The chart reader finds it and writes it in the case file.", "Powder test: the chemist drops a spoonful of each powder into the vinegar, one at a time. Flour: nothing. Powdered sugar: nothing. Baking soda: erupts.", "The evidence tech drops the EVIDENCE powder into the same cup. It erupts. You: \"The thief left this at the scene. It's baking soda. Station 2 has five lumps of it, and now you know how to open them.\" (Squad 2 has already been there: \"Recognize it? That's what the ghosts were made of.\")", "At the bell: hand over the sealed CLUE 1 envelope. Dump the vinegar cup in the bucket, pour an inch of fresh. Ten seconds."],
+    fixes: ["Measurements disagree: measure together, once, heel to toe.", "Fast squad: lift a fingerprint (pencil scribble, thumb, clear tape onto white paper).", "Kid won't touch powder: swap jobs with a ruler."],
+    pack: ["Footprint sheet + sheet protector", "5 rulers, pencils, shoe-size chart", "3 powder cups + spoons, EVIDENCE bag + spoon", "Clear cup, vinegar bottle, dump bucket", "Rimmed tray, paper towels", "4 CLUE 1 envelopes, backup sketch sheets"],
+  },
+  {
+    n: 2, name: "Ghostbuster Lab", emoji: "👻", sub: "Fizz open the evidence", arrive: "1:05", energy: "High energy", pills: ["Messy", "Loud corner"],
+    say: "These ghosts are holding evidence hostage. The only thing they can't survive is vinegar. One syringe each. Bust them.",
+    clue: { title: "Clue 2 · The timeline", fact: "The ghosts spell it out: SEEN IN HALL AT 2:15. Nobody knew the time of the theft until now.", clears: "The Principal, whose form says off campus at a meeting, 1:00 to 3:00. Everyone else was in the building." },
+    setup: ["Tablecloth down, the big under-bed bin on top: fizz stays in the bin.", "Five ghosts in the bin to start; the other twenty stay in their muffin tins, out of reach.", "Pitcher of green vinegar and 6 syringes on the table, wipes and paper towels in reach.", "Four sealed CLUE 2 envelopes in your pocket."],
+    run: ["Count off 1 to 5. One ghost each, one syringe each, sleeves up.", "Bust your ghost with vinegar until it fizzes apart and a laminated word slip appears.", "Everyone lays their word in a line on the table and shuffles until it reads like a sentence. Whoever got SEEN reads it aloud: SEEN IN HALL AT 2:15. Whoever got 2:15 writes it in the case file.", "Let it land: \"So now we know when. Who was in the building at 2:15?\" Don't answer it for them.", "At the bell: hand over the sealed CLUE 2 envelope. Whoever got HALL scoops the residue into the bin. Set five fresh ghosts."],
+    fixes: ["Ghost won't break: more vinegar, poke it with the syringe tip.", "Kid doesn't want to touch it: they assemble the words.", "Words out of order: \"Read it like a sentence. Where does SEEN go?\"", "Vinegar running low: it's the same jug Station 1 uses. Send a kid to the Floater."],
+    pack: ["25 baking-soda ghosts in muffin tins (each hides one word slip)", "Pitcher of green vinegar, 6 syringes", "Big under-bed bin, tablecloth", "Paper towels, wipes", "4 CLUE 2 envelopes, backup sketch sheets"],
+  },
+  {
+    n: 3, name: "The Cipher Room", emoji: "📜", sub: "Ransom note and invisible ink", arrive: "1:10", energy: "Calm station", pills: ["Quiet corner", "Puzzle"],
+    say: "The thief left a note and thinks we can't read it. Prove them wrong. Then check the paper again. Thieves always leave something behind.",
+    clue: { title: "Clue 3 · Something orange", fact: "Hidden under the blacklight, in the thief's own words: \"Snagged something orange on the shelf. Worth it.\"", clears: "The Custodian, whose records say gray work shirt. Everyone else wore orange for Halloween week." },
+    setup: ["Four ransom notes (A to D), each with the P.S. already written in yellow highlighter below the signature. Test one under the blacklight before 1:30.", "Pigpen key printed large, pencils, 20 take-home message cards.", "2 blacklight flashlights. If the room can't dim, the dark box (a shoebox with a hand hole).", "Four sealed CLUE 3 envelopes in your pocket."],
+    run: ["Count off 1 to 5. Hand the squad one note and the key. Five words, one per detective; letters go on the lines under the shapes. About 3 minutes.", "Once 1 has read the whole note aloud (YOU WILL NEVER FIND IT): \"Now sweep the blacklight across the whole page.\" 2 holds the light.", "The P.S. glows: SNAGGED SOMETHING ORANGE ON THE SHELF. WORTH IT. 3 reads it aloud, 4 writes it in the case file. 5 keeps the key.", "Each detective writes a one-line Pigpen message on a take-home card (mini key on the back) for someone at home to crack.", "At the bell: hand over the sealed CLUE 3 envelope. Collect the key; the used note stays with you."],
+    fixes: ["Two free hints per squad. Make them ask.", "Stuck: give them the first word.", "Stuck on a dot: \"A dot means the second trip through the grid.\"", "Fast: they write a second message for the next squad to solve."],
+    pack: ["4 ransom notes with the highlighter P.S.", "Pigpen key, pencils, 20 take-home cards", "2 blacklight flashlights, dark box", "4 CLUE 3 envelopes, backup sketch sheets"],
+  },
+  {
+    n: 4, name: "The Mummy Witness", emoji: "🧻", sub: "Wrap a mummy, send it to the witness box", arrive: "1:05", energy: "High energy", pills: ["Loud corner", "Stopwatch"],
+    say: "I am the witness. I saw everything. But I only speak to mummies. You have ninety seconds. Make me one.",
+    clue: { title: "Clue 4 · The sour ones", fact: "The witness saw the thief find the avocado squishy, squeeze it, whisper \"so satisfying,\" and hug the Jar like a puppy. The thief loves squishies.", clears: "The Reading Specialist, whose form says \"don't get them.\" Everyone else ticked LOVE THEM." },
+    setup: ["Tape a start line on the floor and a witness box ten feet away. Inside the box: four identical sealed witness statements.", "20 rolls of the cheapest toilet paper, four stacked at the start line, the rest in reserve. Stopwatch in hand, trash bags open.", "Four sealed CLUE 4 envelopes in your pocket."],
+    run: ["Count off 1 to 5. Number 5 is the mummy, on the start line, arms out. 1 left arm, 2 right arm, 3 left leg, 4 right leg, one roll each. Whoever finishes a limb first wraps the body.", "Ninety seconds on the stopwatch. Eyes and mouth stay free. Call out the last ten seconds.", "\"Time. Mummy, the witness box is ten feet away. Only a mummy may open it. Go.\" The mummy hobbles over, tears free, takes one envelope.", "1 reads the statement aloud, 2 writes it in the case file. It all adds up to one fact: the thief loves squishies. 3 and 4 bag every scrap: \"Detectives, bag the evidence.\"", "Time left? Round two with a new mummy and a time to beat.", "At the bell: hand over the sealed CLUE 4 envelope. New rolls out."],
+    fixes: ["Nobody wants to be the mummy: you are. All five wrap: 1 and 2 arms, 3 and 4 legs, 5 the body.", "Two kids want it: the second one is round two's mummy.", "Paper tearing too fast: wrap looser. Cheap paper is the point.", "Shout out best-wrapped and funniest hobble, not just fastest."],
+    pack: ["20 rolls of cheap toilet paper", "Stopwatch, trash bags, tape", "Witness box with 4 sealed statements", "4 CLUE 4 envelopes, backup sketch sheets"],
+  },
+];
+const VIDEOS = ["1:49", "2:02", "2:15"];
+const VNAMES = ["Video 1: the Principal. After this, everyone says \"squishies.\"", "Video 2: the Reading Specialist.", "Video 3: the Librarian."];
+function timeline(st) {
+  const rows = [
+    [st.arrive, `You arrive. Set up (checklist at right) and test anything that has to work.`],
+    ["1:15", "Huddle at the Chief's desk, ten minutes. You get your four clue envelopes and the bell signal."],
+    ["1:30", "Lights off, the Detective's opening. Stay at your station; squads walk to the station with their number."],
+  ];
+  ORDER[st.n].forEach((sq, i) => {
+    rows.push([SLOTS[i], `<strong>Squad ${sq}</strong> is yours. 11 minutes: 1 explain, 8 do, 2 hand over the envelope and reset.`, true]);
+    if (i < 3) rows.push([VIDEOS[i], `Bell. Lights dim, ${VNAMES[i]} Reset while they watch, then they rotate.`]);
+  });
+  rows.push(["2:28", "Lights up. Deliberation, snack, warrants. Pack your bin. You're done at your station; help the Floater."]);
+  rows.push(["2:40", "Video 4: the confession. 2:45 lights out, the squishy hunt. 2:55 certificates. 3:00 hard stop."]);
+  return `<table class="tl">${rows.map(r => `<tr${r[2] ? ' class="you"' : ""}><td>${r[0]}</td><td>${r[1]}</td></tr>`).join("")}</table>`;
+}
+let out = "";
+for (const st of S) {
+  out += `<section class="page">
+  <div class="head"><div class="num">${st.n}</div><div><h1>${st.name} · Lead's manual</h1><div class="sub">${st.sub} · Evidence envelope: <strong>CLUE ${st.n}</strong></div><div class="pills"><span class="pill hot">${st.energy}</span><span class="pill">Arrive ${st.arrive}</span><span class="pill">Huddle 1:15</span><span class="pill">4 squads × 11 min</span>${st.pills.map(p => `<span class="pill">${p}</span>`).join("")}</div></div><div class="emoji">${st.emoji}</div></div>
+  <div class="story"><p><strong>The story in thirty seconds.</strong> Yesterday afternoon the Party Candy Jar vanished from its shelf. Four suspects are on the board: the Principal, the Reading Specialist, the Librarian, and the Custodian (who declined to comment). Twenty kids in four squads of five rotate through four stations. Every station ends with a sealed clue envelope that clears one suspect; the kids do the crossing-off themselves, against the suspects' own statement forms. After Video 1 they learn the Jar held squishies, not candy. By 2:28 every suspect is cleared and the Chief, Mrs. Driscoll, gets caught; she confesses on video, the lights go out, and everyone hunts for squishies with blacklights.</p><p><strong>You don't need to solve anything.</strong> You run one station, four times, and hand over one sealed envelope per squad. Never say who did it. The Chief is not a suspect until the kids make her one.</p></div>
+  <div class="grid">
+    <div>
+      <div class="clue"><h3 style="border:0;margin:0;color:var(--coral-dark)">${st.clue.title} · what's in your envelopes</h3><div class="fact">${st.clue.fact}</div><div><strong>It clears:</strong> ${st.clue.clears} The squad opens the envelope after your station, reads it, checks the statement forms on the wall, and crosses one name off. You hand it over sealed, at the bell, every time.</div></div>
+      <div class="sec"><h3>Your afternoon</h3>${timeline(st)}</div>
+      <div class="sec"><h3>If things go sideways</h3><ul>${st.fixes.map(f => `<li>${f}</li>`).join("")}<li>Running long: the Detective calls the bell, not you. Hand over the envelope even if they're mid-step.</li><li>A kid is upset or needs the bathroom: wave the Floater. You stay with the squad.</li></ul></div>
+    </div>
+    <div>
+      <div class="rules"><h3>Words</h3><ul><li>Say <strong>"candy"</strong> until Video 1 has played (1:49). Say <strong>"squishies"</strong> after. Every squad arrives knowing what the whole room knows.</li><li>Never name the thief, even as a joke. If a kid guesses the Chief: "Write it down. Detectives prove things."</li><li>Nothing about the time of the theft before the ghosts spell it (Station 2's job).</li></ul></div>
+      <div class="sec"><h3>Set up before 1:30</h3><ul class="cl">${st.setup.map(f => `<li>${f}</li>`).join("")}</ul></div>
+      <div class="say"><b>Open with</b>"${st.say}"</div>
+      <div class="sec"><h3>Run it, every squad</h3><ol>${st.run.map(f => `<li>${f}</li>`).join("")}</ol></div>
+      <div class="sec pack"><h3>Pack list</h3><ul class="cl">${st.pack.map(f => `<li>${f}</li>`).join("")}</ul></div>
+    </div>
+  </div>
+  <div class="footer-note"><span>Mrs. Driscoll's Detective Bureau · The Case of the Missing Candy · Station ${st.n} lead</span><span>Bell = rotate. Questions on the day: the Floater, then the Detective.</span></div>
+</section>`;
+}
+document.write(out);
+</script>
+</body>
+</html>

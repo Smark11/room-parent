@@ -112,12 +112,11 @@ FORMS = [
        q3="9", q4="Orange. It’s Halloween week. Half the building wears orange.", q5="Tick DON’T GET THEM. Explain: “You squeeze it. It goes back. That’s it.”",
        q6="Tick YES. Add: “To pull a reading group. Daily.”", q7="No. If I wanted to steal something, I’d steal a good chapter book.", q8="I just don’t understand the obsession these days.",
        note="Not getting squishies is what clears you (Clue 4, the witness). Don’t soften it."),
-  dict(key="librarian", who="The Librarian", form="S-3",
-       q1="Shelving. Alone. In the back. 2:00 to 2:30, every day.", q2="No witnesses. That sounded worse than I meant it to.",
-       q3="7", q4="Orange. Obviously.", q5="Tick LOVE THEM. Explain: “One on every cart. Shelving is stressful.”",
-       q6="Tick YES. Add: “Overdue books.”", q7="No. If I had, they would be alphabetized by now.", q8="Whoever took them... check their feet.",
-       note="Your shoe size is what clears you (Clue 1, the footprint is a 9). Write 7 whatever your real size is."),
+  dict(key="librarian", who="The Librarian", form="S-3", declined=True,
+       records="shoe size 7, shelving alone 2:00 to 2:30, wore orange, loves squishies (one on every cart). One note left on the desk: \"check their feet.\"",
+       note="Declined to comment. The Bureau’s own records go on the form instead."),
   dict(key="custodian", who="The Custodian", form="S-4", declined=True,
+       records="shoe size 9, in the building all afternoon, gray work shirt, loves squishies (seen squeezing one in the boiler room).",
        note="Nothing to fill in. The form is pre-stamped DECLINED TO COMMENT and the Bureau’s own records are printed on it. Sign the bottom if you like. On Oct 30, act shifty in the hallway."),
   dict(key="chief", who="The Chief (Mrs. Driscoll)", form="S-5",
        q1="My classroom. All afternoon. I live here, basically.", q2="Twenty children.",
@@ -170,7 +169,7 @@ def answer_key_page():
     rows = ""
     for f in FORMS:
         if f.get("declined"):
-            rows += f'<tr><td><strong>{html.escape(f["who"])}</strong></td><td colspan="4">Write DECLINED TO COMMENT across the form yourself, then add "From Bureau records: shoe size 9, in the building all afternoon, gray work shirt, loves squishies (seen squeezing one in the boiler room)."</td><td>Nothing. Act shifty on Oct 30.</td></tr>'
+            rows += f'<tr><td><strong>{html.escape(f["who"])}</strong></td><td colspan="4">Write DECLINED TO COMMENT across the form yourself, then add "From Bureau records: {html.escape(f["records"])}"</td><td>Nothing. Act shifty on Oct 30.</td></tr>'
         else:
             rows += (f'<tr><td><strong>{html.escape(f["who"])}</strong></td><td>{html.escape(f["q1"])}</td><td>{html.escape(f["q3"])}</td><td>{html.escape(f["q4"])}</td>'
                      f'<td>{html.escape(f["q5"])}</td><td>{html.escape(f["q7"])} / {html.escape(f["q8"])}</td></tr>')

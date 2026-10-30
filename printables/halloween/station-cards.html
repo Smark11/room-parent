@@ -7,13 +7,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../print.css">
 <style>
-  .sp { font-size: 11.5pt; line-height: 1.4; }
-  .sp .act { font-size: 12pt; margin: 0 0 10px; }
-  .sp h2 { font-size: 12.5pt; margin: 12px 0 4px; letter-spacing: .04em; text-transform: uppercase; color: var(--coral-dark); }
+  .sp { font-size: 11pt; line-height: 1.38; }
+  .sp .act { font-size: 11.5pt; margin: 0 0 8px; }
+  .sp .case { background: #f3f0e8; border-radius: 10px; padding: 7px 14px; margin: 0 0 8px; font-size: 10pt; line-height: 1.35; }
+  .sp .case h2 { margin: 0 0 3px; color: var(--ink); }
+  .sp .case p { margin: 0; }
+  .sp .gist { margin: 0; padding-left: 1.2em; } .sp .gist li { margin-bottom: 4px; }
+  .sp h2 { font-size: 12pt; margin: 10px 0 4px; letter-spacing: .04em; text-transform: uppercase; color: var(--coral-dark); }
   .sp ol { margin: 0; padding-left: 1.4em; } .sp ol li { margin-bottom: 6px; }
   .sp .bell { border: 3px solid var(--ink); border-radius: 10px; padding: 7px 14px; margin-top: 10px; font-size: 12pt; }
   .sp .bell b { font-family: "Fredoka", sans-serif; }
-  .sp .story { background: #fcfbf7; border: 2px solid var(--coral); border-radius: 10px; padding: 9px 14px; margin-top: 12px; }
+  .sp .story { background: #fcfbf7; border: 2px solid var(--coral); border-radius: 10px; padding: 8px 14px; margin-top: 10px; }
   .sp .story h2 { margin: 0 0 4px; }
   .sp .story p { margin: 0 0 5px; }
   .sp .story .fact { font-weight: 800; }
@@ -25,7 +29,7 @@
   .jobs { border: 2px solid var(--grape); border-radius: 10px; padding: 7px 10px; margin-bottom: 8px; }
   .jobs h4 { margin: 0 0 2px; color: var(--grape); }
   .jobs li { margin: 0 0 2px; }
-  .say { background: #f3f0e8; border-left: 6px solid var(--sun); padding: 10px 14px; border-radius: 6px; font-size: 12pt; margin-bottom: 12px; }
+  .say { background: #f3f0e8; border-left: 6px solid var(--sun); padding: 8px 14px; border-radius: 6px; font-size: 11.5pt; margin-bottom: 8px; }
   .say b { font-family: "Fredoka", sans-serif; letter-spacing: .12em; text-transform: uppercase; font-size: 8.5pt; display: block; color: var(--muted); }
   .run ol { margin: 0; padding-left: 1.3em; } .run li { margin-bottom: .4em; }
   .cols { display: grid; grid-template-columns: 1.3fr 1fr; gap: 14px; }
@@ -34,57 +38,61 @@
 </style>
 </head>
 <body>
-<div class="toolbar"><b>📋 Station cards</b><span class="muted">6 pages · one sheet per station volunteer (the activity, how it fits the story), plus the Floater and the Detective's cue card</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/station-cards.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
+<div class="toolbar"><b>📋 Station cards</b><span class="muted">6 pages · one sheet per station volunteer (the whole story, their table, the three things that matter, how their clue fits), plus the Floater and the Detective's cue card</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/station-cards.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
 
 <section class="page sp">
-  <div class="sc-head"><div class="num">1</div><div><h1>Evidence Lab</h1><div class="sub">Measure the footprint, then measure yourselves · You hand out: <strong>CLUE 1</strong> envelopes</div></div><div class="emoji">👣</div></div>
-  <h2>The activity</h2>
-  <p class="act">A painted footprint was "found" by the shelf where the jar sat. Every kid measures it in centimeters and the group converts it to a shoe size on a chart. Then each kid traces and measures their own shoe and the group lines them up against the thief's.</p>
-  <div class="say"><b>When a group arrives, say</b>"Every footprint tells a story. In this lab, everybody measures. Twice."</div>
-  <h2>Run it</h2>
-  <ol><li>Count the kids off 1 to 5. One at a time, EVERY kid measures the footprint heel to toe in centimeters and writes their number on the tally sheet. Don't help. Let them get 25, 26, 27.</li><li>Compare the five numbers. If they don't match, the group measures again together until everyone agrees. It should be 26.</li><li>Kid 1 flips over the shoe-size chart and finds 26 cm: size 9. Kid 2 writes "size 9" in the group's case file.</li><li>The lineup: each kid stands on the big paper while a partner traces one shoe. Measure your own tracing heel to toe, find your size on the chart, write it inside the tracing. Line the tracings up smallest to biggest. Who is closest to the thief?</li></ol>
-  <div class="bell"><b>When the bell rings:</b> hand the group ONE sealed CLUE 1 envelope. Don't open it. Flip the chart face down and roll out a fresh sheet of paper.</div>
-  <div class="story"><h2>How it fits the story</h2><p><span class="fact">Your clue: the thief wears a size 9.</span> CLUE 1 says the footprint is 26 cm, a size 9. The group checks that against the four suspects' statement forms: the Librarian is a size 7 (Bureau records), everyone else wrote 9. Your table clears <strong>the Librarian</strong>.</p><p>Say "candy" until the first video has played (about 1:50); "squishies" after. Never say who did it.</p></div>
-  <div class="table"><strong>On your table:</strong> the footprint under a plastic sheet, five rulers, the shoe-size chart (face down), a tally sheet, a roll of butcher paper (or four big sheets) for tracing, pencils, four CLUE 1 envelopes.</div>
+  <div class="sc-head"><div class="num">1</div><div><h1>Evidence Lab</h1><div class="sub">Measure the footprint, convert it, cross one off · You hand out: <strong>CLUE 1</strong> envelopes</div></div><div class="emoji">👣</div></div>
+  <div class="case"><h2>The whole story, for you</h2><p>Yesterday afternoon the class's Party Candy Jar vanished from the high shelf. Four suspects: the Principal, the Reading Specialist, the Librarian, the Custodian. Four stations, one clue each, and every clue clears one suspect. Between rotations the kids hear from a suspect on video. By the end all four are crossed off, the kids realize their list was too short, and the Chief, Mrs. Driscoll herself, turns out to be the thief. The jar was never candy either: it was squishies, which the kids find hidden around the room with blacklights at the finale. Your part: run your activity your way, keep your clue a surprise until it comes out, and hand over the sealed envelope at the bell. The squads work out what it means on their own.</p></div>
+  <h2>Your table</h2>
+  <p class="act">A painted footprint was found by the shelf. The kids measure it in centimeters, look it up on the shoe-size chart (26 cm = size 9), write the size in their case file, then look at the suspect table and cross off whoever isn't a 9. That's the whole station. Let them measure as many times as they like.</p>
+  <div class="say"><b>An opening line, if you want one</b>"Every footprint tells a story. Let's find out what size our thief wears."</div>
+  <h2>The three things that matter</h2>
+  <ul class="gist"><li>They leave with: <strong>26 cm = size 9</strong>, written on the Evidence Lab line of their case file.</li><li>Keep the chart face down until they have a number.</li><li>Then the cross-off: have them find the one suspect who isn't a size 9 and draw a line through them.</li></ul>
+  <div class="story"><h2>How your clue fits the case</h2><p><span class="fact">The footprint is the thief's: a size 9.</span> Every suspect gave a shoe size. The Principal, the Reading Specialist and the Custodian are all 9s. The Librarian is a 7. When a squad opens CLUE 1 and checks the suspects, <strong>the Librarian is cleared</strong>.</p><p>The Chief is a size 9 too, which is how the kids catch her at the end. Don't bring her up.</p><p>Until the first video plays (about 1:50) everyone calls it the candy jar; after that the kids know it was squishies. Follow their lead. Never say who did it.</p></div>
+  <div class="bell"><b>When the bell rings:</b> hand the group ONE sealed CLUE 1 envelope, unopened. Flip the chart face down again.</div>
+  <div class="table"><strong>On your table:</strong> the footprint under a plastic sheet, rulers, the shoe-size chart (face down), pencils, four CLUE 1 envelopes.</div>
   <div class="footer-note"><span>The Case of the Missing Candy · Table 1</span><span>Questions on the day: wave the Floater.</span></div>
 </section>
 
 <section class="page sp">
   <div class="sc-head"><div class="num">2</div><div><h1>Ghostbuster Lab</h1><div class="sub">Fizz the ghosts, find the words · You hand out: <strong>CLUE 2</strong> envelopes</div></div><div class="emoji">👻</div></div>
-  <h2>The activity</h2>
-  <p class="act">Five baking-soda "ghosts" sit in a bin, each hiding a laminated word slip. Every kid squirts one with green vinegar until it fizzes apart, then the group puts the five words in order to read a sentence.</p>
-  <div class="say"><b>When a group arrives, say</b>"These ghosts are holding evidence hostage. The only thing they can't survive is vinegar. One syringe each. Bust them."</div>
-  <h2>Run it</h2>
-  <ol><li>Count the kids off 1 to 5. Put five ghosts in the bin, one per kid. Each kid gets a syringe of green vinegar. Sleeves up.</li><li>They squirt their ghost until it fizzes apart. A small word slip is hidden inside each one.</li><li>Everyone lays their word on the table and moves them around until it reads like a sentence: <strong>SEEN IN HALL AT 2:15.</strong> Whoever has SEEN reads it out loud. Whoever has 2:15 writes it in the group's case file.</li><li>Say: "So now you know when it happened." That's it. Don't explain more.</li></ol>
-  <div class="bell"><b>When the bell rings:</b> hand the group ONE sealed CLUE 2 envelope. Don't open it. Then scoop the mush into the bin, wipe the table, and set out five fresh ghosts from the muffin tins.</div>
-  <div class="story"><h2>How it fits the story</h2><p><span class="fact">Your clue: the theft happened at 2:15.</span> Until a group reaches your table, nobody knows when the jar was taken; the case file just says "afternoon." The ghosts spell SEEN IN HALL AT 2:15, and CLUE 2 says the same. The Principal's statement says he was off campus at a meeting from 1:00 to 3:00, so he couldn't have been in the hall. Your table clears <strong>the Principal</strong>.</p><p>Don't mention the time before the words come out of the ghosts; the surprise is the point.</p><p>Say "candy" until the first video has played (about 1:50); "squishies" after. Never say who did it.</p></div>
-  <div class="table"><strong>On your table:</strong> a tablecloth with a big plastic bin on it, 25 ghosts in muffin tins (use 5 per group), a pitcher of green vinegar, 6 syringes, paper towels and wipes, four CLUE 2 envelopes.</div>
+  <div class="case"><h2>The whole story, for you</h2><p>Yesterday afternoon the class's Party Candy Jar vanished from the high shelf. Four suspects: the Principal, the Reading Specialist, the Librarian, the Custodian. Four stations, one clue each, and every clue clears one suspect. Between rotations the kids hear from a suspect on video. By the end all four are crossed off, the kids realize their list was too short, and the Chief, Mrs. Driscoll herself, turns out to be the thief. The jar was never candy either: it was squishies, which the kids find hidden around the room with blacklights at the finale. Your part: run your activity your way, keep your clue a surprise until it comes out, and hand over the sealed envelope at the bell. The squads work out what it means on their own.</p></div>
+  <h2>Your table</h2>
+  <p class="act">Five baking-soda ghosts sit in a bin, each hiding a laminated word. The kids squirt them with green vinegar from syringes until they fizz apart, pull out the words and arrange them into a sentence: SEEN IN HALL AT 2:15. One ghost per kid works well; if someone wants to share or go twice, fine.</p>
+  <div class="say"><b>An opening line, if you want one</b>"These ghosts are holding evidence hostage. The only thing they can't survive is vinegar. Bust them."</div>
+  <h2>The three things that matter</h2>
+  <ul class="gist"><li>They leave with: <strong>SEEN IN HALL AT 2:15</strong>, one word in each of the five boxes in their case file.</li><li>Don't say the time before the ghosts do. The reveal is the whole point of your table.</li><li>Sleeves up, vinegar stays in the bin, five fresh ghosts for each group.</li></ul>
+  <div class="story"><h2>How your clue fits the case</h2><p><span class="fact">Your ghosts say WHEN it happened.</span> Until a squad reaches you, nobody knows the time; the case file only says "yesterday afternoon." The Principal's statement says he was off campus at a meeting from 1:00 to 3:00, so he can't be the one seen in the hall at 2:15. CLUE 2 says the same, and <strong>the Principal is cleared</strong>.</p><p>The other three suspects were all in the building at 2:15. So was the Chief, in her classroom.</p><p>Until the first video plays (about 1:50) everyone calls it the candy jar; after that the kids know it was squishies. Follow their lead. Never say who did it.</p></div>
+  <div class="bell"><b>When the bell rings:</b> hand the group ONE sealed CLUE 2 envelope, unopened. Scoop the mush into the bin, wipe the table, set out five fresh ghosts.</div>
+  <div class="table"><strong>On your table:</strong> a tablecloth with a big plastic bin on it, 25 ghosts in muffin tins (5 per group), a pitcher of green vinegar, 6 syringes, paper towels and wipes, four CLUE 2 envelopes.</div>
   <div class="footer-note"><span>The Case of the Missing Candy · Table 2</span><span>Questions on the day: wave the Floater.</span></div>
 </section>
 
 <section class="page sp">
-  <div class="sc-head"><div class="num">3</div><div><h1>The Cipher Room</h1><div class="sub">Decode a note, find the hidden message · You hand out: <strong>CLUE 3</strong> envelopes</div></div><div class="emoji">📜</div></div>
-  <h2>The activity</h2>
-  <p class="act">The thief left a ransom note written in a symbol code. The group decodes it with a key, one word per kid. Then they sweep the page with a blacklight and a hidden line, written in highlighter, glows.</p>
-  <div class="say"><b>When a group arrives, say</b>"The thief left a note and thinks we can't read it. Prove them wrong. Then check the paper again. Thieves always leave something behind."</div>
-  <h2>Run it</h2>
-  <ol><li>Count the kids off 1 to 5. Give the group one ransom note and the symbol key. The note has five words; each kid decodes one word, writing letters on the lines under the symbols. It says <strong>YOU WILL NEVER FIND IT.</strong> About 3 minutes. Give a hint if they're stuck.</li><li>When kid 1 has read the whole note out loud, hand kid 2 the blacklight flashlight: "Now sweep the light across the whole page."</li><li>A hidden line glows at the bottom: <strong>SNAGGED SOMETHING ORANGE ON THE SHELF. WORTH IT.</strong> Kid 3 reads it out loud. Kid 4 writes it in the group's case file.</li><li>Time left? Each kid writes a short message in symbols on a take-home card to give someone at home.</li></ol>
-  <div class="bell"><b>When the bell rings:</b> hand the group ONE sealed CLUE 3 envelope. Don't open it. Then take the key back. The used note stays with you.</div>
-  <div class="story"><h2>How it fits the story</h2><p><span class="fact">Your clue: the thief wore orange.</span> The decoded note is just a taunt. The hidden P.S. is the evidence, and CLUE 3 says the same. The Principal and the Reading Specialist wrote that they wore orange for Halloween week, and Bureau records say the Librarian did too; the Custodian's records say a gray work shirt. Your table clears <strong>the Custodian</strong>.</p><p>The take-home cards are just for fun; they don't affect the case.</p><p>Say "candy" until the first video has played (about 1:50); "squishies" after. Never say who did it.</p></div>
+  <div class="sc-head"><div class="num">3</div><div><h1>The Cipher Room</h1><div class="sub">Decode the note, find the hidden message · You hand out: <strong>CLUE 3</strong> envelopes</div></div><div class="emoji">📜</div></div>
+  <div class="case"><h2>The whole story, for you</h2><p>Yesterday afternoon the class's Party Candy Jar vanished from the high shelf. Four suspects: the Principal, the Reading Specialist, the Librarian, the Custodian. Four stations, one clue each, and every clue clears one suspect. Between rotations the kids hear from a suspect on video. By the end all four are crossed off, the kids realize their list was too short, and the Chief, Mrs. Driscoll herself, turns out to be the thief. The jar was never candy either: it was squishies, which the kids find hidden around the room with blacklights at the finale. Your part: run your activity your way, keep your clue a surprise until it comes out, and hand over the sealed envelope at the bell. The squads work out what it means on their own.</p></div>
+  <h2>Your table</h2>
+  <p class="act">The thief left a ransom note in a symbol code. The squad decodes it with the key (YOU WILL NEVER FIND IT), then sweeps the page with a blacklight and a hidden line glows: SNAGGED SOMETHING ORANGE ON THE SHELF. WORTH IT. Work it however you like; give hints when they stall. Extra time: kids write secret messages in symbols on the take-home cards.</p>
+  <div class="say"><b>An opening line, if you want one</b>"The thief left a note and thinks we can't read it. Prove them wrong. Then look at the paper again. Thieves always leave something behind."</div>
+  <h2>The three things that matter</h2>
+  <ul class="gist"><li>They leave with: the hidden P.S. about <strong>something orange</strong>, written on the Cipher Room lines of their case file.</li><li>Hold the blacklight back until the note is decoded. The glowing line is the payoff.</li><li>Take the key back at the bell. The notes stay with you.</li></ul>
+  <div class="story"><h2>How your clue fits the case</h2><p><span class="fact">The decoded note is a taunt. The glowing P.S. is the evidence.</span> The thief snagged something orange on the shelf, so the thief was wearing orange. The Principal, the Reading Specialist and the Librarian all wore orange for Halloween week. The Custodian wore a gray work shirt. CLUE 3 says the same, and <strong>the Custodian is cleared</strong>.</p><p>The Chief wore orange too. Your blacklight returns at the finale: the hidden squishy tags glow the same way.</p><p>Until the first video plays (about 1:50) everyone calls it the candy jar; after that the kids know it was squishies. Follow their lead. Never say who did it.</p></div>
+  <div class="bell"><b>When the bell rings:</b> hand the group ONE sealed CLUE 3 envelope, unopened. Take the key back.</div>
   <div class="table"><strong>On your table:</strong> four ransom notes, the symbol key, pencils, two blacklight flashlights, a stack of take-home message cards, four CLUE 3 envelopes.</div>
   <div class="footer-note"><span>The Case of the Missing Candy · Table 3</span><span>Questions on the day: wave the Floater.</span></div>
 </section>
 
 <section class="page sp">
-  <div class="sc-head"><div class="num">4</div><div><h1>The Mummy Witness</h1><div class="sub">Wrap a mummy, send it to the box · You hand out: <strong>CLUE 4</strong> envelopes</div></div><div class="emoji">🧻</div></div>
-  <h2>The activity</h2>
-  <p class="act">The only witness to the theft is a mummy, and mummies only talk to other mummies. Four kids wrap the fifth in toilet paper in ninety seconds; the mummy hobbles to the witness box and brings back the witness statement.</p>
-  <div class="say"><b>When a group arrives, say</b>"I am the witness. I saw everything. But I only speak to mummies. You have ninety seconds. Make me one."</div>
-  <h2>Run it</h2>
-  <ol><li>Count the kids off 1 to 5. Kid 5 is the mummy: stands on the tape line, arms out. Kids 1 to 4 each get one roll of toilet paper and one limb (left arm, right arm, left leg, right leg). Whoever finishes first wraps the body.</li><li>Start the stopwatch: 90 seconds. Eyes and mouth stay uncovered. Call out the last ten seconds.</li><li>Say: "Time. Mummy, the witness box is ten feet away. Only a mummy may open it. Go." The mummy hobbles to the box, tears free, opens the lid (the clue is printed inside it) and takes ONE envelope.</li><li>Kid 1 reads the witness statement out loud, ending with the boxed clue. Kid 2 writes "squishies" on the Mummy Witness line of the case file. Kids 3 and 4 stuff every scrap of paper into the trash bag.</li><li>Time left? Do it again with a new mummy and a time to beat.</li></ol>
-  <div class="bell"><b>When the bell rings:</b> hand the group ONE sealed CLUE 4 envelope. Don't open it. Then put out four fresh rolls.</div>
-  <div class="story"><h2>How it fits the story</h2><p><span class="fact">Your clue: the thief REALLY likes squishies.</span> It is printed inside the lid of the witness box and in the box at the bottom of every statement. The story around it (the avocado one, "so satisfying," the puppy hug) is just flavor. CLUE 4 says the same thing. Three suspects ticked LOVE THEM; the Reading Specialist ticked DON'T GET THEM. Your table clears <strong>the Reading Specialist</strong>.</p><p>Groups that reach you after the first video (about 1:50) already know the jar held squishies, not candy. Before that, say "candy"; the statement still works. Never say who did it.</p></div>
-  <div class="table"><strong>On your table:</strong> 20 rolls of cheap toilet paper, a stopwatch, trash bags, a tape line on the floor and the witness box ten feet away (clue sign inside the lid, four identical statements inside), four CLUE 4 envelopes.</div>
+  <div class="sc-head"><div class="num">4</div><div><h1>The Mummy Witness</h1><div class="sub">Wrap a mummy, send it to the witness box · You hand out: <strong>CLUE 4</strong> envelopes</div></div><div class="emoji">🧻</div></div>
+  <div class="case"><h2>The whole story, for you</h2><p>Yesterday afternoon the class's Party Candy Jar vanished from the high shelf. Four suspects: the Principal, the Reading Specialist, the Librarian, the Custodian. Four stations, one clue each, and every clue clears one suspect. Between rotations the kids hear from a suspect on video. By the end all four are crossed off, the kids realize their list was too short, and the Chief, Mrs. Driscoll herself, turns out to be the thief. The jar was never candy either: it was squishies, which the kids find hidden around the room with blacklights at the finale. Your part: run your activity your way, keep your clue a surprise until it comes out, and hand over the sealed envelope at the bell. The squads work out what it means on their own.</p></div>
+  <h2>Your table</h2>
+  <p class="act">The only witness is a mummy, and mummies only talk to mummies. Each squad wraps one of their own in toilet paper against a 90-second timer, and the mummy hobbles to the witness box to fetch the witness statement. The clue is printed inside the box lid and at the bottom of the statement, so it can't be missed. Second mummy if there's time; a time to beat is always popular.</p>
+  <div class="say"><b>An opening line, if you want one</b>"I am the witness. I saw everything. But I only speak to mummies. You have ninety seconds. Make me one."</div>
+  <h2>The three things that matter</h2>
+  <ul class="gist"><li>They leave with: <strong>squishies</strong>, on the Mummy Witness line of their case file. Whoever took the jar REALLY likes squishies.</li><li>Eyes and mouth stay uncovered. Everything torn off goes straight into the trash bag.</li><li>Only the mummy opens the box. That's the rule, and the kids will enforce it for you.</li></ul>
+  <div class="story"><h2>How your clue fits the case</h2><p><span class="fact">The witness says the thief REALLY likes squishies.</span> Three suspects admitted they love them. The Reading Specialist wrote DON'T GET THEM, and says so in the video. CLUE 4 says the same, and <strong>the Reading Specialist is cleared</strong>.</p><p>The Chief's own form says "Fine. Love them." Squads arriving before about 1:50 still think the jar held candy; the statement works either way, and they catch up at the next video.</p><p>Until the first video plays (about 1:50) everyone calls it the candy jar; after that the kids know it was squishies. Follow their lead. Never say who did it.</p></div>
+  <div class="bell"><b>When the bell rings:</b> hand the group ONE sealed CLUE 4 envelope, unopened. Put out four fresh rolls.</div>
+  <div class="table"><strong>On your table:</strong> 20 rolls of cheap toilet paper, a stopwatch, trash bags, a tape line on the floor and the witness box ten feet away (clue inside the lid, four identical statements inside), four CLUE 4 envelopes.</div>
   <div class="footer-note"><span>The Case of the Missing Candy · Table 4</span><span>Questions on the day: wave the Floater.</span></div>
 </section>
 

@@ -30,9 +30,6 @@
   .ev .row .f .blank { flex: 1; min-width: 0; }
   .ev .row .n { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--squad); color: #fff; font-size: 10pt; margin-right: 5px; }
   .ev .row .x { font-weight: 800; }
-  .order { display: flex; gap: 6px; align-items: center; font-size: 10pt; flex-wrap: nowrap; }
-  .order .st { border: 2px solid var(--squad); border-radius: 8px; padding: 3px 8px; font-weight: 800; white-space: nowrap; }
-  .order .arrow { color: var(--muted); }
   .done { border: 2.5px dashed var(--ink); border-radius: 10px; padding: 10px 12px; margin-top: 14px; font-size: 11.5pt; line-height: 1.5; }
   /* warrant */
   .warrant { border: 4px double var(--ink); padding: .45in; height: 100%; display: flex; flex-direction: column; }
@@ -69,7 +66,7 @@ function casePage() {
       <tr><td><span class="chk"></span></td><td><strong>The Reading Specialist</strong></td><td>9</td><td>Reading room, all afternoon</td><td>Orange</td><td>Doesn't get them</td><td>Video 2</td></tr>
       <tr><td><span class="chk"></span></td><td><strong>The Librarian</strong></td><td>7</td><td>Shelving, 2:00 to 2:30</td><td>Orange</td><td>Loves them</td><td><em>Declined</em></td></tr>
       <tr><td><span class="chk"></span></td><td><strong>The Custodian</strong></td><td>9</td><td>In the building, all afternoon</td><td>Gray</td><td>Loves them</td><td><em>Declined</em></td></tr>
-      <tr><td><span class="chk"></span></td><td><span class="blank" style="min-width:1.4in"></span><div class="tiny muted">Anyone else?</div></td><td><span class="blank short"></span></td><td><span class="blank" style="min-width:1.1in"></span></td><td><span class="blank short"></span></td><td><span class="blank" style="min-width:.9in"></span></td><td></td></tr>
+      <tr><td><span class="chk"></span></td><td colspan="6"><strong>Someone else?</strong> &nbsp;Name: <span class="blank" style="min-width:2.6in"></span></td></tr>
     </tbody>
   </table>
   <div class="rule">A clue tells you who DIDN'T do it. Doesn't match the clue? Cross them off. ✗</div>
@@ -82,8 +79,6 @@ function casePage() {
     <div class="row"><b><span class="n">4</span>Mummy Witness</b><span class="f">The thief REALLY likes: <span class="blank"></span></span><span class="x">Cross off: <span class="blank" style="min-width:1.1in"></span></span></div>
   </div>
 
-  <div class="sec">Your stations <small>start at your squad number, then count up. After 4 comes 1.</small></div>
-  <div class="order">${[1,2,3,4].map((n, i) => `<span class="st">${STATIONS[n][1]} ${n} · ${STATIONS[n][0]}</span>${i < 3 ? '<span class="arrow">→</span>' : ''}`).join("")}</div>
 
   <div class="done"><strong>All four clues in?</strong> Everyone crossed off? Tell the Detective: "Our list is too short." Then write your Arrest Warrant (next page) and drop it in the cauldron.</div>
   <div class="footer-note"><span>Mrs. Driscoll's Detective Bureau · Case #1031</span><span>Keep this file with your squad.</span></div>

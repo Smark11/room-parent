@@ -12,7 +12,11 @@
   .hdr h1 { font-size: 26pt; margin: 4px 0 0; }
   .squadtag { text-align: right; }
   .squadtag .name { font-family: "Fredoka", sans-serif; font-size: 16pt; font-weight: 600; margin-left: auto; }
+  .squadtag .badge { display: inline-block; font-family: "Fredoka", sans-serif; font-size: 20pt; font-weight: 700; color: #fff; background: var(--squad); border-radius: 12px; padding: 4px 16px; white-space: nowrap; }
+  .squadtag .badge.light { color: #111; }
   .page { --squad: #5b21b6; }
+  .warrant .sq { display: inline-block; font-family: "Fredoka", sans-serif; font-weight: 700; color: #fff; background: var(--squad); border-radius: 10px; padding: 0 12px; line-height: 1.4; }
+  .warrant .sq.light { color: #111; }
   .stolen { border: 2.5px solid var(--ink); border-radius: 10px; padding: 8px 12px; margin-bottom: 12px; display: flex; gap: 14px; align-items: center; font-size: 11.5pt; }
   .stolen .big { font-family: "Fredoka", sans-serif; font-size: 18pt; letter-spacing: .06em; white-space: nowrap; }
   .sec { font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 13pt; margin: 12px 0 6px; display: flex; align-items: center; gap: 8px; }
@@ -45,18 +49,19 @@
 </style>
 </head>
 <body>
-<div class="toolbar"><b>📁 Case file</b><span class="muted">2 pages · one case file and one arrest warrant. Print five (four squads and a spare).</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/case-file.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
+<div class="toolbar"><b>📁 Case file</b><span class="muted">8 pages · a case file and an arrest warrant for each squad, in squad colors. Print once, double-sided.</span><span class="grow"></span><a href="../../events/halloween.html#downloads">← Back to the plan</a><a href="../../downloads/halloween/case-file.pdf" download>⬇ PDF</a><button class="primary" onclick="window.print()">🖨 Print</button></div>
 
 <script>
 const STATIONS = { 1: ["Evidence Lab", "👣"], 2: ["Ghostbuster Lab", "👻"], 3: ["Cipher Room", "📜"], 4: ["Mummy Witness", "🧻"] };
-function casePage() {
+const SQUADS = [["1", "Purple", "#5b21b6", false], ["2", "Black", "#111318", false], ["3", "Teal", "#0f766e", false], ["4", "Orange", "#ea580c", true]];
+function casePage([n, color, hex, light]) {
   return `
-<section class="page">
+<section class="page" style="--squad:${hex}">
   <div class="hdr">
     <div><span class="tape"><span>Confidential</span></span><div class="case" style="margin-top:8px">Mrs. Driscoll's Detective Bureau · Case #1031</div><h1 style="white-space:nowrap">The Case of the Missing Candy</h1></div>
-    <div class="squadtag"><div class="case">Squad</div><div class="name" style="border-bottom:2px solid #111;min-width:1.2in;height:1.3em"></div><div class="small muted" style="white-space:nowrap">1 purple · 2 black · 3 teal · 4 orange</div></div>
+    <div class="squadtag"><span class="badge${light ? " light" : ""}">Squad ${n} · ${color}</span></div>
   </div>
-  <div class="stolen"><span>Stolen:</span><span class="big">THE CANDY JAR</span><span class="muted" style="white-space:nowrap">from the high shelf, yesterday afternoon.</span><span class="muted small" style="margin-left:auto;white-space:nowrap">New info? Fix it: </span><span class="blank" style="min-width:1.2in"></span></div>
+  <div class="stolen"><span>Stolen:</span><span class="big">THE CANDY JAR</span><span class="muted" style="white-space:nowrap">from the high shelf, yesterday afternoon.</span></div>
 
   <div class="sec">Suspects <small>from their statement forms, or from Bureau records if they declined to comment</small></div>
   <table class="sus">
@@ -83,12 +88,12 @@ function casePage() {
   <div class="done"><strong>All four clues in?</strong> Everyone crossed off? Tell the Detective: "Our list is too short." Then write your Arrest Warrant (next page) and drop it in the cauldron.</div>
   <div class="footer-note"><span>Mrs. Driscoll's Detective Bureau · Case #1031</span><span>Keep this file with your squad.</span></div>
 </section>
-<section class="page fill">
+<section class="page fill" style="--squad:${hex}">
   <div class="warrant">
     <div class="seal"><span class="stamp">Official</span></div>
     <div class="case center" style="font-family:Fredoka;font-size:9pt;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Mrs. Driscoll's Detective Bureau · Case #1031</div>
     <h1>Arrest Warrant</h1>
-    <div class="we" style="margin-top:14px">We, the detectives of Squad <span class="blank" style="min-width:.6in"></span>, accuse</div>
+    <div class="we" style="margin-top:14px">We, the detectives of <span class="sq${light ? " light" : ""}">Squad ${n} · ${color}</span>, accuse</div>
     <div class="line" style="height:.75in;border-bottom-width:2.5px"></div>
     <div class="we" style="margin-top:6px">of taking the Jar, because:</div>
     <div class="because lines"><span class="line"></span><span class="line"></span><span class="line"></span><span class="line"></span><span class="line"></span></div>
@@ -99,7 +104,7 @@ function casePage() {
   </div>
 </section>`;
 }
-document.write(casePage());
+document.write(SQUADS.map(casePage).join(""));
 </script>
 </body>
 </html>
